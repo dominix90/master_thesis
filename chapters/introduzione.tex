@@ -1,0 +1,31 @@
+\setlength{\parskip}{0.3cm}
+\chapter{Introduzione}
+
+Negli ultimi anni, sono state effettuate diverse ricerche orientate allo sviluppo di strumenti e metodi per il monitoraggio e le operazioni all’interno di scenari complessi. 
+Le missioni all’interno di questi contesti sono generalmente classificate come “noiose, sporche e pericolose” (categorizzazione delle “three Ds”, dall’inglese dull, dirty and dangerous), in quanto l’accesso a determinate zone risulta limitato, pericoloso o, in alcuni casi, impossibile, sia ad operatori umani che ai mezzi convenzionali.
+
+Piattaforme aeree come gli UAV (Unmanned Aerial Vehicles), spesso chiamati droni, sono oggi la risposta più frequente alle esigenze di tali missioni, grazie ai recenti progressi tecnologici in materia di miniaturizzazione della batteria, di tecnologia di comunicazione, elaborazione e rilevamento \cite{whitehead2014remote}. 
+In particolare, la categoria specifica per questa tipologia di operazioni è quella dei mini-UAV, droni di piccole dimensioni equipaggiati con strumenti di self-localization e sensing utilizzati per la raccolta dei dati necessari al completamento dei task prefissati.
+
+L'individuazione e l'identificazione di un obiettivo sono elementi chiave in tutte le operazioni di cui sopra.
+In alcune di esse, però, anche il tempo di completamento del task ricopre un ruolo fondamentale, basti pensare ad operazioni di ricerca e recupero di particolari target: in questa tipologia di task un’analisi dettagliata di tutto l’ambiente può rappresentare una strategia inefficiente. 
+Un approccio sicuramente più appropriato potrebbe essere quello di effettuare una ricognizione veloce dell’area, con l’unico scopo di identificare i punti chiave da sottomettere, in un secondo momento, ad un'ispezione più accurata. 
+In questo contesto, la qualità degli strumenti di sensing ha un impatto diretto sulle performance dell'intera missione \cite{bertuccelli2005robust}, così come il numero di attori utilizzati: completare tutte le operazioni con un singolo UAV può risultare rischioso (il drone è il nostro single point-of-failure) ed altamente costoso in termini di progettazione, costruzione e manutenzione del velivolo e dell'array di sensori su di esso presente.
+
+L'utilizzo di uno sciame di mini-UAV, ed il conseguente approccio cooperativo che sfrutta gli strumenti di misurazione di tutti i velivoli, può minimizzare l'errore relativo all'identificazione dei target. 
+I maggiori benefici che ne possono derivare sono robustezza, scalabilità e flessibilità e, per tale ragione, è necessario che ogni individuo dello sciame agisca ad un certo livello di autonomia ed esegua operazioni di sensing e comunicazione locali senza un controllo centralizzato o conoscenze globali della missione. 
+L’elemento chiave del funzionamento di uno sciame di droni – in particolare, una delle principali ragioni per cui parliamo di sciame e non di gruppo – è la cooperazione tra gli individui, che permette di completare il task globale attraverso una serie di meccanismi di coordinazione ed esplorazione attuati dai singoli UAV. 
+La principale ispirazione deriva proprio da osservazioni di animali sociali, quali formiche, api, pesci o uccelli, che riescono ad eseguire operazioni complesse di gruppo attraverso poche regole elementari, mostrando una sorta di conoscenza collettiva costituita con delle semplici interazioni locali \cite{brambilla2013swarm}.
+
+Un meccanismo fondamentale di coordinamento dello sciame è la cosiddetta stigmergia \cite{sauter2005performance}. 
+Attraverso questo processo, gli individui lasciano informazioni nell’ambiente in forma di feromoni, sostanze evaporabili diffuse localmente a cui altri individui reagiscono modificando il loro comportamento di conseguenza \cite{parunak2002digital}. 
+Una strategia che permette l’organizzazione dei droni in sciami, invece, è il flocking, un comportamento emergente basato su semplici regole quali allineamento, separazione e coesione \cite{reynolds1987flocks}. 
+Una forma simulata di feromone, la strategia di flocking ed una serie di meccanismi di evitamento di ostacoli, dunque, possono essere utilizzate per coordinare lo sciame e raggiungere l’obiettivo della missione.
+
+Una volta introdotti gli attori principali del coordinamento di uno sciame di mini-UAV è necessario valutare tali meccanismi attraverso uno strumento di simulazione. 
+Un simulatore di esplorazione dello sciame ha degli obiettivi diversi rispetto ad un simulatore di volo del drone: quest’ultimo si occupa di modellare aspetti di movimento o ambientali; quando trattiamo uno sciame, invece, la modellazione riguarda il sensing e le regole di comportamento che permettono ai singoli individui di collaborare ai fini del completamento di un particolare task. 
+L’obiettivo di questo documento è quello di implementare un simulation testbed, all’interno del quale è possibile integrare diversi algoritmi al fine di valutarne le performance ed attuare un’analisi comparativa tra gli stessi.
+
+Prima di passare ai dettagli implementativi dell’ambiente di simulazione verrà presentata, nel capitolo successivo, un’analisi sullo stato dell’arte relativo agli algoritmi bioispirati e sulle varie ricerche che hanno portato alle conoscenze odierne. 
+Successivamente, verranno presentate in dettaglio le caratteristiche chiave degli algoritmi selezionati per la comparazione all’interno del testbed. 
+Infine, verrà illustrata l’implementazione del simulatore, insieme all’algoritmo di Differential Evolution utilizzato per l’ottimizzazione parametrica ed ai risultati a contorno della nostra analisi.

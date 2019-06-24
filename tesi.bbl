@@ -1,0 +1,140 @@
+\begin{thebibliography}{10}
+
+\bibitem{whitehead2014remote}
+K.~Whitehead, C.~H. Hugenholtz, S.~Myshak, O.~Brown, A.~LeClair, A.~Tamminga,
+  T.~E. Barchyn, B.~Moorman, and B.~Eaton, ``Remote sensing of the environment
+  with small unmanned aircraft systems (uass), part 2: Scientific and
+  commercial applications,'' {\em Journal of unmanned vehicle systems}, vol.~2,
+  no.~3, pp.~86--102, 2014.
+
+\bibitem{bertuccelli2005robust}
+L.~F. Bertuccelli and J.~How, ``Robust uav search for environments with
+  imprecise probability maps,'' in {\em Proceedings of the 44th IEEE Conference
+  on Decision and Control}, pp.~5680--5685, IEEE, 2005.
+
+\bibitem{brambilla2013swarm}
+M.~Brambilla, E.~Ferrante, M.~Birattari, and M.~Dorigo, ``Swarm robotics: a
+  review from the swarm engineering perspective,'' {\em Swarm Intelligence},
+  vol.~7, no.~1, pp.~1--41, 2013.
+
+\bibitem{sauter2005performance}
+J.~A. Sauter, R.~Matthews, H.~Van Dyke~Parunak, and S.~A. Brueckner,
+  ``Performance of digital pheromones for swarming vehicle control,'' in {\em
+  Proceedings of the fourth international joint conference on Autonomous agents
+  and multiagent systems}, pp.~903--910, ACM, 2005.
+
+\bibitem{parunak2002digital}
+H.~V. Parunak, M.~Purcell, and R.~O'Connell, ``Digital pheromones for
+  autonomous coordination of swarming uav's,'' in {\em 1st UAV Conference},
+  p.~3446, 2002.
+
+\bibitem{reynolds1987flocks}
+C.~W. Reynolds, {\em Flocks, herds and schools: A distributed behavioral
+  model}, vol.~21.
+\newblock ACM, 1987.
+
+\bibitem{senanayake2016search}
+M.~Senanayake, I.~Senthooran, J.~C. Barca, H.~Chung, J.~Kamruzzaman, and
+  M.~Murshed, ``Search and tracking algorithms for swarms of robots: A
+  survey,'' {\em Robotics and Autonomous Systems}, vol.~75, pp.~422--434, 2016.
+
+\bibitem{brust2017target}
+M.~R. Brust, M.~Zurad, L.~Hentges, L.~Gomes, G.~Danoy, and P.~Bouvry, ``Target
+  tracking optimization of uav swarms based on dual-pheromone clustering,'' in
+  {\em 2017 3rd IEEE International Conference on Cybernetics (CYBCONF)},
+  pp.~1--8, IEEE, 2017.
+
+\bibitem{atten2016uav}
+C.~Atten, L.~Channouf, G.~Danoy, and P.~Bouvry, ``Uav fleet mobility model with
+  multiple pheromones for tracking moving observation targets,'' in {\em
+  European Conference on the Applications of Evolutionary Computation},
+  pp.~332--347, Springer, 2016.
+
+\bibitem{vasarhelyi2014outdoor}
+G.~V{\'a}s{\'a}rhelyi, C.~Vir{\'a}gh, G.~Somorjai, N.~Tarcai,
+  T.~Sz{\"o}r{\'e}nyi, T.~Nepusz, and T.~Vicsek, ``Outdoor flocking and
+  formation flight with autonomous aerial robots,'' in {\em 2014 IEEE/RSJ
+  International Conference on Intelligent Robots and Systems}, pp.~3866--3873,
+  IEEE, 2014.
+
+\bibitem{hauert2011reynolds}
+S.~Hauert, S.~Leven, M.~Varga, F.~Ruini, A.~Cangelosi, J.-C. Zufferey, and
+  D.~Floreano, ``Reynolds flocking in reality with fixed-wing robots:
+  communication range vs. maximum turning rate,'' in {\em 2011 IEEE/RSJ
+  International Conference on Intelligent Robots and Systems}, pp.~5015--5020,
+  IEEE, 2011.
+
+\bibitem{quintero2013flocking}
+S.~A. Quintero, G.~E. Collins, and J.~P. Hespanha, ``Flocking with fixed-wing
+  uavs for distributed sensing: A stochastic optimal control approach,'' in
+  {\em 2013 American Control Conference}, pp.~2025--2031, IEEE, 2013.
+
+\bibitem{bayindir2016review}
+L.~Bay{\i}nd{\i}r, ``A review of swarm robotics tasks,'' {\em Neurocomputing},
+  vol.~172, pp.~292--321, 2016.
+
+\bibitem{paradzik2016multi}
+M.~Paradzik and G.~{\.I}nce, ``Multi-agent search strategy based on digital
+  pheromones for uavs,'' in {\em 2016 24th Signal Processing and Communication
+  Application Conference (SIU)}, pp.~233--236, IEEE, 2016.
+
+\bibitem{de2017fault}
+M.~De~Benedetti, F.~D'Urso, G.~Fortino, F.~Messina, G.~Pappalardo, and
+  C.~Santoro, ``A fault-tolerant self-organizing flocking approach for uav
+  aerial survey,'' {\em Journal of Network and Computer Applications}, vol.~96,
+  pp.~14--30, 2017.
+
+\bibitem{qiu2017pigeon}
+H.~Qiu and H.~Duan, ``Pigeon interaction mode switch-based uav distributed
+  flocking control under obstacle environments,'' {\em ISA transactions},
+  vol.~71, pp.~93--102, 2017.
+
+\bibitem{palmieri2017comparison}
+N.~Palmieri, X.-S. Yang, F.~De~Rango, and S.~Marano, ``Comparison of
+  bio-inspired algorithms applied to the coordination of mobile robots
+  considering the energy consumption,'' {\em Neural Computing and
+  Applications}, pp.~1--24, 2017.
+
+\bibitem{singh2017detection}
+S.~Singh, S.~Lu, M.~M. Kokar, P.~A. Kogut, and L.~Martin, ``Detection and
+  classification of emergent behaviors using multi-agent simulation framework
+  (wip),'' in {\em Proceedings of the Symposium on Modeling and Simulation of
+  Complexity in Intelligent, Adaptive and Autonomous Systems}, p.~3, Society
+  for Computer Simulation International, 2017.
+
+\bibitem{bloembergen2015evolutionary}
+D.~Bloembergen, K.~Tuyls, D.~Hennes, and M.~Kaisers, ``Evolutionary dynamics of
+  multi-agent learning: A survey,'' {\em Journal of Artificial Intelligence
+  Research}, vol.~53, pp.~659--697, 2015.
+
+\bibitem{cimino2015combining}
+M.~G. Cimino, A.~Lazzeri, and G.~Vaglini, ``Combining stigmergic and flocking
+  behaviors to coordinate swarms of drones performing target search,'' in {\em
+  2015 6th International Conference on Information, Intelligence, Systems and
+  Applications (IISA)}, pp.~1--6, IEEE, 2015.
+
+\bibitem{labella2006division}
+T.~H. Labella, M.~Dorigo, and J.-L. Deneubourg, ``Division of labor in a group
+  of robots inspired by ants' foraging behavior,'' {\em ACM Transactions on
+  Autonomous and Adaptive Systems (TAAS)}, vol.~1, no.~1, pp.~4--25, 2006.
+
+\bibitem{yang2009firefly}
+X.-S. Yang, ``Firefly algorithms for multimodal optimization,'' in {\em
+  International symposium on stochastic algorithms}, pp.~169--178, Springer,
+  2009.
+
+\bibitem{yang2010firefly}
+X.-S. Yang, ``Firefly algorithm, stochastic test functions and design
+  optimisation,'' {\em arXiv preprint arXiv:1003.1409}, 2010.
+
+\bibitem{eberhart1995particle}
+R.~Eberhart and J.~Kennedy, ``Particle swarm optimization,'' in {\em
+  Proceedings of the IEEE international conference on neural networks}, vol.~4,
+  pp.~1942--1948, Citeseer, 1995.
+
+\bibitem{karaboga2009comparative}
+D.~Karaboga and B.~Akay, ``A comparative study of artificial bee colony
+  algorithm,'' {\em Applied mathematics and computation}, vol.~214, no.~1,
+  pp.~108--132, 2009.
+
+\end{thebibliography}

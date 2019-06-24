@@ -1,0 +1,46 @@
+\makeatletter
+\newgeometry{left=3cm,bottom=0.1cm}
+
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+    
+    \center 
+    \textsc{\LARGE Università Degli Studi Di Pisa }\\[0.3cm]
+
+    \vspace{1cm}
+    \includegraphics[scale=0.7]{img/logo.png}
+    \vspace{1cm}
+  
+    \textsc{\Large Tesi Magistrale in }\\[0.5cm]
+    \textsc{\Large Computer Engineering }\\[1.5cm]
+
+    %\HRule \\[0.4cm]
+    %{ \huge \bfseries \@title }\\[0.03cm] 
+    %\HRule \\[1.5cm]
+
+    { \huge \bfseries \@title }\\[1.5cm] 
+    
+    \begin{minipage}{0.4\textwidth}
+    \begin{flushleft} \large
+    \emph{Relatori:}\\
+    Mario G.C.A. Cimino\\
+    Gigliola Vaglini
+    \end{flushleft}
+    \end{minipage}
+    ~
+    \begin{minipage}{0.4\textwidth}
+    \begin{flushright} \large
+    \emph{Candidato:} \\
+    \@author \\ 
+    \vspace{1.2\baselineskip}
+    \end{flushright}
+    \end{minipage}\\[1cm]
+    
+    \vfill
+
+    {\large \@date }\\[1cm]
+
+   
+\end{titlepage}
+
+\restoregeometry

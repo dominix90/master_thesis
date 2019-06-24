@@ -1,0 +1,40 @@
+- introduzione
+    - reti neurali
+    - stigmergia
+    - ???
+
+- stato dell'arte
+    - reti neurali FF
+    - reti neurali convoluzionali
+    - reti neurali ricorsive
+    - LMST
+    - spiking neural network
+
+- reti neurali stigmergiche
+    - introduzione
+    - definizione matematica
+    - esperimenti
+    - modes?
+    - non sono differenziabili
+
+- rendere differenziaibili le reti neurali stigmergiche
+    - smooth threshold (sigmoide)
+    - smooth mark (sigmoid temporale)
+    - conti
+    - esperimenti
+
+- teorema di equivalenza
+    - dimostrazione
+    - esperimenti
+
+- algoritmo di apprendimento
+    - backpropagation
+    - dimostrazione
+    - pesudocodice
+
+- MNIST
+     - topologia rete
+     - risultati
+     - comparazione con altre reti in stato dell'arte
+
+- Conclusione

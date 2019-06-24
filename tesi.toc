@@ -1,0 +1,23 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {chapter}{\numberline {1}Introduzione}{1}% 
+\contentsline {chapter}{\numberline {2}Stato dell'arte}{4}% 
+\contentsline {chapter}{\numberline {3}Analisi}{7}% 
+\contentsline {section}{\numberline {3.1}Ambiente}{7}% 
+\contentsline {section}{\numberline {3.2}UAV: Unmanned Aerial Vehicles}{8}% 
+\contentsline {subsection}{\numberline {3.2.1}Stati di un UAV}{8}% 
+\contentsline {section}{\numberline {3.3}Target}{9}% 
+\contentsline {section}{\numberline {3.4}Ostacolo}{10}% 
+\contentsline {section}{\numberline {3.5}Algoritmo bioispirato}{10}% 
+\contentsline {subsection}{\numberline {3.5.1}SciaDro}{10}% 
+\contentsline {subsubsection}{Modulo di collision avoidance}{10}% 
+\contentsline {subsubsection}{Stigmergia}{11}% 
+\contentsline {subsubsection}{Flocking}{11}% 
+\contentsline {subsection}{\numberline {3.5.2}Algortmi PAPER}{12}% 
+\contentsline {subsubsection}{Esplorazione}{12}% 
+\contentsline {subsubsection}{Strategie di reclutamento}{13}% 
+\contentsline {chapter}{\numberline {4}Progettazione}{14}% 
+\contentsline {chapter}{\numberline {5}Algoritmo di ottimizzazione parametrica}{15}% 
+\contentsline {chapter}{\numberline {6}Implementazione e prove sperimentali}{16}% 
+\contentsline {section}{\numberline {6.1}Simulation testbed}{16}% 
+\contentsline {section}{\numberline {6.2}Sezione sui test}{16}% 

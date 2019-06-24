@@ -1,0 +1,40 @@
+\chapter{Stato dell'arte}
+
+Molte ricerche sono state sviluppate nel campo della metaeuristica per la ricerca del target utilizzando uno sciame: queste ricerche sono caratterizzate per l'eterogeneità di obiettivi, metodologie e scenari. 
+Alcune indagini recenti (ad esempio, \cite{senanayake2016search}) hanno tentato di creare una tassonomia per discutere le differenze qualitative tra gli approcci proposti. 
+In questa sezione alcuni lavori rilevanti sono brevemente citati e riassunti per il lettore interessato.
+
+Tra gli approcci di ispirazione biologica esistenti in letteratura, stigmergia e flocking sono ampiamente utilizzati per coordinare uno sciame di UAV in compiti di ricerca di target \cite{parunak2002digital}. 
+Gli autori in \cite{sauter2005performance} hanno proposto uno schema di sciame basato sulla stigmergia, in cui feromoni virtuali sono depositati su una mappa feromonica e rilevati dagli agenti. 
+In particolare, le decisioni relative ad azioni e movimenti sono prese dagli agenti camminatori, mentre gli agenti avatar si impegnano a fare stime in assenza di informazioni sul sensore. 
+Lo schema è applicato a molti scenari, compresa l'acquisizione del target. 
+In \cite{brust2017target} gli autori progettano una procedura di multi-hop clustering combinata con la stigmergia per fornire una soluzione ottimale ad un insieme di obiettivi, tra cui il rilevamento e il monitoraggio dei target. 
+Inoltre, propongono un modello di feromoni che include feromoni attrattivi e repulsivi, per marcare rispettivamente i target rilevati e le aree visitate. 
+Un'altra applicazione di questo tipo di modello di feromoni è proposta in \cite{atten2016uav}, per missioni simili.
+
+Il flocking è stato proposto per la prima volta da Reynolds \cite{reynolds1987flocks}. 
+Un esempio è proposto in \cite{vasarhelyi2014outdoor} dove gli autori presentano una strategia di coordinamento decentrato per gli UAV basata sul flocking. 
+Questo meccanismo è utilizzato per mantenere gli UAV nel campo della comunicazione e per coordinarsi durante i loro task. 
+In \cite{hauert2011reynolds} viene proposto un gruppo di UAV multipli ad ala fissa che volano ad una distanza relativamente grande l'uno dall'altro. 
+Una strategia di flocking viene applicata anche in \cite{quintero2013flocking} dove gli UAV navigano autonomamente in un'area di ricerca.
+
+Diversi lavori di ricerca hanno proposto miglioramenti per tali metaeuristiche biologiche \cite{bayindir2016review}. 
+Queste, a differenza delle euristiche, non sono problem-dependent e possono essere utilizzate come strumenti generali per la risoluzione dei problemi. 
+Ovviamente, una regolazione parametrica è necessaria per adattare una metaeuristica al task in questione ed una taratura di scarsa qualità può portare a risultati imprevedibili. 
+Per esempio, la stigmergia con feromoni persistenti e con un ampio raggio di diffusione può attrarre troppi agenti e portare a ricerche inefficienti. 
+Il flocking con un ampio raggio di visibilità può portare ad una formazione molto rigida. 
+Poiché nei sistemi multi-agente l'interazione degli agenti non è semplicemente deducibile dalle proprietà dei componenti, un'importante tecnica per studiare le proprietà globali e il loro livello di prevedibilità è la simulazione che può essere utilizzata anche quando si propone una variante di una metaeuristica. 
+I lavori che seguono riassumono alcune varianti di flocking e stigmergia utilizzate per i sistemi multi-UAVs.
+
+In questo contesto, in \cite{paradzik2016multi} rispetto al modello a feromoni di ispirazione biologica, solitamente attrattivo/ripulsivo, gli autori codificano informazioni specifiche come sapori feromonici. 
+In \cite{de2017fault} l'auto-organizzazione di uno sciame di UAV, impiegato in una missione di copertura territoriale, si ottiene consentendo la comunicazione a breve raggio tra UAV attraverso il gossiping. 
+In \cite{qiu2017pigeon} gli autori propongono una strategia di coordinamento basata sul modello di flocking dei piccioni. 
+Per evitare gli ostacoli, gli individui più alti nella gerarchia del flock sono informati sulla posizione degli ostacoli, fornendo una strategia di pianificazione del percorso basata su un campo di potenziale artificiale. 
+In \cite{palmieri2017comparison} gli autori propongono diversi approcci basati su tre diversi algoritmi bio-ispirati per effettuare un confronto di metaeuristica applicata ad uno sciame di robot che deve completare una missione con l'obiettivo di minimizzare il consumo energetico.
+
+La particolarità dell'approccio qui proposto è che le metaeuristiche del flocking e della stigmergia generano, insieme a rilevamento ed attuazione, una logica integrata che è parametrizzata nel suo insieme da un'ottimizzazione di Differential Evolution. 
+Un processo di adattamento, infatti, può ricercare la migliore aggregazione delle metaeuristiche secondo la missione specifica e la misura delle prestazioni, che può essere testata nell'ambiente simulato, esplorando soluzioni normalmente impossibili da considerare in una progettazione convenzionale \cite{singh2017detection}, \cite{bloembergen2015evolutionary}.
+
+Ciò è confermato da lavori di ricerca come \cite{cimino2015combining} in cui è necessario un meccanismo di adattamento che regola la coordinazione dello sciame per adattarsi al layout dello scenario attuale. 
+Un altro esempio di coordinamento adattivo è proposto in \cite{labella2006division} i cui autori propongono un sistema di controllo per uno sciame di robot coinvolto in un compito di recupero di oggetti. 
+Cambiando la probabilità di passare da una strategia individuale ad un’altra, gli autori mostrano i miglioramenti rilevanti legati all’efficienza dei robot reali e simulati.
