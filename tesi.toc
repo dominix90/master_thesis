@@ -18,7 +18,17 @@
 \contentsline {subsubsection}{Strategie di reclutamento}{13}% 
 \contentsline {chapter}{\numberline {4}Progettazione}{14}% 
 \contentsline {section}{\numberline {4.1}Progettazione dell'ambiente}{14}% 
-\contentsline {chapter}{\numberline {5}Algoritmo di ottimizzazione parametrica}{16}% 
-\contentsline {chapter}{\numberline {6}Implementazione e prove sperimentali}{17}% 
-\contentsline {section}{\numberline {6.1}Simulation testbed}{17}% 
-\contentsline {section}{\numberline {6.2}Sezione sui test}{17}% 
+\contentsline {section}{\numberline {4.2}Elemento ostacolo}{17}% 
+\contentsline {section}{\numberline {4.3}Elemento target}{17}% 
+\contentsline {section}{\numberline {4.4}Elemento UAV}{18}% 
+\contentsline {section}{\numberline {4.5}Algoritmo bioispirato}{19}% 
+\contentsline {subsection}{\numberline {4.5.1}SciaDro}{19}% 
+\contentsline {subsubsection}{Progettazione del drone}{19}% 
+\contentsline {subsubsection}{Progettazione del flocking}{22}% 
+\contentsline {subsubsection}{Progettazione del meccanismo di collision avoidance}{22}% 
+\contentsline {subsubsection}{Progettazione dell'impronta di feromone attrattivo}{22}% 
+\contentsline {subsection}{\numberline {4.5.2}Algortmi PAPER}{22}% 
+\contentsline {chapter}{\numberline {5}Algoritmo di ottimizzazione parametrica}{23}% 
+\contentsline {chapter}{\numberline {6}Implementazione e prove sperimentali}{24}% 
+\contentsline {section}{\numberline {6.1}Simulation testbed}{24}% 
+\contentsline {section}{\numberline {6.2}Sezione sui test}{24}% 

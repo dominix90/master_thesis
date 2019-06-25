@@ -118,6 +118,12 @@ T.~H. Labella, M.~Dorigo, and J.-L. Deneubourg, ``Division of labor in a group
   of robots inspired by ants' foraging behavior,'' {\em ACM Transactions on
   Autonomous and Adaptive Systems (TAAS)}, vol.~1, no.~1, pp.~4--25, 2006.
 
+\bibitem{cimino2019adaptive}
+M.~G. Cimino, M.~Lega, M.~Monaco, and G.~Vaglini, ``Adaptive exploration of a
+  uavs swarm for distributed targets detection and tracking,'' in {\em The 8th
+  International Conference on Pattern Recognition Applications and Methods
+  (ICPRAM 2019)}, pp.~1--8, 2019.
+
 \bibitem{yang2009firefly}
 X.-S. Yang, ``Firefly algorithms for multimodal optimization,'' in {\em
   International symposium on stochastic algorithms}, pp.~169--178, Springer,
