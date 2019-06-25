@@ -323,6 +323,9 @@ INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/uav_states.pdf
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/uav_states.pdf
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/progettazione.tex
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/progettazione.tex
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/elementi_ambiente.png
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/elementi_ambiente.png
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/elementi_ambiente.png
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/genetico.tex
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/genetico.tex
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/esperimenti.tex
@@ -334,6 +337,8 @@ INPUT /home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb

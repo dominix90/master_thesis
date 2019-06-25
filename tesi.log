@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.6.14)  24 JUN 2019 12:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.6.14)  24 JUN 2019 20:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -780,39 +780,45 @@ Package pdftex.def Info: img/uav_states.pdf  used on input line 44.
 pdfTeX warning: pdflatex (file /home/domi/tesi/stesura/latex/tesimagistrale/img/uav_states.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >] [10] [11] [12]) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/progettazione.tex [13]
 Capitolo 4.
-) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/genetico.tex [14
+[14
 
 ]
+<img/elementi_ambiente.png, id=78, 592.46344pt x 538.26094pt>
+File: img/elementi_ambiente.png Graphic file (type png)
+<use img/elementi_ambiente.png>
+Package pdftex.def Info: img/elementi_ambiente.png  used on input line 27.
+(pdftex.def)             Requested size: 307.14749pt x 279.05135pt.
+) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/genetico.tex [15 </home/domi/tesi/stesura/latex/tesimagistrale/img/elementi_ambiente.png (PNG copy)>]
 Capitolo 5.
-) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/esperimenti.tex [15
+) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/esperimenti.tex [16
 
 ]
 Capitolo 6.
-) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex [16
+) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex [17
 
-]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [17
+]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [18
 
-] [18
+] [19
 
-] [19]
+] [20]
 Underfull \hbox (badness 4686) in paragraph at lines 127--129
 []\OT1/cmr/m/n/12 X.-S. Yang, ``Fi-re-fly al-go-ri-thm, sto-cha-stic te-st func-tions and de-si-gn
  []
 
-) [20] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux) ) 
+) [21] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 27244 strings out of 492616
- 653073 string characters out of 6135177
+ 27250 strings out of 492616
+ 653232 string characters out of 6135177
  999715 words of memory out of 5000000
- 30641 multiletter control sequences out of 15000+600000
+ 30646 multiletter control sequences out of 15000+600000
  12112 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,7n,96p,846b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (23 pages, 219073 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (24 pages, 244490 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 125 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

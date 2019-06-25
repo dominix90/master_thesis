@@ -17,7 +17,8 @@
 \contentsline {subsubsection}{Esplorazione}{12}% 
 \contentsline {subsubsection}{Strategie di reclutamento}{13}% 
 \contentsline {chapter}{\numberline {4}Progettazione}{14}% 
-\contentsline {chapter}{\numberline {5}Algoritmo di ottimizzazione parametrica}{15}% 
-\contentsline {chapter}{\numberline {6}Implementazione e prove sperimentali}{16}% 
-\contentsline {section}{\numberline {6.1}Simulation testbed}{16}% 
-\contentsline {section}{\numberline {6.2}Sezione sui test}{16}% 
+\contentsline {section}{\numberline {4.1}Progettazione dell'ambiente}{14}% 
+\contentsline {chapter}{\numberline {5}Algoritmo di ottimizzazione parametrica}{16}% 
+\contentsline {chapter}{\numberline {6}Implementazione e prove sperimentali}{17}% 
+\contentsline {section}{\numberline {6.1}Simulation testbed}{17}% 
+\contentsline {section}{\numberline {6.2}Sezione sui test}{17}% 
