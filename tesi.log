@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.6.14)  25 JUN 2019 16:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.6.14)  25 JUN 2019 20:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -508,20 +508,20 @@ File: lstlang1.sty 2018/09/02 1.7 listings language file
 )) (/home/domi/tesi/stesura/latex/tesimagistrale/custom_commands.tex) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux)
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Info: Redefining \it@ocap on input line 24.
-LaTeX Info: Redefining \it@ccap on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Info: Redefining \it@ocap on input line 26.
+LaTeX Info: Redefining \it@ccap on input line 26.
 
 
 File italian.ldf warning: 
@@ -529,7 +529,7 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 24.
+italian.ldf    on input line 26.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -584,7 +584,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) ABD: EveryShipout initializing macros
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into your preamble.
- on input line 24.
+ on input line 26.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
@@ -806,48 +806,78 @@ File: img/modello_parametrico_drone.png Graphic file (type png)
 <use img/modello_parametrico_drone.png>
 Package pdftex.def Info: img/modello_parametrico_drone.png  used on input line 190.
 (pdftex.def)             Requested size: 245.71425pt x 162.97896pt.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 197.
-
-[20 </home/domi/tesi/stesura/latex/tesimagistrale/img/modello_parametrico_drone.png (PNG copy)>]
+ [20 </home/domi/tesi/stesura/latex/tesimagistrale/img/modello_parametrico_drone.png (PNG copy)>]
 <img/classe_drone.png, id=105, 162.6075pt x 473.77pt>
 File: img/classe_drone.png Graphic file (type png)
 <use img/classe_drone.png>
 Package pdftex.def Info: img/classe_drone.png  used on input line 227.
 (pdftex.def)             Requested size: 122.85712pt x 357.96526pt.
- [21]) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/genetico.tex [22 </home/domi/tesi/stesura/latex/tesimagistrale/img/classe_drone.png>]
+ [21]
+<img/aree_flocking.png, id=109, 450.18187pt x 318.43968pt>
+File: img/aree_flocking.png Graphic file (type png)
+<use img/aree_flocking.png>
+Package pdftex.def Info: img/aree_flocking.png  used on input line 243.
+(pdftex.def)             Requested size: 245.71425pt x 173.811pt.
+ [22 </home/domi/tesi/stesura/latex/tesimagistrale/img/classe_drone.png>]
+<img/separate.png, id=115, 327.47343pt x 191.9672pt>
+File: img/separate.png Graphic file (type png)
+<use img/separate.png>
+Package pdftex.def Info: img/separate.png  used on input line 276.
+(pdftex.def)             Requested size: 245.71425pt x 144.03947pt.
+ [23 </home/domi/tesi/stesura/latex/tesimagistrale/img/aree_flocking.png (PNG copy)>]
+<img/align.png, id=119, 407.27156pt x 265.74281pt>
+File: img/align.png Graphic file (type png)
+<use img/align.png>
+Package pdftex.def Info: img/align.png  used on input line 288.
+(pdftex.def)             Requested size: 245.71425pt x 160.32683pt.
+<img/cohere.png, id=120, 383.93437pt x 266.49562pt>
+File: img/cohere.png Graphic file (type png)
+<use img/cohere.png>
+Package pdftex.def Info: img/cohere.png  used on input line 300.
+(pdftex.def)             Requested size: 245.71425pt x 170.55661pt.
+ [24 </home/domi/tesi/stesura/latex/tesimagistrale/img/separate.png (PNG copy)> </home/domi/tesi/stesura/latex/tesimagistrale/img/align.png (PNG copy)>]
+<img/activity_flocking.png, id=125, 639.38875pt x 372.39125pt>
+File: img/activity_flocking.png Graphic file (type png)
+<use img/activity_flocking.png>
+Package pdftex.def Info: img/activity_flocking.png  used on input line 319.
+(pdftex.def)             Requested size: 307.14749pt x 178.88782pt.
+ [25 </home/domi/tesi/stesura/latex/tesimagistrale/img/cohere.png (PNG copy)>]
+<img/classe_flocking.png, id=129, 202.7575pt x 275.0275pt>
+File: img/classe_flocking.png Graphic file (type png)
+<use img/classe_flocking.png>
+Package pdftex.def Info: img/classe_flocking.png  used on input line 330.
+(pdftex.def)             Requested size: 122.85712pt x 166.65024pt.
+ [26 </home/domi/tesi/stesura/latex/tesimagistrale/img/activity_flocking.png> </home/domi/tesi/stesura/latex/tesimagistrale/img/classe_flocking.png>]) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/genetico.tex [27]
 Capitolo 5.
-) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/esperimenti.tex [23
+) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/esperimenti.tex [28
 
 ]
 Capitolo 6.
-) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex [24
+) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex [29
 
-]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [25
+]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [30
 
-] [26
+] [31
 
-] [27]
+] [32]
 Underfull \hbox (badness 4686) in paragraph at lines 133--135
 []\OT1/cmr/m/n/12 X.-S. Yang, ``Fi-re-fly al-go-ri-thm, sto-cha-stic te-st func-tions and de-si-gn
  []
 
-) [28] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux) ) 
+) [33] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 27279 strings out of 492616
- 653888 string characters out of 6135177
- 1001715 words of memory out of 5000000
- 30671 multiletter control sequences out of 15000+600000
- 12112 words of font info for 45 fonts, out of 8000000 for 9000
+ 27319 strings out of 492616
+ 654685 string characters out of 6135177
+ 1000685 words of memory out of 5000000
+ 30705 multiletter control sequences out of 15000+600000
+ 12458 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,13n,96p,846b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (31 pages, 348793 bytes).
+ 62i,17n,96p,846b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (36 pages, 602605 bytes).
 PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
+ 188 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 

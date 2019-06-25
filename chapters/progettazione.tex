@@ -194,7 +194,7 @@ Per le ragioni sopra menzionate, tutti questi parametri devono essere fissati pr
 \end{figure}
 
 La seguente tabella riassume i parametri strutturali che caratterizzano il drone.
-\begin{table}[]
+\begin{table}[H]
     \centering
     \begin{tabular}{|l|l|c|}
     \hline
@@ -232,7 +232,141 @@ Il drone, inoltre, è anche in grado di rilevare i target e di rilasciare impron
 
 \subsubsection{Progettazione del flocking}
 
+Di seguito si illustra la progettazione del meccanismo di flocking descritto nella fase di analisi. 
+Il drone distingue tre diverse aree di prossimità: l’area di separazione (\textit{separate}), l’area di allineamento (\textit{align}) e l’area di coesione (\textit{cohere}). 
+Ciascuna di tali aree ha uno specifico raggio ed è associata ad uno specifico comportamento del drone.
+Le tre aree di prossimità hanno in comune l’angolo \textbf{drone.flocking.angle}.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.4\paperwidth]{img/aree_flocking.png}}
+    \end{center}
+    \caption[short]{Aree del meccanismo di flocking.}
+    \label{aree_flocking}
+\end{figure}
+
+I parametri illustrati nella figura \ref{aree_flocking}, sono analizzati in dettaglio nella seguente tabella.
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|c|}
+    \hline
+    \textbf{Parametro}             & \textbf{Definizione}                                                                    & \textbf{Unità di misura} \\ \hline
+    drone.flocking.angle           & Angolo di visione del flock                                                             & (gradi)                  \\ \hline
+    drone.flocking.radiusCohere    & Raggio di coesione $\in$ [drone.flocking.radiusAlign, +$\infty$)                            & (m)                      \\ \hline
+    drone.flocking.maxCohereTurn   & Angolo di rotazione massimo nel meccanismo di coesione                                  & (gradi)                  \\ \hline
+    drone.flocking.radiusAlign     &\begin{tabular}[c]{@{}l@{}}Raggio di allineamento $\in$ [drone.flocking.radiusSeparate, \\ drone.flocking.radiusCohere]\end{tabular} & (m)                      \\ \hline
+    drone.flocking.maxAlignTurn    & Angolo di rotazione massimo nel meccanismo di allineamento                              & (gradi)                  \\ \hline
+    drone.flocking.radiusSeparate  & Raggio di separazione $\in$ [drone.collisionVision, +$\infty$)                              & (m)                      \\ \hline
+    drone.flocking.maxSeparateTurn & Angolo di rotazione massimo nel meccanismo di separazione                               & (gradi)                  \\ \hline
+    drone.flocking.wiggleVar       & Numero casuale [0,N]                                                                    & (adimensionale)          \\ \hline
+    \end{tabular}%
+    }
+    \caption{Parametri strutturali del flocking.}
+    \label{tabella_flocking}
+\end{table}
+
+\paragraph{Comportamento separate:} se un drone si trova all'interno dell'area identificata dal raggio \textbf{drone.flocking.radiusSeparate}, allora viene attivato il meccanismo di separazione, ovvero una rotazione che porta il drone a separarsi dal resto del flock.
+Tale rotazione è limitata all'angolo \textbf{drone.flocking.maxSeparateTurn}.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.4\paperwidth]{img/separate.png}}
+    \end{center}
+    \caption[short]{Area di riferimento per il comportamento \textit{Separate}.}
+    \label{separate}
+\end{figure}
+
+\paragraph{Comportamento aling:} il drone verifica la presenza di altri droni nell'area di align e ruota di un angolo \textbf{drone.flocking.alignAngle}, più un angolo casuale \textbf{drone.flocking.wiggleVar}, al fine di allinearsi al resto del flock.
+Tale rotazione è limitata all'angolo  \textbf{drone.flocking.maxAlignTurn}.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.4\paperwidth]{img/align.png}}
+    \end{center}
+    \caption[short]{Area di riferimento per il comportamento \textit{Align}.}
+    \label{align}
+\end{figure}
+
+\paragraph{Comportamento cohere:} il drone calcola il baricentro dei compagni di flock presenti nell'area di cohere, il cui raggio è \textbf{drone.flocking.radiusCohere}, e ruota in quella direzione.
+La massima rotazione permessa è un angolo pari a \textbf{drone.flocking.maxCohereTurn}, più una quantità \textbf{drone.flocking.wiggleVar} casuale.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.4\paperwidth]{img/cohere.png}}
+    \end{center}
+    \caption[short]{Area di riferimento per il comportamento \textit{Cohere}.}
+    \label{cohere}
+\end{figure}
+
+\paragraph{Algoritmo di flocking:} come già ampiamente illustrato, il meccanismo di flocking è costituito da tre sottomeccanismi a priorità decrescente:
+\begin{itemize}
+    \item Separate;
+    \item Align;
+    \item Cohere.
+\end{itemize}
+
+Ad ogni ciclo di aggiornamento (\textit{tick}), può essere eseguito solo uno di questi comportamenti.
+La figura \ref{activity_flocking} rappresenta il diagramma di attività dell'algoritmo di flocking, in cui viene omessa, per semplicità, la variabile casuale \textit{wiggleVar}.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.5\paperwidth]{img/activity_flocking.png}}
+    \end{center}
+    \caption[short]{Diagramma di attività dell'algoritmo di flocking.}
+    \label{activity_flocking}
+\end{figure}
+
+Tutti i parametri di flocking sono fissati prima di avviare la simulazione ed influenzano il movimento del drone e dunque il comportamento del flock.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.2\paperwidth]{img/classe_flocking.png}}
+    \end{center}
+    \caption[short]{Diagramma della classe Flocking.}
+    \label{classe_flocking}
+\end{figure}
+
 \subsubsection{Progettazione del meccanismo di collision avoidance}
+
+Il meccanismo di collision avoidance risulta indispensabile, considerato che i droni non devono scontrarsi tra loro o con gli ostacoli presenti all'interno dell'area simulata.
+Tale meccanismo può essere suddiviso in due sottomeccanismi:
+
+\begin{itemize}
+    \item \textit{Obstacle avoidance}: permette di evitare collisioni tra un drone ed un ostacolo;
+    \item \textit{Overlapping avoidance}: permette di evitare collisioni tra droni.
+\end{itemize}
+
+\paragraph{Modello di obstacle avoidance:} il modello segue una semplice regola: trovare il gap tra ostacoli che comporta la minima rotazione del drone verso il gap stesso. 
+La semplicità di questa regola è dovuta al fatto che il drone ha un tempo limitato per riconoscere l’ostacolo, trovare il gap e ruotare verso la sua direzione.
+
+In un contesto reale, il drone può trasportare un array di sensori ad infrarossi in grado di riconoscere le distanze e gli angoli degli ostacoli vicini. 
+L’attività di riconoscimento di un ostacolo è modellata così come fatto per il sensing: un cono con un certo angolo e un certo raggio. 
+Il drone, dopo aver calcolato le distanze e gli angoli degli ostacoli vicini, ricerca il gap che comporta la minore rotazione rispetto alla direzione corrente.
+
+A causa della grande varietà di ostacoli che si possono trovare nei diversi contesti applicativi, sia la dimensione del gap che il raggio e l’angolo di visione degli ostacoli risultano configurabili. 
+Durante la simulazione, questi parametri influenzano il comportamento del drone, perché l’algoritmo di obstacle avoidance dipende dal loro valore.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|c|}
+    \hline
+    \textbf{Parametro}             & \textbf{Definizione}                                                                                                                                               & \textbf{Unità di misura} \\ \hline
+    drone.collision.gapAngle       &\begin{tabular}[c]{@{}l@{}}Minimo angolo che permette al drone di passare attraverso \\ il varco tra due ostacoli $\in$ [0, drone.sight.angleMax]\end{tabular}   & (gradi)                  \\ \hline
+    drone.collision.vision         & Raggio di visibilità degli ostacoli                                                                                    & (m)                      \\ \hline
+    drone.sight.angleMax           & Massimo angolo di visibilità degli ostacoli                                                                            & (gradi)                  \\ \hline
+    \end{tabular}%
+    }
+    \caption{Parametri strutturali del meccanismo di obstacle avoidance.}
+    \label{tabella_obstacle_avoidance}
+\end{table}
 
 \subsubsection{Progettazione dell'impronta di feromone attrattivo}
 
