@@ -31,9 +31,14 @@
 \contentsline {paragraph}{Algoritmo di flocking:}{25}% 
 \contentsline {subsubsection}{\numberline {4.5.1.3}Progettazione del meccanismo di collision avoidance}{27}% 
 \contentsline {paragraph}{Modello di obstacle avoidance:}{27}% 
-\contentsline {subsubsection}{\numberline {4.5.1.4}Progettazione dell'impronta di feromone attrattivo}{27}% 
-\contentsline {subsection}{\numberline {4.5.2}Algortmi PAPER}{27}% 
-\contentsline {chapter}{\numberline {5}Algoritmo di ottimizzazione parametrica}{28}% 
-\contentsline {chapter}{\numberline {6}Implementazione e prove sperimentali}{29}% 
-\contentsline {section}{\numberline {6.1}Simulation testbed}{29}% 
-\contentsline {section}{\numberline {6.2}Sezione sui test}{29}% 
+\contentsline {paragraph}{Modello di overlapping avoidance:}{30}% 
+\contentsline {subsubsection}{\numberline {4.5.1.4}Progettazione dell'impronta di feromone attrattivo}{34}% 
+\contentsline {paragraph}{Impronta e traccia feromonica:}{34}% 
+\contentsline {paragraph}{Comportamento di evaporazione:}{36}% 
+\contentsline {paragraph}{Meccanismo di coordinamento basato su stigmergia:}{37}% 
+\contentsline {paragraph}{Assuefazione olfattiva:}{37}% 
+\contentsline {subsection}{\numberline {4.5.2}Algortmi PAPER}{38}% 
+\contentsline {chapter}{\numberline {5}Algoritmo di ottimizzazione parametrica}{39}% 
+\contentsline {chapter}{\numberline {6}Implementazione e prove sperimentali}{40}% 
+\contentsline {section}{\numberline {6.1}Simulation testbed}{40}% 
+\contentsline {section}{\numberline {6.2}Sezione sui test}{40}% 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.6.14)  25 JUN 2019 20:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.6.14)  26 JUN 2019 12:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -503,25 +503,39 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \ULC@box=\box57
 Package: ulem 2012/05/18
 \ULdepth=\dimen262
+) (/usr/share/texmf-dist/tex/latex/was/gensymb.sty
+Package: gensymb 2003/07/02 v1.0 (WaS)
+) (/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/02/04 v3.8 Customized lists
+\labelindent=\skip68
+\enit@outerparindent=\dimen263
+\enit@toks=\toks45
+\enit@inbox=\box58
+\enit@count@id=\count155
+\enitdp@description=\count156
 ) (/home/domi/tesi/stesura/latex/tesimagistrale/listings_style.tex (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
-)) (/home/domi/tesi/stesura/latex/tesimagistrale/custom_commands.tex) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux)
+)) (/home/domi/tesi/stesura/latex/tesimagistrale/custom_commands.tex) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux
+
+LaTeX Warning: Label `tabella_obstacle_avoidance' multiply defined.
+
+)
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Info: Redefining \it@ocap on input line 26.
-LaTeX Info: Redefining \it@ccap on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Info: Redefining \it@ocap on input line 28.
+LaTeX Info: Redefining \it@ccap on input line 28.
 
 
 File italian.ldf warning: 
@@ -529,21 +543,21 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 26.
+italian.ldf    on input line 28.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count155
-\scratchdimen=\dimen263
-\scratchbox=\box58
-\nofMPsegments=\count156
-\nofMParguments=\count157
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count158
-\MPscratchDim=\dimen264
-\MPnumerator=\count159
-\makeMPintoPDFobject=\count160
-\everyMPtoPDFconversion=\toks46
+\scratchcounter=\count157
+\scratchdimen=\dimen264
+\scratchbox=\box59
+\nofMPsegments=\count158
+\nofMParguments=\count159
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count160
+\MPscratchDim=\dimen265
+\MPnumerator=\count161
+\makeMPintoPDFobject=\count162
+\everyMPtoPDFconversion=\toks47
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
  (/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
@@ -584,12 +598,12 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) ABD: EveryShipout initializing macros
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into your preamble.
- on input line 26.
+ on input line 28.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count161
+\c@lstlisting=\count163
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -623,6 +637,16 @@ Package caption Info: End \AtBeginDocument code.
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Info: Redefining \celsius on input line 28.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 28.
+
+Package gensymb Warning: Not defining \perthousand.
+
+LaTeX Info: Redefining \ohm on input line 28.
+Package gensymb Info: Using \Omega for \ohm on input line 28.
+
+Package gensymb Warning: Not defining \micro.
 
 (/home/domi/tesi/stesura/latex/tesimagistrale/frontespizio.tex
 *geometry* verbose mode - [ newgeometry ] result:
@@ -847,37 +871,115 @@ File: img/classe_flocking.png Graphic file (type png)
 <use img/classe_flocking.png>
 Package pdftex.def Info: img/classe_flocking.png  used on input line 330.
 (pdftex.def)             Requested size: 122.85712pt x 166.65024pt.
- [26 </home/domi/tesi/stesura/latex/tesimagistrale/img/activity_flocking.png> </home/domi/tesi/stesura/latex/tesimagistrale/img/classe_flocking.png>]) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/genetico.tex [27]
+ [26 </home/domi/tesi/stesura/latex/tesimagistrale/img/activity_flocking.png> </home/domi/tesi/stesura/latex/tesimagistrale/img/classe_flocking.png>]
+<img/obstacle_avoidance.png, id=135, 537.50812pt x 356.0803pt>
+File: img/obstacle_avoidance.png Graphic file (type png)
+<use img/obstacle_avoidance.png>
+Package pdftex.def Info: img/obstacle_avoidance.png  used on input line 378.
+(pdftex.def)             Requested size: 245.71425pt x 162.77745pt.
+ [27] [28 </home/domi/tesi/stesura/latex/tesimagistrale/img/obstacle_avoidance.png (PNG copy)>]
+<img/activity_obstacle.png, id=144, 457.71pt x 603.25375pt>
+File: img/activity_obstacle.png Graphic file (type png)
+<use img/activity_obstacle.png>
+Package pdftex.def Info: img/activity_obstacle.png  used on input line 402.
+(pdftex.def)             Requested size: 245.71425pt x 323.84676pt.
+<img/classe_obstacle.png, id=145, 202.7575pt x 242.9075pt>
+File: img/classe_obstacle.png Graphic file (type png)
+<use img/classe_obstacle.png>
+Package pdftex.def Info: img/classe_obstacle.png  used on input line 414.
+(pdftex.def)             Requested size: 122.85712pt x 147.18742pt.
+ [29 </home/domi/tesi/stesura/latex/tesimagistrale/img/activity_obstacle.png>] [30 </home/domi/tesi/stesura/latex/tesimagistrale/img/classe_obstacle.png>]
+<img/overlapping_a.png, id=154, 332.74312pt x 344.78813pt>
+File: img/overlapping_a.png Graphic file (type png)
+<use img/overlapping_a.png>
+Package pdftex.def Info: img/overlapping_a.png  used on input line 455.
+(pdftex.def)             Requested size: 122.85712pt x 127.30128pt.
+<img/overlapping_b.png, id=155, 316.93407pt x 274.77657pt>
+File: img/overlapping_b.png Graphic file (type png)
+<use img/overlapping_b.png>
+Package pdftex.def Info: img/overlapping_b.png  used on input line 466.
+(pdftex.def)             Requested size: 122.85712pt x 106.51254pt.
+ [31 </home/domi/tesi/stesura/latex/tesimagistrale/img/overlapping_a.png (PNG copy)>]
+<img/overlapping_c.png, id=159, 255.95625pt x 274.02374pt>
+File: img/overlapping_c.png Graphic file (type png)
+<use img/overlapping_c.png>
+Package pdftex.def Info: img/overlapping_c.png  used on input line 476.
+(pdftex.def)             Requested size: 122.85712pt x 131.52989pt.
+<img/activity_scheduling.png, id=160, 384.43625pt x 452.69125pt>
+File: img/activity_scheduling.png Graphic file (type png)
+<use img/activity_scheduling.png>
+Package pdftex.def Info: img/activity_scheduling.png  used on input line 490.
+(pdftex.def)             Requested size: 184.29036pt x 217.01303pt.
+ [32 </home/domi/tesi/stesura/latex/tesimagistrale/img/overlapping_b.png (PNG copy)> </home/domi/tesi/stesura/latex/tesimagistrale/img/overlapping_c.png (PNG copy)>]
+<img/classe_overlapping.png, id=164, 202.7575pt x 224.84pt>
+File: img/classe_overlapping.png Graphic file (type png)
+<use img/classe_overlapping.png>
+Package pdftex.def Info: img/classe_overlapping.png  used on input line 502.
+(pdftex.def)             Requested size: 122.85712pt x 136.23961pt.
+ [33 </home/domi/tesi/stesura/latex/tesimagistrale/img/activity_scheduling.png> </home/domi/tesi/stesura/latex/tesimagistrale/img/classe_overlapping.png>]
+<img/modello3d_feromone.png, id=170, 659.46375pt x 333.49594pt>
+File: img/modello3d_feromone.png Graphic file (type png)
+<use img/modello3d_feromone.png>
+Package pdftex.def Info: img/modello3d_feromone.png  used on input line 528.
+(pdftex.def)             Requested size: 245.71425pt x 124.25664pt.
+<img/modello2d_feromone.png, id=171, 542.77782pt x 357.58594pt>
+File: img/modello2d_feromone.png Graphic file (type png)
+<use img/modello2d_feromone.png>
+Package pdftex.def Info: img/modello2d_feromone.png  used on input line 537.
+(pdftex.def)             Requested size: 245.71425pt x 161.87794pt.
+ [34 </home/domi/tesi/stesura/latex/tesimagistrale/img/modello3d_feromone.png (PNG copy)>]
+<img/evaporazione.png, id=176, 697.10437pt x 345.54094pt>
+File: img/evaporazione.png Graphic file (type png)
+<use img/evaporazione.png>
+Package pdftex.def Info: img/evaporazione.png  used on input line 584.
+(pdftex.def)             Requested size: 307.14749pt x 152.2441pt.
+ [35 </home/domi/tesi/stesura/latex/tesimagistrale/img/modello2d_feromone.png (PNG copy)>] [36 </home/domi/tesi/stesura/latex/tesimagistrale/img/evaporazione.png (PNG copy)>]
+<img/activity_assuefazione.png, id=184, 258.9675pt x 359.3425pt>
+File: img/activity_assuefazione.png Graphic file (type png)
+<use img/activity_assuefazione.png>
+Package pdftex.def Info: img/activity_assuefazione.png  used on input line 636.
+(pdftex.def)             Requested size: 122.85712pt x 170.47562pt.
+ [37]
+<img/classe_pheromone.png, id=188, 162.6075pt x 214.8025pt>
+File: img/classe_pheromone.png Graphic file (type png)
+<use img/classe_pheromone.png>
+Package pdftex.def Info: img/classe_pheromone.png  used on input line 648.
+(pdftex.def)             Requested size: 122.85712pt x 162.2978pt.
+) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/genetico.tex [38 </home/domi/tesi/stesura/latex/tesimagistrale/img/activity_assuefazione.png> </home/domi/tesi/stesura/latex/tesimagistrale/img/classe_pheromone.png>]
 Capitolo 5.
-) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/esperimenti.tex [28
+) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/esperimenti.tex [39
 
 ]
 Capitolo 6.
-) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex [29
+) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex [40
 
-]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [30
+]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [41
 
-] [31
+] [42
 
-] [32]
+] [43]
 Underfull \hbox (badness 4686) in paragraph at lines 133--135
 []\OT1/cmr/m/n/12 X.-S. Yang, ``Fi-re-fly al-go-ri-thm, sto-cha-stic te-st func-tions and de-si-gn
  []
 
-) [33] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux) ) 
+) [44] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 27319 strings out of 492616
- 654685 string characters out of 6135177
- 1000685 words of memory out of 5000000
- 30705 multiletter control sequences out of 15000+600000
+ 27763 strings out of 492616
+ 662636 string characters out of 6135177
+ 1009501 words of memory out of 5000000
+ 31128 multiletter control sequences out of 15000+600000
  12458 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,96p,846b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (36 pages, 602605 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (47 pages, 1057613 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
+ 252 PDF objects out of 1000 (max. 8388607)
+ 151 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 143 words of extra memory for PDF output out of 10000 (max. 10000000)
 

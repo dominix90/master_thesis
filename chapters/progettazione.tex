@@ -368,6 +368,287 @@ Durante la simulazione, questi parametri influenzano il comportamento del drone,
     \label{tabella_obstacle_avoidance}
 \end{table}
 
+Durante la simulazione, il drone esplora l'ambiente al fine di rilevare i target.
+Per mantenere la sua operatività ed integrità, l'UAV deve evitare gli ostacoli.
+Un'idea del funzionamento del meccanismo di obstacle avoidance è mostrato dalla figura \ref{obstacle_avoidance}.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.4\paperwidth]{img/obstacle_avoidance.png}}
+    \end{center}
+    \caption[short]{Principio di funzionamento del meccanismo di obstacle avoidance.}
+    \label{obstacle_avoidance}
+\end{figure}
+
+L’algoritmo opera nel seguente modo:
+\begin{itemize}
+	\item Prima di controllare la presenza di ostacoli, il drone deve verificare se è rimasto fermo sulla stessa posizione per un certo numero di ticks consecutivi.
+	\item Se risulta bloccato, significa che l’ostacolo presente di fronte al drone è probabilmente un muro che gli impedisce di avanzare. 
+    Al fine di evitare lo stallo, il drone esegue un movimento rotazionale di 90$^{\circ}$ più una quantità casuale \textbf{drone.flocking.wiggleVar}.
+	\item Viceversa, se il drone non è bloccato, allora controlla la presenza di ostacoli.
+	\item Se non ci sono ostacoli, significa che il drone può avanzare senza alcun problema.
+	\item Se sono rilevati degli ostacoli, il drone controlla la presenza del varco tra essi, in riferimento ad un certo angolo di gap.
+	\item Se il varco non viene trovato, allora il drone ruota leggermente in direzione oraria o antioraria (la direzione viene scelta casualmente), al fine di ricercare un altro gap vicino. 
+    Questo angolo di rotazione è pari alla metà di \textbf{drone.sight.angleMax}. 
+    Successivamente, il drone effettua una decelerazione, perché si trova di fronte a ostacoli senza varco.
+	\item Se il varco viene trovato, allora il drone esegue una rotazione verso il gap. 
+    Anche in questo caso il drone decelera, perché il varco potrebbe essere stretto e dunque il drone deve attraversarlo con attenzione.
+\end {itemize}
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.4\paperwidth]{img/activity_obstacle.png}}
+    \end{center}
+    \caption[short]{Diagramma di attività del meccanismo di obstacle avoidance.}
+    \label{activity_obstacle}
+\end{figure}
+
+La figura \ref{classe_obstacle} illustra il diagramma di classe relativo al meccanismo di obstacle avoidance.
+Gli attributi \textbf{drone.collision.gapAngle}, \textbf{drone.collision.vision} e \textbf{drone.sight.angleMax} sono configurati prima dell'avvio della simulazione, mentre i restanti due vengono utilizzati per contare il numero di collisioni e l'eventuale tempo di blocco di un drone su una patch.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.2\paperwidth]{img/classe_obstacle.png}}
+    \end{center}
+    \caption[short]{Diagramma della classe ObstacleAvoidance.}
+    \label{classe_obstacle}
+\end{figure}
+
+\paragraph{Modello di overlapping avoidance:} il solo meccanismo di obstacle avoidance non è sufficiente per evitare le sovrapposizioni tra i droni, perché un drone non può prevedere i movimenti degli altri droni. 
+Al fine di evitare questo tipo di problema, si è progettato un modello di overlapping avoidance tra droni: conoscendo l’accelerazione, la decelerazione, la velocità massima e la rotazione massima di un drone nell’arco di una finestra temporale, si può calcolare la regione di raggiungibilità (\textit{reachable region}), ovvero la regione che, in termini di patch, il drone potrebbe ricoprire nei prossimi ticks. 
+
+In particolare, la strategia per evitare le sovrapposizioni tra i droni prevede, in primo luogo, di schedulare una regione conica di raggiungibilità e, in secondo luogo, di trattare le regioni già schedulate dagli altri droni come ostacoli, applicando il meccanismo di obstacle avoidance. 
+In questo modo, le potenziali regioni in cui un drone può trovarsi nell’immediato futuro non sono accessibili dagli altri droni. 
+
+Il meccanismo di overlapping avoidance dei droni risulta altresì configurabile: il numero di droni può variare notevolmente tra i diversi scenari applicativi e le caratteristiche tecniche come velocità massima e massima rotazione risultano molto diverse tra modelli di drone differenti. 
+La regione conica schedulata da un drone per evitare le collisioni è descritta da un certo raggio ed un certo angolo, come riportato nella seguente tabella.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|c|}
+    \hline
+    \textbf{Parametro}              & \textbf{Definizione}                      & \textbf{Unità di misura}      \\ \hline
+    drone.reachable.radius          & Angolo delle patch schedulate             & (gradi)                       \\ \hline
+    drone.reachable.angle           & Raggio delle patch schedulate             & (m)                           \\ \hline
+    \end{tabular}%
+    \caption{Parametri strutturali del meccanismo di overlapping avoidance.}
+    \label{tabella_obstacle_avoidance}
+\end{table}
+
+L'algoritmo di overlapping avoidance tra UAV, come si evince dalla suddetta descrizione, è suddiviso in due fasi:
+
+\begin{enumerate}
+    \item \textit{Scheduling delle celle};
+    \item \textit{Azione di overlapping avoidance}.
+\end{enumerate}
+
+Di seguito vengono illustrate tutte le casistiche della fase di prenotazione delle patch:
+
+\begin{enumerate} [label=(\alph*)]
+    \item Nel caso generale, il drone identifica le patch libere sotto la sua posizione ed all'interno del cono di raggiungibilità e le blocca.
+    \begin{figure}[H] 
+        \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+        \begin{center}
+        \makebox[\textwidth]{\includegraphics[width=0.2\paperwidth]{img/overlapping_a.png}}
+        \end{center}
+        \caption[short]{Caso generale: prenotazione delle patch nella regione di raggiungibilità.}
+        \label{overlapping_a}
+    \end{figure}
+    \item In altri casi, le regioni di scheduling possono risultare sovrapposte.
+    Nella figura \ref{overlapping_b} l'UAV A blocca le celle nel cono arancione.
+    L'UAV B, di conseguenza, identifica le celle già bloccate da A e prenota solo le patch disponibili in quel preciso istante, ovvero le celle presenti nel cono blu.
+    \begin{figure}[H] 
+        \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+        \begin{center}
+        \makebox[\textwidth]{\includegraphics[width=0.2\paperwidth]{img/overlapping_b.png}}
+        \end{center}
+        \caption[short]{Caso di sovrapposizione dello scheduling delle patch.}
+        \label{overlapping_b}
+    \end{figure}
+    \item I casi (a) e (b) potrebbero portare ad un problema di \textit{deadlock}, nell'eventualità in cui un drone A, che si trova esattamente dietro il drone B, prenota le patch davanti a B.
+    In questo caso il drone B non può avanzare, in quanto tutte le celle raggiungibili sono già prenotate.
+    \begin{figure}[H] 
+        \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+        \begin{center}
+        \makebox[\textwidth]{\includegraphics[width=0.2\paperwidth]{img/overlapping_c.png}}
+        \end{center}
+        \caption[short]{Caso di deadlock.}
+        \label{overlapping_c}
+    \end{figure}
+    Al fine di evitare tale situazione, risulta necessario introdurre un ulteriore requisito: un drone, prima di eseguire la prenotazione delle celle, deve controllare se all'interno del cono di scheduling è presente un altro UAV.
+    Se il controllo ha esito positivo (è presente un drone nel cono), verrà schedulata solo la cella sottostante il drone che ha effettuato il controllo.
+\end{enumerate}
+
+Il diagramma di attività che descrive l'algoritmo di scheduling è mostrato in figura \ref{activity_scheduling}.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.3\paperwidth]{img/activity_scheduling.png}}
+    \end{center}
+    \caption[short]{Diagramma di attività del meccanismo di obstacle avoidance.}
+    \label{activity_scheduling}
+\end{figure}
+
+Di seguito, invece, è possibile osservare il diagramma della classe DronesOverlapAvoidance: gli attributi relativi al raggio ed all'angolo del cono di scheduling devono essere configurati prima dell'esecuzione del simulatore e dipendono dalla velocità di crociera assunta dal drone.
+I rimanenti parametri variano durante la simulazione.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.2\paperwidth]{img/classe_overlapping.png}}
+    \end{center}
+    \caption[short]{Diagramma della classe ObstacleAvoidance.}
+    \label{classe_overlapping}
+\end{figure}
+
 \subsubsection{Progettazione dell'impronta di feromone attrattivo}
+
+Un drone rilascia un’impronta di feromone attrattivo quando rileva un target, al fine di “richiamare” altri droni attivando il meccanismo di coordinamento basato su stigmergia. 
+
+Un’impronta di feromone è modellata come un tronco di cono e tipicamente ricopre più celle dello spazio di ricerca. 
+Più impronte di feromone rilasciate in prossimità spazio-temporale si aggregano a formare una traccia feromonica che evapora nel tempo. 
+
+L’impronta è caratterizzata da un raggio centrale (\textbf{mark.RadiusTop}), da un raggio periferico (\textbf{mark.radiusDown}) e da un tasso di diffusione (\textbf{track.diffRate}), mentre la traccia feromonica è caratterizzata da un tasso di evaporazione superficiale (\textbf{track.evapRate}). 
+
+Le funzioni eseguite sulla traccia feromonica sono:
+\begin{itemize}
+	\item \textit{Evaporazione};
+	\item \textit{Diffusione} (opzionale).
+\end{itemize}
+
+\paragraph{Impronta e traccia feromonica:} di seguito viene illustrato il modello dell'impronta e della traccia di feromone attrattivo, insieme ai parametri caratteristici.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.4\paperwidth]{img/modello3d_feromone.png}}
+    \end{center}
+    \caption[short]{Modello tridimensionale dell'impronta di feromone attrattivo.}
+    \label{modello3d_feromone}
+\end{figure}
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.4\paperwidth]{img/modello2d_feromone.png}}
+    \end{center}
+    \caption[short]{Modello bidimensionale dell'impronta di feromone attrattivo.}
+    \label{modello2d_feromone}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|c|}
+    \hline
+    \textbf{Parametro}              & \textbf{Definizione}                                                                                  & \textbf{Unità di misura}      \\ \hline
+    mark.centerX                    & Coordinata X del centro di rilascio dell'impronta di feromone                                         & (-)                           \\ \hline
+    mark.centerY                    & Coordinata Y del centro di rilascio dell'impronta di feromone                                         & (-)                           \\ \hline
+    mark.radiusTop                  & Raggio di rilascio iniziale dell'impronta di feromone $\in$ [0, +$\infty$)                            & (m)                           \\ \hline
+    mark.radiusDown                 & Raggio di rilascio diffuso iniziale dell'impronta di feromone $\in$ [mark.radiusTop, +$\infty$)       & (m)                           \\ \hline
+    track.evapRate                  & Tasso di evaporazione della traccia di feromone $\in$ [0,1]                                           & (adimensionale)               \\ \hline
+    \end{tabular}%
+    }
+    \caption{Parametri strutturali dell'impronta di feromone.}
+    \label{tabella_feromone}
+\end{table}
+
+L'intensità di rilascio dell'impronta di feromone attrattivo al tick 0 è pari a:
+
+\begin{equation*}
+    pheromone.intensity (r,0) = 1 \; , \; r < mark.radiusTop
+\end{equation*}
+
+L'intensità decresce a partire da \textbf{mark.radiusTop} fino a \textbf{mark.radiusDown} in accordo alla seguente espressione:
+
+\begin{equation*}
+    \resizebox{\textwidth}{!} 
+    {
+        $ pheromone.intensity (r,k) = pheromone.intensity (0,k) \cdot \frac{r - mark.radiusDown}{mark.radiusTop - mark.radiusDown} $
+    }
+\end{equation*}
+
+dove
+
+\begin{equation*}
+    mark.radiusTop < r < mark.radiusDown , \; k \ge 0
+\end{equation*}
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.5\paperwidth]{img/evaporazione.png}}
+    \end{center}
+    \caption[short]{Modello dell'intensità di feromone e comportamento di evaporazione.}
+    \label{evaporazione}
+\end{figure}
+
+\paragraph{Comportamento di evaporazione:} l’evaporazione rappresenta il decadimento lineare della traccia di feromone nel tempo. 
+Ad ogni ciclo di aggiornamento il feromone evapora di una certa quantità a partire da quando viene rilasciato e dopo un certo tempo, a seconda del valore del tasso di evaporazione, il feromone scompare completamente. 
+
+Dal momento che il tempo simulato è discretizzato e l’evaporazione è lineare, ad ogni ciclo di aggiornamento viene sottratta da ogni patch sempre la stessa quantità di feromone. 
+Ad esempio, se il tasso di evaporazione è pari a 0.1, dopo 10 ticks, il feromone scompare completamente indipendentemente dalla sua intensità iniziale. 
+
+L’espressione matematica che descrive l’evaporazione feromonica è la seguente:
+\begin{equation*}
+    pheromone.intensity(r,k) = pheromone.intensity(r,k-1) \; - \; deltaEvaporation(r)
+\end{equation*}
+
+dove
+\begin{itemize}
+    \item $deltaEvaporation(r) = evapRate \cdot pheromone.intensity(r,0)$, ovvero la quantità di feromone che evapora ad ogni tick;
+    \item $pheromone.intensity(r,k)$ rappresenta l'intensità dell'impronta feromonica in funzione della distanza r dal centro di rilascio e del numero di tick k;
+    \item $pheromone.intensity(r,0)$ rappresenta l'intensità dell'impronta feromonica al momento del rilascio in funzione della distanza r dal centro di rilascio.
+\end{itemize}
+
+\paragraph{Meccanismo di coordinamento basato su stigmergia:} come già evidenziato in precedenza, la stigmergia è un meccanismo emergente.
+Il meccanismo di coordinamento basato su stigmergia segue due semplici regole:
+\begin{itemize}
+	\item se un drone rileva un target, vi rilascia sopra un’impronta feromonica;
+	\item se un drone rileva un’impronta feromonica, segue la direzione corrispondente al picco di intensità. 
+\end{itemize}
+
+Tale meccanismo ha la potenzialità di attrarre gruppi di droni che sono posizionati in prossimità spazio-temporale rispetto alla traccia feromonica. 
+
+\paragraph{Assuefazione olfattiva:} un altro importante meccanismo da evidenziare è rappresentato dall’assuefazione olfattiva (\textit{olfactory habituation}). 
+Un’agente, dopo aver rilevato del feromone per un certo numero di ticks, ne diventa assuefatto, ovvero non è più in grado di percepirne la presenza e, di conseguenza, non ne viene influenzato. 
+
+L’assuefazione olfattiva risulta importante per due ragioni:
+\begin{itemize}
+    \item evita di attrarre un numero eccessivo di agenti sullo stesso target;
+	\item evita di rimanere nei pressi dello stesso target per troppo tempo.
+\end{itemize}
+
+Questi due aspetti permettono di ridurre la probabilità di collisioni ed il tempo impiegato nella ricerca di target in prossimità spaziale. 
+
+L’assuefazione olfattiva è caratterizzata da un parametro che esprime la quantità di tempo entro la quale un drone deve annusare il feromone prima di ignorarlo. 
+Questo è un parametro configurabile in modo da poter essere modificato in funzione dello specifico contesto applicativo. 
+
+Il seguente diagramma di attività illustra il meccanismo di funzionamento dell’assuefazione olfattiva.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.2\paperwidth]{img/activity_assuefazione.png}}
+    \end{center}
+    \caption[short]{Diagramma di attività relativo al funzionamento dell'assuefazione olfattiva.}
+    \label{activity_assuefazione}
+\end{figure}
+
+Di seguito, invece, sono evidenziati tutti gli attributi ed i metodi relativi al feromone attrattivo.
+Tali attributi, eccetto \textbf{mark.deltaEvaporate}, devono essere configurati prima dell'inizio della simulazione.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.2\paperwidth]{img/classe_pheromone.png}}
+    \end{center}
+    \caption[short]{Diagramma della classe Pheromone.}
+    \label{classe_pheromone}
+\end{figure}
 
 \subsection{Algortmi PAPER}
