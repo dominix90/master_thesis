@@ -95,7 +95,7 @@ Un ostacolo è un elemento che ostruisce il passaggio di un UAV.
 Esso ha una posizione statica e occupa una cella all’interno dell’ambiente di esplorazione. 
 L’ostacolo non può essere attraversato dal drone e rappresenta la base per modellare diversi tipi di strutture come, ad esempio, alberi, costruzioni, ecc.
 
-\section {Elemento target}
+\section {Elemento target} \label{elemento_target}
 
 Un target è un elemento collocato, all'istante \textit{t}, in una determinata posizione dell’ambiente di simulazione sconosciuta ai droni. 
 La struttura di un target dipende da cosa si vuole modellare, in accordo con il task della missione:
@@ -113,6 +113,8 @@ Lo stato di un target è identificato dalla variabile \textbf{target.state}, che
     \item \textit{Not found};
     \item \textit{Executed}.
 \end{itemize}
+
+Perché un target venga lavorato, dev'essere raggiunto da un numero minimo di agenti: questo parametro può essere configurato prima dell'avvio della simulazione.
 
 \begin{figure}[H] 
     \captionsetup{justification=centering, margin=2cm, font=footnotesize}
@@ -691,6 +693,7 @@ In questo modo, un drone che deve selezionare la cella successiva analizza prima
 
 \paragraph{Diffusione del feromone:} il feromone viene depositato dal drone non appena si muove in una nuova posizione.
 La struttura del feromone prevede la diffusione dello stesso entro un raggio $R_S$.
+Ogni cella ha un livello feromonico iniziale uguale a 0, a voler rappresentare che la patch non è stata mai visitata.
 
 Ipotizziamo che un drone $k$, all'istante $t$, si trova nella cella di coordinate ($x_k$,$y_k$).
 La quantità di feromone depositata sulle celle di coordinata ($x$,$y$), all'interno dell'area descritta dal raggio $R_S$, è data da:
@@ -702,18 +705,274 @@ La quantità di feromone depositata sulle celle di coordinata ($x$,$y$), all'int
         0 &\text{altrimenti}
     \end{cases}
 \end{equation}
+Dove:
+\begin{itemize}
+    \item $r_{kc}$ è la distanza tra il drone $k$ e la cella $c$ ed è definita come:
+    \begin{equation}
+        r_{kc} = \sqrt{(x^{t}_{k} - x)^{2} + (y^{t}_{k} - y)^{2}}
+    \end{equation}
+    \item $\Delta\tau_{0}$ rappresenta la quantità iniziale di feromone che un agente rilascia sulla cella su cui è posizionato;
+    \item $\epsilon \in (0,1)$ è una variabile euristica atta a modellare il rumore;
+    \item $a_{1}$ e $a_{2}$ sono costanti utilizzate per ridurre o aumentare gli effetti di feromone e rumore, rispettivamente. 
+\end{itemize} 
 
-Dove $r_{kc}$ è la distanza tra il drone $k$ e la cella $c$ ed è definita come:
+Più droni possono depositare feromone sulla stessa patch.
+La quantità totale di feromone all'interno di una cella sarà data dalla somma algebrica delle quantità depositate dai vari agenti.
 
+\'E previsto un meccanismo di evaporazione della traccia feromonica che dipende da un parametro configurabile, detto \textit{tasso di evaporazione} $\rho$.
+La quantità di feromone evaporata in una generica cella \textit{c}, all'istante \textit{t}, è data da:
 \begin{equation}
-    r_{kc} = \sqrt{(x^{t}_{k} - x)^{2} + (y^{t}_{k} - y)^{2}}
+    \xi_{t}^{c} = \rho \cdot \tau_{c}^{t}
+\end{equation}
+Dove $\tau_{c}^{t}$ è la quantità totale di feromone depositata sulla cella \textit{c} all'istante \textit{t}.
+
+Per il calcolo di $\rho$ viene utilizzato il coefficiente $ERTU_{\%}$ (Evaporation Rate Time Unit), che riguarda il tasso di evaporazione per unità di tempo.
+Siano $t_{v}$ l'istante corrispondente all'ultima visita in una cella e $t$ l'istante corrente.
+$(t - t_{v})$ è dunque il tempo trascorso dall'ultima visita. 
+La percentuale di feromone evaporato nell'intervallo di tempo preso in esame è dato da:
+\begin{equation}
+    \rho = (t - t_{v}) \cdot ERTU_{\%}
 \end{equation}
 
+Considerando l'evaporazione del feromone e la diffusione in accordo con la distanza dalla cella di rilascio, la quantità totale di feromone in una generica cella \textit{c}, all'iterazione \textit{t}, è data dall'espressione:
+\begin{equation}\label{rule18}
+    \tau_{c}^{t} = \tau_{c}^{t-1} - \xi_{c}^{t} + \sum_{k=1}^{N^{D}} \Delta\tau_{c}^{k,t}
+\end{equation}
+Dove $N^{D}$ è il numero totale di droni che hanno depositato il feromone.
 
+Nella figura \ref{diffusione_feromone} è possibile osservare un esempio di diffusione feromonica.
 
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.4\paperwidth]{img/diffusione_feromone.png}}
+    \end{center}
+    \caption{Esempio di diffusione del feromone.}
+    \label{diffusione_feromone}
+\end{figure}
 
-\subsubsection{Strategia di reclutamento FTS-RR}
+\paragraph{Selezione cella successiva:} ciascun drone $k$, ad ogni iterazione $t$, è posizionato in una particolare patch $c_{k}^{t}$, circondata dal set $N(c_{k}^{t})$ di celle accessibili da quella posizione, denominato \textit{neighborhood}.
 
-\subsubsection{Strategia di reclutamento PSO-RR}
+Ogni drone rileva il feromone depositato in $N(c_{k}^{t})$ e, successivamente, seleziona la cella in cui muoversi all'iterazione successiva.
 
-\subsubsection{Strategia di reclutamento ABC-RR}
+La probabilità, all'istante $t$, che un agente $k$ ha di muoversi dalla cella $c_{k}^{t}$ ad una $c \in N(c_{k}^{t})$ può essere calcolata attraverso la seguente relazione:
+\begin{equation}\label{rule19}
+    p(c|c_{k}^{t}) = \frac{(\tau_{c}^{t})^{\phi} \cdot (\eta_{c}^{t})^{\lambda}}{\sum_{b \in N(c_{k}^{t})}(\tau_{b}^{t})^{\phi} \cdot (\eta_{b}^{t})^{\lambda}} \; , \; \forall c \in N(c_{k}^{t})
+\end{equation}
+Dove:
+\begin{itemize}
+    \item $(\tau_{c}^{t})^{\phi}$ rappresenta la quantità di feromone nella cella $c$ al tick $t$;
+    \item $(\eta_{c}^{t})^{\lambda}$ è una variabile euristica, necessaria ad evitare che un drone resti intrappolato in un minimo locale;
+    \item $\phi$ e $\lambda$ sono due costanti parametriche, utilizzate per bilanciare i pesi dati al feromone ed alla variabile euristica, rispettivamente.
+\end{itemize}
+Il drone $k$ selezionerà, dunque, la patch che soddisfa la seguente condizione:
+\begin{equation}
+    c = min[p(c|c_{k}^{t})]\label{rule20}
+\end{equation}
+In questo modo, l'agente si dirigerà verso zone inesplorate, ottimizzando l'esplorazione dell'area ed il rilevamento dei target non ancora trovati.
+
+\paragraph{Algoritmo di esplorazione:} questo algoritmo è un processo iterativo. 
+Alla prima iterazione, ogni cella ha lo stesso valore di intensità feromonica, in modo da rendere quasi casuale la selezione di una patch.
+Alle iterazioni successive, i droni si muovono da una cella all'altra secondo le regole espresse in \ref{rule19} e \ref{rule20}.
+La traccia di feromone sulle celle visitate è aggiornata secondo \ref{rule18}, così da aumentare la probabilità che le celle con intensità feromonica nulla vengano visitate.
+
+L'obiettivo è quello di ridurre comportamenti di sovrapposizione o ridondanza, in modo da rendere ancor più efficente il completamento della missione.
+
+L'algoritmo termina l'esecuzione nel momento in cui il drone diventa \textit{coordinator} o \textit{recruited}, come vedremo più avanti, oppure se la missione è completa.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.5\paperwidth]{img/attivita_exploration.png}}
+    \end{center}
+    \caption{Diagramma di attività per la strategia di esplorazione.}
+    \label{attivita_exploration}
+\end{figure}
+
+\subsubsection{Strategie di reclutamento}
+
+Quando un drone identifica un target, esso diventa \textit{coordinator} ed inizia una procedura di reclutamento di altri agenti, per poter lavorare l'obiettivo in modo cooperativo.
+Tale procedura prevede l'utilizzo di una comunicazione wireless per rintracciare i droni che risultano posizionati entro un raggio $R_t$.
+I pacchetti inviati contengono le coordinate del mittente che, non appena lette da un drone in stato d'esplorazione, portano quest'ultimo a cambiare il proprio stato in \textit{recruited} ed a raggiungere il coordinatore.
+
+Come accennato nella sezione \ref{elemento_target}, è necessario che un numero minimo di droni raggiunga il target, prima che questi possa essere lavorato e che la comunicazione del coordinatore venga interrotta.
+
+Di seguito illustriamo tre differenti metaeuristiche per le gestione della fase di reclutamento.
+
+\paragraph{Strategia di reclutamento FTS-RR:} l'algoritmo \textit{Firefly-based team strategy for robots recruitment} è una strategia di ispirazione biologica, basato sul comportamento delle lucciole.
+
+In particolare, quando un drone identifica un target, questo diventa \textit{coordinatore} ed inizia ad attrarre gli altri droni come una lucciola.
+
+Gli elementi più importanti sono la \textit{variazione di intensità luminosa} ed il cosiddetto \textit{coefficiente di attrattività}.
+Il primo fattore dipende dalla distanza tra due lucciole, il secondo è funzione del primo e, di conseguenza, anche della distanza.
+
+La distanza tra due lucciole $i$ e $j$, posizionate rispettivamente in ($x_i,y_i$) e ($x_j,y_j$), può essere definita come la distanza Euclidea, data da:
+\begin{equation}
+    r_{ij} = \sqrt{(x_i - x_j)^2 \; + \; (y_i - y_j)^2}
+\end{equation}
+
+Poiché la funzione di attrattività di una lucciola varia in base a $r_{ij}$, si può selezionare una qualunque funzione monotona decrescente dipendente dalla distanza tra le due lucciole.
+Possiamo dunque utilizzare la seguente funzione esponenziale:
+\begin{equation}\label{rule23}
+    \beta = \beta_{0} e^{- \gamma r_{ij}^{2}}
+\end{equation}
+Dove:
+\begin{itemize}
+    \item $\beta_{0}$ rappresenta l'attrattività iniziale a distanza $r_{ij} = 0$;
+    \item $\gamma$ è il coefficiente di assorbimento alla fonte che regola la diminuzione di intensità luminosa.
+\end{itemize}
+
+Il movimento di una lucciola $i$, che è attratta da una lucciola più luminosa $j$, nella sequenza di tick $t \rightarrow t+1$, è regolato dalle seguenti relazioni:
+\begin{equation}\label{rule25}
+    \begin{cases}
+        x_{i}^{t+1} = x_{i}^{t} + \beta_{0} e^{- \gamma r_{ij}^{2}} (x_{j}^{t} - x_{i}^{t}) + \alpha(\sigma - \frac{1}{2}) \\
+        y_{i}^{t+1} = y_{i}^{t} + \beta_{0} e^{- \gamma r_{ij}^{2}} (y_{j}^{t} - y_{i}^{t}) + \alpha(\sigma - \frac{1}{2})
+    \end{cases}    
+\end{equation}
+
+Dove:
+\begin{itemize}
+    \item $x_{i}^{t}$ e $y_{i}^{t}$ rappresentano le coordinate della posizione corrente;
+    \item $\beta_{0} e^{- \gamma r_{ij}^{2}} (x_{j}^{t} - x_{i}^{t})$ e $\beta_{0} e^{- \gamma r_{ij}^{2}} (y_{j}^{t} - y_{i}^{t})$ sono utilizzati per modellare l'attrattiva della lucciola $i$ come l'intensità della luce vista dalle lucciole adiacenti;
+    \item $\alpha(\sigma - \frac{1}{2})$ è un termine di randomizzazione, con $\alpha$ parametro di randomizzazione che dipende dalla missione;
+    \item $\sigma$ rappresenta il fattore che regola la distanza di visibilità ed in molti casi può essere settato a 1.
+\end{itemize}
+
+Prendiamo adesso in esame il caso in cui un drone riceve più di una richiesta d'aiuto: in questo caso si muoverà verso il target più luminoso, secondo la relazione \ref{rule23}.
+Il movimento di un drone è dunque condizionato sia dalla distanza con il target che da una componente randomica, atta ad evitare che l'agente rimanga incastrato in un minimo locale.
+
+Affinché le relazioni in \ref{rule25} possano essere applicabili ad un contesto discreto, come nel caso dell'ambiente di simulazione, gli autori hanno trovato necessario modificarle come segue.
+Per la coordinata $x$:
+\begin{equation}
+    \begin{cases}
+        x_{i}^{t+1} = x_{i}^{t} + 1 , \text{se}[\beta_{0} e^{- \gamma r_{ij}^{2}} (x_{j}^{t} - x_{i}^{t}) + \alpha(\sigma - \frac{1}{2}) > 0]\\
+        x_{i}^{t+1} = x_{i}^{t} - 1 , \text{se}[\beta_{0} e^{- \gamma r_{ij}^{2}} (x_{j}^{t} - x_{i}^{t}) + \alpha(\sigma - \frac{1}{2}) < 0]\\
+        x_{i}^{t+1} = x_{i}^{t} , \text{se}[\beta_{0} e^{- \gamma r_{ij}^{2}} (x_{j}^{t} - x_{i}^{t}) + \alpha(\sigma - \frac{1}{2}) = 0]
+    \end{cases}
+\end{equation}
+Mentre per la coordinata $y$:
+\begin{equation}
+    \begin{cases}
+        y_{i}^{t+1} = y_{i}^{t} + 1 , \text{se}[\beta_{0} e^{- \gamma r_{ij}^{2}} (y_{j}^{t} - y_{i}^{t}) + \alpha(\sigma - \frac{1}{2}) > 0]\\
+        y_{i}^{t+1} = y_{i}^{t} - 1 , \text{se}[\beta_{0} e^{- \gamma r_{ij}^{2}} (y_{j}^{t} - y_{i}^{t}) + \alpha(\sigma - \frac{1}{2}) < 0]\\
+        y_{i}^{t+1} = y_{i}^{t} , \text{se}[\beta_{0} e^{- \gamma r_{ij}^{2}} (y_{j}^{t} - y_{i}^{t}) + \alpha(\sigma - \frac{1}{2}) = 0]
+    \end{cases}
+\end{equation}
+
+Per evitare che un drone si alterni da un coordinatore all'altro, data la presenza di parametri di randomizzazione, la selezione del coordinatore viene effettuata solo nei seguenti casi:
+\begin{itemize}
+    \item arriva una richiesta da un drone appena diventato coordinatore il cui raggio di reclutamento ricade sull'agente;
+    \item il robot passa dallo stato di esploratore a quello di reclutamento;
+    \item il robot esce dal raggio di reclutamento del coordinatore scelto, annullando così la selezione.
+\end{itemize}
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.5\paperwidth]{img/attivita_fts.png}}
+    \end{center}
+    \caption{Diagramma di attività per la strategia FTS-RR.}
+    \label{attivita_fts}
+\end{figure}
+
+\paragraph{Strategia di reclutamento PSO-RR:} \textit{Particle Swarm Optimization} è una tecnica di ottimizzazione ispirata ai movimenti degli stormi.
+Ogni agente $i$ si muove nello spazio di ricerca e presenta una velocità $v_{i}^{t}$ e delle coordinate $(x_{i}^{t},y_{i}^{t})$.
+La velocità è aggiornata secondo la relazione seguente, in funzione delle coordinate di un target ricevute da un drone coordinatore:
+\begin{equation}
+    \begin{cases}
+        v_{xi}^{t+1} = \omega v_{xi}^{t} + r \cdot c(x_{z} - x_{i}^{t}) \\
+        v_{yi}^{t+1} = \omega v_{yi}^{t} + r \cdot c(y_{z} - y_{i}^{t})    
+    \end{cases}    
+\end{equation}
+Dove:
+\begin{itemize}
+    \item $\omega$ è il coefficiente inerziale;
+    \item $c$ è il coefficiente di accelerazione;
+    \item $r \in [0,1]$ è un numero generato casualmente, per evitare blocchi in minimi locali.
+\end{itemize}
+
+Un drone $i$ che si trova nella cella di coordinate $(x_{i}^{t},y_{i}^{t})$, all'iterazione $t$, che riceve una richiesta d'aiuto da un coordinatore z, sceglierà la patch in cui muoversi secondo le seguenti espressioni:
+\begin{equation}
+    \begin{cases}
+        x_{i}^{t+1} = x_{i}^{t} + 1 , \text{se}[v_{xi}^{t+1} > 0]\\
+        x_{i}^{t+1} = x_{i}^{t} - 1 , \text{se}[v_{xi}^{t+1} < 0]\\
+        x_{i}^{t+1} = x_{i}^{t} , \text{se}[v_{xi}^{t+1} = 0]
+    \end{cases}
+\end{equation}
+e
+\begin{equation}
+    \begin{cases}
+        y_{i}^{t+1} = y_{i}^{t} + 1 , \text{se}[v_{yi}^{t+1} > 0]\\
+        y_{i}^{t+1} = y_{i}^{t} - 1 , \text{se}[v_{yi}^{t+1} < 0]\\
+        y_{i}^{t+1} = y_{i}^{t} , \text{se}[v_{yi}^{t+1} = 0]
+    \end{cases}
+\end{equation}
+
+Se il drone riceve richieste da più coordinatori, questo sceglierà di muoversi verso quello più vicino.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.5\paperwidth]{img/attivita_pso.png}}
+    \end{center}
+    \caption{Diagramma di attività per la strategia PSO-RR.}
+    \label{attivita_pso}
+\end{figure}
+
+\paragraph{Strategia di reclutamento ABC-RR:} \textit{Artificial bee colony for robots recruitment} è una strategia che segue il comportamento delle api in cerca di una fonte di nutrimento di qualità. 
+Nell’algoritmo in questione, la distribuzione di fonti di cibo, all’interno del territorio di esplorazione, può essere modificata dalle api stesse nel corso del tempo. 
+L’algoritmo utilizza l’insieme delle api per trovare la soluzione ottima al problema. 
+
+Nell'ambiente simulato, le fonti di cibo sono rappresentate dai target e la metaeuristica è applicata grazie alla comunicazione avviata dal coordinatore.
+
+Sia $\phi \in [-1,1]$ un coefficiente scelto in modo casuale, ogni robot $i$ nel raggio di reclutamento di un coordinatore $z$, all'iterazione $t$, si muoverà in funzione delle seguenti equazioni:
+\begin{equation}
+    \begin{cases}
+        x_{i}^{t+1} = x_{i}^{t} + \phi (x_{i}^{t} - x_{z}) \\
+        y_{i}^{t+1} = y_{i}^{t} + \phi (y_{i}^{t} - y_{z})    
+    \end{cases}    
+\end{equation}
+
+Se vogliamo applicare tali regole al piano bidimensionale dell'ambiente di simuazione, esse vanno adattate come segue:
+\begin{equation}
+    \begin{cases}
+        x_{i}^{t+1} = x_{i}^{t} + 1 , \text{se}[\phi (x_{i}^{t} - x_{z}) > 0]\\
+        x_{i}^{t+1} = x_{i}^{t} - 1 , \text{se}[\phi (x_{i}^{t} - x_{z}) < 0]\\
+        x_{i}^{t+1} = x_{i}^{t} , \text{se}[\phi (x_{i}^{t} - x_{z}) = 0]
+    \end{cases}
+\end{equation}
+e
+\begin{equation}
+    \begin{cases}
+        y_{i}^{t+1} = y_{i}^{t} + 1 , \text{se}[\phi (y_{i}^{t} - y_{z}) > 0]\\
+        y_{i}^{t+1} = y_{i}^{t} - 1 , \text{se}[\phi (y_{i}^{t} - y_{z}) < 0]\\
+        y_{i}^{t+1} = y_{i}^{t} , \text{se}[\phi (y_{i}^{t} - y_{z}) = 0]
+    \end{cases}
+\end{equation}
+
+Nel caso in cui un drone $i$ riceva più di una richiesta di aiuto, esso dovrà decidere quale coordinatore prendere come riferimento.
+La \textit{qualità} di un coordinatore $z$ è definita come il reciproco della distanza:
+\begin{equation}
+    \mu_{z}^{i} = \frac{1}{r_{iz}}
+\end{equation}
+Dove $r_{iz}$ rappresenta la distanza euclidea tra $i$ e $z$.
+
+La probabilità che il drone $i$ selezioni $z$ come coordinatore di riferimento è data da:
+\begin{equation}
+    p_{z}^{i} = P{coordinator_{i} = z} = \frac{\mu_{z}^{i}}{\sum_{b \in RR_{i}} \mu_{b}^{i}}
+\end{equation}
+Dove $RR_{i}$ è l'insieme di richieste di reclutamento ricevute da $i$.
+In questo modo $\sum_{b \in RR_{i}} p_{b}^{i} = 1$.
+
+Viene pertanto utilizzata la regola della \textit{spinning-wheel}: ad ogni coordinatore è associata una probabilità.
+Se immaginiamo una \textit{ruota della fortuna}, possiamo rappresentare tale probabilità come una porzione più o meno grande  di questa ruota e la dimensione della porzione dipende proprio dalla probabilità calcolata.
+Il drone farà girare questa ruota, in modo da ottenere il target (ed il coordinatore) di riferimento.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.5\paperwidth]{img/attivita_abc.png}}
+    \end{center}
+    \caption{Diagramma di attività per la strategia ABC-RR.}
+    \label{attivita_abc}
+\end{figure}

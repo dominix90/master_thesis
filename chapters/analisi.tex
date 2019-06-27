@@ -26,7 +26,7 @@ In generale, il task primario è quello di trovare tutti i target nel minor temp
 Si assume che i droni non conoscano la struttura dell'ambiente e, di conseguenza, non hanno informazioni sulla posizione degli altri UAV impiegati nella missione.
 Il movimento all'interno dell'area e il coordinamento dello sciame è dettato dall'informazione feromonica rilasciata nell'ambiente e, naturalmente, dalla strategia utilizzata nell'algoritmo bioispirato utilizzato.
 
-\subsection{Stati di un UAV}
+\subsection{Stati di un UAV} \label{stati}
 
 Durante lo svolgimento di una missione, ogni UAV può assumere uno dei seguenti stati:
 
@@ -36,8 +36,10 @@ Durante lo svolgimento di una missione, ogni UAV può assumere uno dei seguenti 
     \item \textit{Recruited:} nel caso in cui la missione lo preveda, un drone che si trova in stato di esplorazione può essere richiamato da un coordinatore per intervenire sul target, modificando il proprio stato in \textit{reclutato}, in accordo con il task previsto dalla missione;
     \item \textit{Waiting:} il numero di UAV necessari all'esecuzione di un target dipende dalla missione. Un drone reclutato, che ha raggiunto il coordinatore, modifica il proprio e resta in attesa che tale numero venga raggiunto;
     \item \textit{Execution:} una volta raggiunto il numero minimo di UAV per intervenire sul target, tutti i droni nell'area del target, coordinatore compreso, modifica il proprio stato per \textit{eseguire} il target, in accordo con il task previsto dalla missione.
-
 \end{itemize}
+
+Ogni algoritmo, integrato nel relativo modulo, può prevedere tutti gli stati o un subset di essi.
+Nelle prossime sezioni saranno definiti, nel dettaglio, i possibili stati che un drone può assumere negli algoritmi presi in esempio.
 
 \begin{figure}[H] 
     \captionsetup{justification=centering, margin=2cm, font=footnotesize}
@@ -127,10 +129,22 @@ Il meccanismo di flocking può essere ulteriormente suddiviso in tre diversi sot
     Tale lontananza rappresenta un parametro regolabile all'interno del simulatore.
 \end{enumerate}
 
+\subsubsection{Stati di un drone}
+
+Nell'ultima versione dell'algoritmo è stato introdotto un meccanismo che prevede la modifica dello stato del drone, in accordo con determinati eventi che si scatenano durante lo svolgimento della missione.
+Nel caso specifico, un drone può assumere uno dei seguenti stati, che verranno illustrati in dettaglio nella fase di progettazione:
+\begin{itemize}
+    \item \textit{Explorer};
+    \item \textit{Waiting};
+    \item \textit{Execution};
+\end{itemize}
+
 \subsection{Algortmi PAPER}
 
 Gli autori in \cite{palmieri2017comparison} si sono concentrati sull'applicazione di diverse metaeuristiche di ispirazione biologica per il coordinamento di uno sciame che deve esplorare un'area sconosciuta al fine di trovare e gestire in modo cooperativo alcuni obiettivi distribuiti.
 Di seguito verranno analizzate prima le metaeuristiche orientate all'esplorazione dell'area e successivamente quelle inerenti il coordinamento dello sciame per la gestione dei target identificati.
+
+In questo caso, un agente può assumere tutti e 5 gli stati descritti nella sezione \ref{stati}.
 
 \subsubsection{Esplorazione}
 
