@@ -56,5 +56,3 @@
 \contentsline {subsubsection}{\numberline {5.1.1.3}Selezione}{58}% 
 \contentsline {subsection}{\numberline {5.1.2}Implementazione software \textit {Differential Evolution}}{59}% 
 \contentsline {chapter}{\numberline {6}Implementazione e prove sperimentali}{60}% 
-\contentsline {section}{\numberline {6.1}Simulation testbed}{60}% 
-\contentsline {section}{\numberline {6.2}Sezione sui test}{60}% 
