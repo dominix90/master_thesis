@@ -114,8 +114,18 @@ Lo stato di un target è identificato dalla variabile \textbf{target.state}, che
     \item \textit{Executed}.
 \end{itemize}
 
-Perché un target venga lavorato, dev'essere raggiunto da un numero minimo di agenti: questo parametro può essere configurato prima dell'avvio della simulazione.
+Perché un target venga lavorato, dev'essere raggiunto da un numero minimo di agenti: questo parametro può essere configurato prima dell'avvio della simulazione e dipende dalla singola missione.
 
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.4\paperwidth]{img/tipi_target.png}}
+    \end{center}
+    \caption{Stati di un target: (da sinistra a destra) \textit{Not found, Found, Executed}.}
+    \label{tipi_target}
+\end{figure}
+
+La struttura della classe \textit{Target} è illustrata in figura \ref{classe_target}.
 \begin{figure}[H] 
     \captionsetup{justification=centering, margin=2cm, font=footnotesize}
     \begin{center}
@@ -256,13 +266,13 @@ I parametri illustrati nella figura \ref{aree_flocking}, sono analizzati in dett
     \hline
     \textbf{Parametro}             & \textbf{Definizione}                                                                    & \textbf{Unità di misura} \\ \hline
     drone.flocking.angle           & Angolo di visione del flock                                                             & (gradi)                  \\ \hline
-    drone.flocking.radiusCohere    & Raggio di coesione $\in$ [drone.flocking.radiusAlign, +$\infty$)                            & (m)                      \\ \hline
+    drone.flocking.radiusCohere    & Raggio di coesione $\in$ (drone.flocking.radiusAlign, +$\infty$)                            & (m)                      \\ \hline
     drone.flocking.maxCohereTurn   & Angolo di rotazione massimo nel meccanismo di coesione                                  & (gradi)                  \\ \hline
-    drone.flocking.radiusAlign     &\begin{tabular}[c]{@{}l@{}}Raggio di allineamento $\in$ [drone.flocking.radiusSeparate, \\ drone.flocking.radiusCohere]\end{tabular} & (m)                      \\ \hline
+    drone.flocking.radiusAlign     &\begin{tabular}[c]{@{}l@{}}Raggio di allineamento $\in$ (drone.flocking.radiusSeparate, \\ drone.flocking.radiusCohere]\end{tabular} & (m)                      \\ \hline
     drone.flocking.maxAlignTurn    & Angolo di rotazione massimo nel meccanismo di allineamento                              & (gradi)                  \\ \hline
-    drone.flocking.radiusSeparate  & Raggio di separazione $\in$ [drone.collisionVision, +$\infty$)                              & (m)                      \\ \hline
+    drone.flocking.radiusSeparate  & Raggio di separazione $\in$ (drone.collisionVision, +$\infty$)                              & (m)                      \\ \hline
     drone.flocking.maxSeparateTurn & Angolo di rotazione massimo nel meccanismo di separazione                               & (gradi)                  \\ \hline
-    drone.flocking.wiggleVar       & Numero casuale [0,N]                                                                    & (adimensionale)          \\ \hline
+    drone.flocking.wiggleVar       & Numero casuale $\in$ (0,N)                                                                   & (adimensionale)          \\ \hline
     \end{tabular}%
     }
     \caption{Parametri strutturali del flocking.}
@@ -361,7 +371,7 @@ Durante la simulazione, questi parametri influenzano il comportamento del drone,
     \begin{tabular}{|l|l|c|}
     \hline
     \textbf{Parametro}             & \textbf{Definizione}                                                                                                                                               & \textbf{Unità di misura} \\ \hline
-    drone.collision.gapAngle       &\begin{tabular}[c]{@{}l@{}}Minimo angolo che permette al drone di passare attraverso \\ il varco tra due ostacoli $\in$ [0, drone.sight.angleMax]\end{tabular}   & (gradi)                  \\ \hline
+    drone.collision.gapAngle       &\begin{tabular}[c]{@{}l@{}}Minimo angolo che permette al drone di passare attraverso \\ il varco tra due ostacoli $\in$ (0, drone.sight.angleMax)\end{tabular}   & (gradi)                  \\ \hline
     drone.collision.vision         & Raggio di visibilità degli ostacoli                                                                                    & (m)                      \\ \hline
     drone.sight.angleMax           & Massimo angolo di visibilità degli ostacoli                                                                            & (gradi)                  \\ \hline
     \end{tabular}%

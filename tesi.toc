@@ -21,34 +21,40 @@
 \contentsline {section}{\numberline {4.1}Progettazione dell'ambiente}{15}% 
 \contentsline {section}{\numberline {4.2}Elemento ostacolo}{18}% 
 \contentsline {section}{\numberline {4.3}Elemento target}{18}% 
-\contentsline {section}{\numberline {4.4}Elemento UAV}{19}% 
+\contentsline {section}{\numberline {4.4}Elemento UAV}{20}% 
 \contentsline {section}{\numberline {4.5}Algoritmo bioispirato}{20}% 
-\contentsline {subsection}{\numberline {4.5.1}SciaDro}{20}% 
-\contentsline {subsubsection}{\numberline {4.5.1.1}Progettazione del drone}{20}% 
-\contentsline {subsubsection}{\numberline {4.5.1.2}Progettazione del flocking}{23}% 
-\contentsline {paragraph}{Comportamento separate:}{24}% 
-\contentsline {paragraph}{Comportamento aling:}{25}% 
-\contentsline {paragraph}{Comportamento cohere:}{25}% 
-\contentsline {paragraph}{Algoritmo di flocking:}{26}% 
-\contentsline {subsubsection}{\numberline {4.5.1.3}Progettazione del meccanismo di collision avoidance}{28}% 
-\contentsline {paragraph}{Modello di obstacle avoidance:}{28}% 
-\contentsline {paragraph}{Modello di overlapping avoidance:}{31}% 
-\contentsline {subsubsection}{\numberline {4.5.1.4}Progettazione dell'impronta di feromone attrattivo}{35}% 
-\contentsline {paragraph}{Impronta e traccia feromonica:}{35}% 
-\contentsline {paragraph}{Comportamento di evaporazione:}{37}% 
-\contentsline {paragraph}{Meccanismo di coordinamento basato su stigmergia:}{38}% 
-\contentsline {paragraph}{Assuefazione olfattiva:}{38}% 
-\contentsline {subsubsection}{\numberline {4.5.1.5}Progettazione del meccanismo di rilevamento ed esecuzione dei target}{40}% 
-\contentsline {subsection}{\numberline {4.5.2}Algortmi PAPER}{41}% 
-\contentsline {subsubsection}{\numberline {4.5.2.1}Strategia di esplorazione}{41}% 
-\contentsline {paragraph}{Diffusione del feromone:}{41}% 
-\contentsline {paragraph}{Selezione cella successiva:}{43}% 
-\contentsline {paragraph}{Algoritmo di esplorazione:}{44}% 
-\contentsline {subsubsection}{\numberline {4.5.2.2}Strategie di reclutamento}{45}% 
-\contentsline {paragraph}{Strategia di reclutamento FTS-RR:}{46}% 
-\contentsline {paragraph}{Strategia di reclutamento PSO-RR:}{49}% 
-\contentsline {paragraph}{Strategia di reclutamento ABC-RR:}{51}% 
-\contentsline {chapter}{\numberline {5}Algoritmo di ottimizzazione parametrica}{54}% 
-\contentsline {chapter}{\numberline {6}Implementazione e prove sperimentali}{55}% 
-\contentsline {section}{\numberline {6.1}Simulation testbed}{55}% 
-\contentsline {section}{\numberline {6.2}Sezione sui test}{55}% 
+\contentsline {subsection}{\numberline {4.5.1}SciaDro}{21}% 
+\contentsline {subsubsection}{\numberline {4.5.1.1}Progettazione del drone}{21}% 
+\contentsline {subsubsection}{\numberline {4.5.1.2}Progettazione del flocking}{24}% 
+\contentsline {paragraph}{Comportamento separate:}{25}% 
+\contentsline {paragraph}{Comportamento aling:}{26}% 
+\contentsline {paragraph}{Comportamento cohere:}{26}% 
+\contentsline {paragraph}{Algoritmo di flocking:}{27}% 
+\contentsline {subsubsection}{\numberline {4.5.1.3}Progettazione del meccanismo di collision avoidance}{29}% 
+\contentsline {paragraph}{Modello di obstacle avoidance:}{29}% 
+\contentsline {paragraph}{Modello di overlapping avoidance:}{32}% 
+\contentsline {subsubsection}{\numberline {4.5.1.4}Progettazione dell'impronta di feromone attrattivo}{36}% 
+\contentsline {paragraph}{Impronta e traccia feromonica:}{36}% 
+\contentsline {paragraph}{Comportamento di evaporazione:}{38}% 
+\contentsline {paragraph}{Meccanismo di coordinamento basato su stigmergia:}{39}% 
+\contentsline {paragraph}{Assuefazione olfattiva:}{39}% 
+\contentsline {subsubsection}{\numberline {4.5.1.5}Progettazione del meccanismo di rilevamento ed esecuzione dei target}{41}% 
+\contentsline {subsection}{\numberline {4.5.2}Algortmi PAPER}{42}% 
+\contentsline {subsubsection}{\numberline {4.5.2.1}Strategia di esplorazione}{42}% 
+\contentsline {paragraph}{Diffusione del feromone:}{42}% 
+\contentsline {paragraph}{Selezione cella successiva:}{44}% 
+\contentsline {paragraph}{Algoritmo di esplorazione:}{45}% 
+\contentsline {subsubsection}{\numberline {4.5.2.2}Strategie di reclutamento}{46}% 
+\contentsline {paragraph}{Strategia di reclutamento FTS-RR:}{47}% 
+\contentsline {paragraph}{Strategia di reclutamento PSO-RR:}{50}% 
+\contentsline {paragraph}{Strategia di reclutamento ABC-RR:}{52}% 
+\contentsline {chapter}{\numberline {5}Ottimizzazione parametrica e valutazione delle performance}{55}% 
+\contentsline {section}{\numberline {5.1}Ottimizzazione basata su \\\textit {Differential Evolution}}{56}% 
+\contentsline {subsection}{\numberline {5.1.1}Funzionamento dell'algoritmo \textit {Differential Evolution}}{56}% 
+\contentsline {subsubsection}{\numberline {5.1.1.1}Mutazione}{58}% 
+\contentsline {subsubsection}{\numberline {5.1.1.2}Crossover}{58}% 
+\contentsline {subsubsection}{\numberline {5.1.1.3}Selezione}{58}% 
+\contentsline {subsection}{\numberline {5.1.2}Implementazione software \textit {Differential Evolution}}{59}% 
+\contentsline {chapter}{\numberline {6}Implementazione e prove sperimentali}{60}% 
+\contentsline {section}{\numberline {6.1}Simulation testbed}{60}% 
+\contentsline {section}{\numberline {6.2}Sezione sui test}{60}% 

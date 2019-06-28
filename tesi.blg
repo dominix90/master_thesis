@@ -4,45 +4,46 @@ The top-level auxiliary file: tesi.aux
 The style file: ieeetr.bst
 Database file #1: bibliography.bib
 Warning--can't use both volume and number fields in reynolds1987flocks
-You've used 26 entries,
+Warning--empty journal in jones2014scipy
+You've used 28 entries,
             1876 wiz_defined-function locations,
-            630 strings with 9401 characters,
-and the built_in function-call counts, 8528 in all, are:
-= -- 838
-> -- 336
+            640 strings with 9729 characters,
+and the built_in function-call counts, 9021 in all, are:
+= -- 887
+> -- 355
 < -- 0
-+ -- 122
-- -- 96
-* -- 607
-:= -- 1159
-add.period$ -- 27
-call.type$ -- 26
-change.case$ -- 25
++ -- 129
+- -- 101
+* -- 642
+:= -- 1229
+add.period$ -- 29
+call.type$ -- 28
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 454
-empty$ -- 812
-format.name$ -- 96
-if$ -- 2085
+cite$ -- 30
+duplicate$ -- 480
+empty$ -- 859
+format.name$ -- 101
+if$ -- 2204
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 27
-newline$ -- 82
-num.names$ -- 26
-pop$ -- 112
+int.to.str$ -- 28
+missing$ -- 29
+newline$ -- 88
+num.names$ -- 28
+pop$ -- 119
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 317
+skip$ -- 333
 stack$ -- 0
-substring$ -- 649
-swap$ -- 193
+substring$ -- 681
+swap$ -- 202
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 94
-width$ -- 28
-write$ -- 262
-(There was 1 warning)
+warning$ -- 2
+while$ -- 99
+width$ -- 30
+write$ -- 280
+(There were 2 warnings)

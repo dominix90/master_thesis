@@ -143,4 +143,13 @@ D.~Karaboga and B.~Akay, ``A comparative study of artificial bee colony
   algorithm,'' {\em Applied mathematics and computation}, vol.~214, no.~1,
   pp.~108--132, 2009.
 
+\bibitem{storn1997differential}
+R.~Storn and K.~Price, ``Differential evolution--a simple and efficient
+  heuristic for global optimization over continuous spaces,'' {\em Journal of
+  global optimization}, vol.~11, no.~4, pp.~341--359, 1997.
+
+\bibitem{jones2014scipy}
+E.~Jones, T.~Oliphant, and P.~Peterson, ``$\{$SciPy$\}$: Open source scientific
+  tools for $\{$Python$\}$,'' 2014.
+
 \end{thebibliography}
