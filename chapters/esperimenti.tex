@@ -1,5 +1,7 @@
 \chapter{Implementazione e prove sperimentali}
 
+[Questo grafico è solo di test]
+
 \begin{figure}[H] 
     \captionsetup{justification=centering, margin=2cm, font=footnotesize}
     \begin{center}
@@ -8,22 +10,24 @@
                 \begin{axis}[
                     title={\textit{Fitness function}},
                     xlabel={Generazione},
-                    ylabel={Fitness},
-                    xmin=0, xmax=20,
-                    ymin=0, ymax=400,
-                    xtick={1,3,5,7,9,11,13,15,17,19},
-                    ytick={100, 150, 200, 250, 300},
+                    ylabel={Tick},
+                    xmin=0, xmax=31,
+                    ymin=0, ymax=500,
+                    xtick={5,10,15,20,25,30},
+                    ytick={50, 100, 150, 200, 250, 300, 350, 400, 450},
                     legend pos=north west,
-                    ymajorgrids=true,
-                    grid style=dashed,
+                    grid=major,
+                    %ymajorgrids=true,
+                    %xmajorgrids=true
+                    %grid style=dashed,
                 ]
                 
                 \addplot[
                     color=blue,
-                    mark=square,
+                    line width=0.5mm,
                     ]
                     coordinates {
-                    (1,280)(5,220)(10,180)(15,165)(20,158)
+                        (1,432.0)(2,254.0)(3,254.0)(4,254.0)(5,254.0)(6,231.0)(7,231.0)(8,231.0)(9,231.0)(10,231.0)(11,231.0)(12,228.0)(13,228.0)(14,228.0)(15,228.0)(16,228.0)(17,228.0)(18,228.0)(19,228.0)(20,228.0)(21,228.0)(22,205.0)(23,205.0)(24,196.0)(25,196.0)(26,196.0)(27,196.0)(28,196.0)(29,196.0)(30,196.0)
                     };
                     \legend{$f$}
                 
