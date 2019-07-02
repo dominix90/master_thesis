@@ -1,5 +1,85 @@
 \chapter{Implementazione e prove sperimentali}
 
+\section{Scenario e relative impostazioni tecnologiche}
+
+In questa sezione sono illustrati lo scenario utilizzato e le varie misure di qualità. 
+La tabella \ref{tabella_scenario} riassume le caratteristiche principali dello scenario. 
+Lo scenario è statico: \textit{Illegal Dump} si basa sulla mappa di una discarica abusiva di Paternò, Italia \cite{trashout2018}.
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|c|c|}
+    \hline
+    \textbf{Scenario}              & \textbf{Area size (m x m)}                        & \textbf{No of frames}      \\ \hline
+    Illegal Dump                   & 400 x 400                                         & (1)                           \\ \hline
+    \end{tabular}%
+    
+    \caption{caratteristiche dello scenario Illegal Dump.}
+    \label{tabella_scenario}
+\end{table}
+
+Per mostrare la complessità ambientale, le figure \ref{dump_map} e \ref{dump_scenario} mostrano la mappa satellitare utilizzata per \textit{Illegal Dump}, e la corrispondente immagine vettoriale iniziale rappresentata nell'ambiente di simulazione, rispettivamente. 
+Qui, gli ostacoli (edifici e alberi) sono rappresentati in nero, mentre i bersagli sono rappresentati come punti rossi. 
+I droni, rappresentati come triangoli viola, sono posizionati agli angoli e sono orientati verso il centro dell'area.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.3\paperwidth]{img/dump_map.png}}
+    \end{center}
+    \caption{Immagine satellitare dello scenario Illegal Dump.}
+    \label{dump_map}
+\end{figure}
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.3\paperwidth]{img/dump_scenario.png}}
+    \end{center}
+    \caption{Immagine vettoriale dello scenario Illegal Dump.}
+    \label{dump_scenario}
+\end{figure}
+
+Le caratteristiche ambientali sono state prese in considerazione per le specifiche tecniche degli UAV disponibili in commercio. 
+La Tabella 2 e la Tabella 3 mostrano, rispettivamente, le specifiche tecniche del drone \textit{Dji Matrice 200} \cite{matrice200}, e le apparecchiature di sensing per lo scenario di discarica illegale.
+Tale tecnologia è stata selezionata sulla base delle conoscenze e delle competenze acquisite in diversi progetti che utilizzano la tecnologia UAV per il monitoraggio e la sorveglianza ambientale. 
+In particolare, la tecnologia di rilevamento proposta, si basa su \cite{persechino2010aerospace} e \cite{lega2012using};
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Parameter}              & \textbf{Value}           \\ \hline
+    Radius                          & $0.3 \; m$                             \\ \hline
+    Max speed                       & $17 \; m/s$                             \\ \hline
+    Max acceleration                & $4.4 \; m/s^{2}$                             \\ \hline
+    Max angular speed               & $2.6 \; rad/s$                             \\ \hline
+    Max angular acceleration        & $6.9 \; rad/s^{2}$                             \\ \hline
+    battery duration                & $24-38 \; min$                             \\ \hline
+    Obstacle vision distance        & $3-30 \; m$                             \\ \hline
+    Obstacle vision angle           & $60\circ$                            \\ \hline
+    \end{tabular}%
+    
+    \caption{Specifiche tecniche del modello di drone \textit{Dji Matrice 200}.}
+    \label{tabella_scenario}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|c|c|c|}
+    \hline
+    \textbf{Scenario}               & \begin{tabular}[c]{@{}l@{}}\textbf{Cruise speed} \\ \textbf{(m/s)}\end{tabular}                & \begin{tabular}[c]{@{}l@{}}\textbf{Sensing} \\ \textbf{technology}\end{tabular}                   & \textbf{Sensor model}                 & \begin{tabular}[c]{@{}l@{}}\textbf{Sensing} \\ \textbf{radius}\end{tabular}        \\ \hline
+    Illegal Dump                    & 4                                          & \begin{tabular}[c]{@{}l@{}}Visual + \\ Thermal\end{tabular}                              & Dji Zenmuse XT2                       & 5 m                            \\ \hline    
+    \end{tabular}%    
+    \caption{Specifiche tecniche dell'equipaggiamento di sensing.}
+    \label{tabella_scenario}
+\end{table}
+
+\section{Risultati sperimentali}
+
 [Questo grafico è solo di test]
 
 \begin{figure}[H] 

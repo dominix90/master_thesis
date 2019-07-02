@@ -236,6 +236,8 @@ INPUT /usr/share/texmf-dist/tex/latex/was/gensymb.sty
 INPUT /usr/share/texmf-dist/tex/latex/was/gensymb.sty
 INPUT /usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT /usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/share/texmf-dist/tex/latex/tools/verbatim.sty
+INPUT /usr/share/texmf-dist/tex/latex/tools/verbatim.sty
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/listings_style.tex
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/listings_style.tex
 INPUT /usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -433,10 +435,17 @@ INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/de_steps.png
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/de_steps.png
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/esperimenti.tex
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/esperimenti.tex
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/dump_map.png
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/dump_map.png
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/dump_map.png
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/dump_scenario.png
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/dump_scenario.png
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/dump_scenario.png
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -454,3 +463,4 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
