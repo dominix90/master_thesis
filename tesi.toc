@@ -56,5 +56,6 @@
 \contentsline {subsubsection}{\numberline {5.1.1.3}Selezione}{58}% 
 \contentsline {subsection}{\numberline {5.1.2}Implementazione software \textit {Differential Evolution}}{59}% 
 \contentsline {chapter}{\numberline {6}Implementazione e prove sperimentali}{60}% 
-\contentsline {section}{\numberline {6.1}Scenario e relative impostazioni tecnologiche}{60}% 
-\contentsline {section}{\numberline {6.2}Risultati sperimentali}{62}% 
+\contentsline {section}{\numberline {6.1}Specifiche tecniche del drone}{60}% 
+\contentsline {section}{\numberline {6.2}Scenario \textit {Illegal Dump}}{62}% 
+\contentsline {section}{\numberline {6.3}Risultati sperimentali}{64}% 

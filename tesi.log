@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.6.14)  2 JUL 2019 17:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.7.7)  10 JUL 2019 12:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -24,13 +24,13 @@ File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 ) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2018/11/13 3.27 The Babel package
+Package: babel 2019/04/03 3.29 The Babel package
  (/usr/share/texmf-dist/tex/generic/babel/switch.def
-File: switch.def 2018/11/13 3.27 Babel switching mechanism
+File: switch.def 2019/04/03 3.29 Babel switching mechanism
 ) (/usr/share/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2019/01/05 v.1.4.01 Italian support for the babel system
  (/usr/share/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2018/11/13 3.27 Babel common definitions
+File: babel.def 2019/04/03 3.29 Babel common definitions
 \babel@savecnt=\count89
 \U@D=\dimen103
  (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
@@ -453,14 +453,14 @@ Package: relsize 2013/03/29 ver 4.1
 \lst@lineno=\count148
 \lst@maxwidth=\dimen193
  (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 \c@lstnumber=\count149
 \lst@skipnumbers=\count150
 \lst@framebox=\box52
 ) (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2018/09/02 1.7 listings configuration
+File: listings.cfg 2019/02/27 1.8b listings configuration
 ))
-Package: listings 2018/09/02 1.7 (Carsten Heinz)
+Package: listings 2019/02/27 1.8b (Carsten Heinz)
  (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
 \col@sep=\dimen194
@@ -519,16 +519,16 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks47
 \verbatim@in@stream=\read2
 ) (/home/domi/tesi/stesura/latex/tesimagistrale/listings_style.tex (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2018/09/02 1.7 listings language file
+File: lstlang1.sty 2019/02/27 1.8b listings language file
 )) (/home/domi/tesi/stesura/latex/tesimagistrale/custom_commands.tex) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux
 
 LaTeX Warning: Label `tabella_obstacle_avoidance' multiply defined.
 
 
-LaTeX Warning: Label `tabella_scenario' multiply defined.
+LaTeX Warning: Label `modello3d_feromone' multiply defined.
 
 
-LaTeX Warning: Label `tabella_scenario' multiply defined.
+LaTeX Warning: Label `modello3d_feromone' multiply defined.
 
 
 LaTeX Warning: Label `modello3d_feromone' multiply defined.
@@ -591,12 +591,7 @@ Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
  (/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-))) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+)))) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO)
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -754,14 +749,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(85.35826pt, 436.79155pt, 92.14519pt)
+* h-part:(L,W,R)=(99.58464pt, 422.56517pt, 92.14519pt)
 * v-part:(T,H,B)=(56.9055pt, 642.66711pt, 95.39737pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=436.79155pt
+* \textwidth=422.56517pt
 * \textheight=642.66711pt
-* \oddsidemargin=13.08827pt
-* \evensidemargin=13.08827pt
+* \oddsidemargin=27.31465pt
+* \evensidemargin=27.31465pt
 * \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -780,7 +775,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.toc [2
+ (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.toc
+Overfull \hbox (0.52637pt too wide) in paragraph at lines 41--41
+ [][] []\OT1/cmr/m/n/12 Progettazione del mec-ca-ni-smo di ri-le-va-men-to ed ese- 
+ []
+
+[2
 
 
 
@@ -1012,46 +1012,53 @@ Package pdftex.def Info: img/de_steps.png  used on input line 44.
 (pdftex.def)             Requested size: 368.58073pt x 55.3663pt.
  [57 </home/domi/tesi/stesura/latex/tesimagistrale/img/de_steps.png>] [58]) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/esperimenti.tex [59]
 Capitolo 6.
-<img/dump_map.png, id=283, 220.57407pt x 219.06844pt>
-File: img/dump_map.png Graphic file (type png)
-<use img/dump_map.png>
-Package pdftex.def Info: img/dump_map.png  used on input line 29.
-(pdftex.def)             Requested size: 184.29036pt x 183.04015pt.
 [60
 
 ]
-<img/dump_scenario.png, id=287, 223.58531pt x 221.32687pt>
+<img/dji_matrice_sensore.jpg, id=286, 459.7175pt x 459.7175pt>
+File: img/dji_matrice_sensore.jpg Graphic file (type jpg)
+<use img/dji_matrice_sensore.jpg>
+Package pdftex.def Info: img/dji_matrice_sensore.jpg  used on input line 24.
+(pdftex.def)             Requested size: 245.71425pt x 245.71844pt.
+ [61 </home/domi/tesi/stesura/latex/tesimagistrale/img/dji_matrice_sensore.jpg>] [62]
+<img/dump_map.png, id=293, 220.57407pt x 219.06844pt>
+File: img/dump_map.png Graphic file (type png)
+<use img/dump_map.png>
+Package pdftex.def Info: img/dump_map.png  used on input line 123.
+(pdftex.def)             Requested size: 184.29036pt x 183.04015pt.
+ [63]
+<img/dump_scenario.png, id=298, 223.58531pt x 221.32687pt>
 File: img/dump_scenario.png Graphic file (type png)
 <use img/dump_scenario.png>
-Package pdftex.def Info: img/dump_scenario.png  used on input line 38.
+Package pdftex.def Info: img/dump_scenario.png  used on input line 132.
 (pdftex.def)             Requested size: 184.29036pt x 182.43141pt.
- [61 </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_map.png (PNG copy)> </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_scenario.png (PNG copy)>] [62]) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex [63]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [64
+ [64 </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_map.png (PNG copy)> </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_scenario.png (PNG copy)>] [65]) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex [66]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [67
 
-] [65
+] [68
 
-] [66]
+] [69]
 Underfull \hbox (badness 4686) in paragraph at lines 133--135
 []\OT1/cmr/m/n/12 X.-S. Yang, ``Fi-re-fly al-go-ri-thm, sto-cha-stic te-st func-tions and de-si-gn
  []
 
-[67]) [68] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux)
+[70]) [71] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 28320 strings out of 492616
- 677659 string characters out of 6135177
- 1015047 words of memory out of 5000000
- 31669 multiletter control sequences out of 15000+600000
+ 28361 strings out of 492623
+ 678476 string characters out of 6135670
+ 1018180 words of memory out of 5000000
+ 31709 multiletter control sequences out of 15000+600000
  13990 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,22n,96p,1912b,2279s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,22n,96p,1912b,2277s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (72 pages, 1701736 bytes).
+Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (75 pages, 1777157 bytes).
 PDF statistics:
- 371 PDF objects out of 1000 (max. 8388607)
- 223 compressed objects within 3 object streams
+ 383 PDF objects out of 1000 (max. 8388607)
+ 231 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 198 words of extra memory for PDF output out of 10000 (max. 10000000)
 

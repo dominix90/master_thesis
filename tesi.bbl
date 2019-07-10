@@ -152,13 +152,6 @@ R.~Storn and K.~Price, ``Differential evolution--a simple and efficient
 E.~Jones, T.~Oliphant, and P.~Peterson, ``$\{$SciPy$\}$: Open source scientific
   tools for $\{$Python$\}$,'' 2014.
 
-\bibitem{trashout2018}
-Trashout, ``Trash maps data.''
-  \url{https://www.trashout.ngo/trashmap/?ref=trashout.me}, 2018.
-
-\bibitem{matrice200}
-Dji, ``Dji matrice 200.'' \url{www.dji.com/matrice-200-series}, 2018.
-
 \bibitem{persechino2010aerospace}
 G.~Persechino, P.~Schiano, M.~Lega, R.~Napoli, C.~Ferrara, and J.~Kosmatka,
   ``Aerospace-based support systems and interoperability: the solution to fight
@@ -170,5 +163,12 @@ M.~Lega, J.~Kosmatka, C.~Ferrara, F.~Russo, R.~Napoli, and G.~Persechino,
   ``Using advanced aerial platforms and infrared thermography to track
   environmental contamination,'' {\em Environmental Forensics}, vol.~13, no.~4,
   pp.~332--338, 2012.
+
+\bibitem{matrice200}
+Dji, ``Dji matrice 200.'' \url{www.dji.com/matrice-200-series}, 2018.
+
+\bibitem{trashout2018}
+Trashout, ``Trash maps data.''
+  \url{https://www.trashout.ngo/trashmap/?ref=trashout.me}, 2018.
 
 \end{thebibliography}
