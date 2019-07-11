@@ -73,49 +73,17 @@ Di seguito sono riportate le caratteristiche dello scenario:
     \item \textit{Dimensione patch:} 1.99m x 1.99m
     \item \textit{Conversione spaziale:} 1 m = 0.502 patch
     \item \textit{Conversione temporale:} 1 s = 1 tick
-    \item \textit{Numero target presenti nell'area:} 42
+    \item \textit{Numero target statici presenti nell'area:} 42
+    \item \textit{Numero target dinamici presenti nell'area:} 0
     \item \textit{Numero ostacoli presenti nell'area:} 7174
     \item \textit{Flotta utilizzata:} 80 droni
 \end{itemize}
 
-La configurazione dei parametri utilizzata nella fase sperimentale dello scenario \textit{Illegal Dump} è illustrata nella tabella di seguito.
-
-\begin{table}[H]
-    \centering
-    
-    \begin{tabular}{|l|c|}
-    \hline
-    \textbf{Parameter}              & \textbf{Value}                \\ \hline
-    Radius                          & $0.3 \; m$                    \\ \hline
-    Max speed                       & $17 \; m/s$                   \\ \hline
-    Max acceleration                & $4.4 \; m/s^{2}$              \\ \hline
-    Max angular speed               & $2.6 \; rad/s$                \\ \hline
-    Max angular acceleration        & $7 \; rad/s^{2}$              \\ \hline
-    Battery duration                & $24 \; min$                   \\ \hline
-    Obstacle vision distance        & $3-30 \; m$                   \\ \hline
-    Obstacle vision angle           & $60 \; \circ$                     \\ \hline
-    \end{tabular}%
-    
-    \caption{Configurazione parametrica per la fase sperimentale dello scenario \textit{Illegal Dump}.}
-    \label{tabella_costanti_dump}
-\end{table}
-
-\begin{table}[H]
-    \centering
-    
-    \begin{tabular}{|l|c|c|c|}
-    \hline
-    \textbf{Scenario}              & \textbf{Area size (m x m)}     & \textbf{Area size (patch x patch)}      \\ \hline
-    Illegal Dump                   & 400 x 400                      & 201 x 201                           \\ \hline
-    \end{tabular}%
-    
-    \caption{Caratteristiche dello scenario Illegal Dump.}
-    \label{tabella_scenario}
-\end{table}
+Lo scenario presenta solo target statici, di conseguenza la funzione obiettivo è rappresentata dal tempo di rilevamento del $95 \%$ dei target.
 
 Per osservarne la complessità ambientale, le figure \ref{dump_map} e \ref{dump_scenario} mostrano la mappa satellitare utilizzata per \textit{Illegal Dump}, e la corrispondente immagine vettoriale iniziale rappresentata nell'ambiente di simulazione, rispettivamente. 
-Qui, gli ostacoli (edifici e alberi) sono rappresentati in nero, mentre i bersagli sono rappresentati come punti rossi. 
-I droni, rappresentati come triangoli viola, sono posizionati agli angoli e sono orientati verso il centro dell'area.
+Qui, gli ostacoli (edifici e alberi) sono rappresentati in grigio, mentre i bersagli sono rappresentati come 'x' nere. 
+I droni sono posizionati agli angoli e sono orientati verso il centro dell'area.
 
 \begin{figure}[H] 
     \captionsetup{justification=centering, margin=2cm, font=footnotesize}
@@ -135,16 +103,111 @@ I droni, rappresentati come triangoli viola, sono posizionati agli angoli e sono
     \label{dump_scenario}
 \end{figure}
 
-\section{Risultati sperimentali}
+La configurazione dei parametri tecnologici utilizzata nella fase sperimentale dello scenario \textit{Illegal Dump} è illustrata di seguito e riassunta nella tabella \ref{tabella_parametri_dump}.
 
-Informazioni esperimento:
 \begin{itemize}
-    \item Algoritmo: Artificial Bee Colony (ABC)
-    \item Dimensione vettore parametri: $D = 9$
-    \item Numero individui per popolazione: $NP = 4\cdot D = 36$
-    \item Fattore di amplificazione: $F = 0.7$
-    \item Costante di Crossover: $CR = 0.7$
-    \item Strategia di Crossover: \textit{DE/best/1/bin}
+    \item $algoritmo = Sciadro \; 3.1$: la missione che viene simulata attraverso questo algoritmo è di tipo esplorativo; par tale motivo viene utilizzata la strategia di Sciadro 3.1 con l'obiettivo principale di scoprire il $95 \%$ dei target distribuiti nell'area;
+    \item $strategy = 3$: la logica di coordinamento comprende, in questo modo, stigmergia e flocking;
+    \item $droneRadius = 0.2$: dalle specifiche tecniche del drone, il raggio è uguale a $0.3215 \; m = 0.1614 \; patch$;
+    \item $speedMax = 8.5$: dalle specifiche tecniche del drone, la velocità massima in modalità professionale (che supporta il sistema di \textit{sense and avoid}) è uguale a $17 \; m/s = 8.534 \; patch/tick$;
+    \item $cruisingSpeed = 2$: per garantire l'affidabilità del rilevamento dei sensori e per avere sufficiente spazio di frenata, il drone deve viaggiare ad una velocità non superiore a $13.8 \; m/s$. Per una maggiore sicurezza si limita tale velocità a $4 \; m/s = 2.008 \; patch/tick$;
+    \item $acceleration = 2$, $deceleration = -2$: si considera un'accelerazione pari a $4.44 \; m/s^{2} = 2.229 \; patch/tick^{2}$;
+    \item $angularVelMax = 2.6$: in relazione all'angolo di imbardata, il drone può raggiungere una velocità angolare massima di $2.618 \; rad/s$;
+    \item $angularAcc = 7$, $angularDec = -7$: considerando la logica del simulatore ed il dato relativo alla velocità angolare del drone, si ottiene un'accelerazione angolare di $6.98 \; rad/s^{2}$;
+    \item $endurance = 24$: viene considerata la durata minima della batteria di un drone del modello in esame;
+    \item $sensingRadius = 2.5$: per calcolare questo valore, bisogna considerare una quota di volo pari a $10 \; m$;
+    \item $sensingAngle = 360$;
+    \item $reachableRadius = 4$: questo parametro rappresenta il raggio del settore circolare che il drone può prenotare ad ogni singola iterazione ed è collegato, di conseguenza, alla velocità di crociera;
+    \item $reachableAngle = 360$: si considera un valore di \ang{360} al fine di garantire l'assenza di collisioni;
+    \item $collisionVision = 6$: si deve considerare lo spazio di frenata necessario al drone per evitare la collisione, partendo dai parametri velocità ed accelerazione;
+    \item $sightAngleMax = 60$: dalle specifiche tecniche del drone, il \textit{Field of View} è pari a \ang{60};
+    \item $gapAngle = 20$: rappresenta l'angolo minimo necessario per l'attraversamento di un varco. 
+\end{itemize}
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Parameter}              & \textbf{Value}                \\ \hline
+    Radius                          & $0.2 \; patch$                \\ \hline
+    Max speed                       & $8.5 \; patch/tick$           \\ \hline
+    Cruising speed                  & $2 \; patch/tick$             \\ \hline
+    Max acceleration                & $2 \; patch/tick^{2}$         \\ \hline
+    Max deceleration                & $-2 \; patch/tick^{2}$        \\ \hline
+    Max angular speed               & $2.6 \; rad/s$                \\ \hline
+    Max angular acceleration        & $7 \; rad/s^{2}$              \\ \hline
+    Max angular deceleration        & $-7 \; rad/s^{2}$             \\ \hline
+    Battery duration                & $1440 \; tick$                \\ \hline
+    Sensing radius                  & $2.5 \; patch$                \\ \hline
+    Sensing angle                   & \ang{360}                        \\ \hline
+    Reachable radius                & $4 \; patch$                  \\ \hline
+    Reachable angle                 & \ang{360}                        \\ \hline
+    Obstacle vision distance        & $6 \; patch$                  \\ \hline
+    Obstacle vision angle           & \ang{60}                        \\ \hline
+    Gap angle                       & \ang{20}                        \\ \hline
+    \end{tabular}%
+    
+    \caption{Configurazione parametrica della tecnologia utilizzata nella fase sperimentale dello scenario \textit{Illegal Dump}.}
+    \label{tabella_parametri_dump}
+\end{table}
+
+\subsection{Ottimizzazione parametrica con Differential Evolution}
+
+Come indicato nel paragrafo \ref{sezione_de}, per la fase di ottimizzazione parametrica attraverso l'algoritmo di \textit{Differential Evolution}, è necessario fornire, oltre che i parametri da ottimizzare, anche degli intervalli che definiscono l'iperspazio all'interno del quale si effettua la ricerca dei valori ottimali.
+Uno schema riassuntivo dei suddetti intervalli è presentato nella tabella \ref{tabella_intervalli_dump}
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Parameter}              & \textbf{Interval}                 \\ \hline
+    radiusTop                       & $[1,13]$                          \\ \hline
+    radiusDown                      & $[13,19]$                         \\ \hline
+    evapRate                        & $[0.01,0.1]$                      \\ \hline
+    olfaction                       & $[1,10]$                          \\ \hline
+    flockAngle                      & $[15,45]$                         \\ \hline
+    wiggleVar                       & $[5,15]$                          \\ \hline
+    radiusSeparate                  & $[6,16]$                          \\ \hline
+    maxSeparateTurn                 & $[30,45]$                         \\ \hline
+    radiusAlign                     & $[16,22]$                         \\ \hline
+    maxAlignTurn                    & $[30,45]$                         \\ \hline
+    radiusCohere                    & $[18,26]$                         \\ \hline
+maxCohereTurn                       & $[15,30]$                         \\ \hline
+    \end{tabular}%
+    
+    \caption{Configurazione degli intervalli per l'ottimizzazione parametrica, attraverso l'algoritmo di \textit{Differential Evolution}, utilizzata nella fase sperimentale dello scenario \textit{Illegal Dump}.}
+    \label{tabella_intervalli_dump}
+\end{table}
+
+Nel capitolo 5, abbiamo ampiamente illustrato le caratteristiche dell'algoritmo di DE.
+In particolare, in questo caso avremo una popolazione di $NP$ elementi, dove ogni elemento è rappresentato da un vettore dei $D$ parametri da ottimizzare.
+Nel caso specifico, com'è possibile osservare dalla tabella \ref{tabella_intervalli_dump}, $D=12$.
+
+Per quanto riguarda $NP$, invece, in letteratura si trovano valori che vanno da $2D$ a $40D$.
+Una popolazione grande, infatti, incrementa la possibilità di trovare la soluzione ottima, anche se ha un costo elevato in termini di tempo.
+Per bilanciare questi due fattori, si è utilizzato un valore pari a $NP = 4D = 48$.
+
+Infine, sono stati impostati sia gli iperparametri $F$ e $CR$, per le fasi di mutazione e crossover dell'algoritmo di DE, che la strategia di crossover.
+Al fine di confrontare i risultati sperimentali di questo ambiente di simulazione con altri già effettuati sugli stessi scenari in \cite{cimino2019adaptive}, sono stati utilizzati gli stessi valori sia per il tasso di mutazione $F$ che per strategia e coefficiente di crossover $CR$.
+In particolare:
+\begin{itemize}
+    \item \textit{Strategia di crossover:} DE/rand/1/bin;
+    \item \textit{Tasso di mutazione:} $F=0.7$;
+    \item \textit{Coefficiente di crossover:} $CR=0.5$
+\end{itemize}
+
+\subsection{Risultati sperimentali}
+
+La strategia di \textit{Sciadro 3.1} è stata implementata in NetLogo, una piattaforma di simulazione per \textit{Swarm Intelligence}.
+L'ottimizzazione parametrica, invece, è stata costruita utilizzando la libreria \textit{SciPy} di \textit{Python}.
+
+L'algoritmo di coordinamento dello sciame è stato testato sullo scenario \textit{Illegal Dump}, con la seguente strategia:
+\begin{itemize}
+    \item \textit{5 esecuzioni dell'algoritmo di Differential evolution;}
+    \item \textit{3 ripetizione della simulazione per ogni elemento della popolazione;}
+    \item \textit{Fitness function:} $f(x) = \# tick[95 \% \; target_{found}]$
 \end{itemize}
 
 \begin{figure}[H] 
@@ -153,14 +216,14 @@ Informazioni esperimento:
         \makebox[0.5\paperwidth]{
             \begin{tikzpicture}
                 \begin{axis}[
-                    title={\textit{Fitness function - Exec. 1}},
+                    title={},
                     xlabel={Generazione},
                     ylabel={Tick},
-                    xmin=0, xmax=20,
-                    ymin=0, ymax=550,
-                    xtick={5,10,15,20},
-                    ytick={50,100,150,200,250,300,350,400,450,500,550},
-                    legend pos=north west,
+                    xmin=0, xmax=40,
+                    ymin=100, ymax=150,
+                    xtick={5,10,15,20,25,30,35,40},
+                    ytick={100,110,120,130,140,150},
+                    legend pos=north east,
                     grid=major,
                     %ymajorgrids=true,
                     %xmajorgrids=true
@@ -168,21 +231,151 @@ Informazioni esperimento:
                 ]
                 
                 \addplot[
-                    color=blue,
+                    color=black,
                     line width=0.5mm,
                     ]
                     coordinates {
-                        (1,373.3)(2,542.3)(3,338.3)(4,319.0)(5,282.7)(6,303.3)(7,308.0)(8,328.0)(9,347.0)(10,279.3)(11,295.3)(12,299.7)(13,302.7)(14,288.7)(15,272.0)(16,310.7)(17,281.7)
+                        (1,130.58)(2,123.38)(3,120.18)(4,116.92)(5,115.4)(6,114.46)(7,114.46)(8,114.38)(9,114.04)(10,114.04)(11,112.66)(12,112.66)(13,112.66)(14,112.66)(15,111.8)(16,111.8)(17,111.8)(18,109.92)(19,108.92)(20,108.92)(21,108.92)(22,108.92)(23,108.92)(24,108.92)(25,108.92)(26,108.92)(27,108.92)(28,108.92)(29,108.92)(30,108.92)(31,108.92)(32,108.92)(33,108.92)(34,108.92)(35,108.92)(36,107.4)(37,107.4)(38,107.4)(39,107.4)(40,107.4)
                     };
-                    \legend{$f$}
+                
+                    \legend{\textit{average best fitness}}
                 
                 \end{axis}
             \end{tikzpicture}
         }
     \end{center}
-    \caption{Andamento della funzione obiettivo al variare di generazione.}
-    \label{modello3d_feromone}
+    \caption{Ottimizzazione parametrica con Differential Evolution, andamento della media tra le migliori fitness function delle 5 esecuzioni, al variare della generazione}
+    \label{fitness_sciadro_dump}
 \end{figure}   
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Algorithm}              & \textbf{Performance (tick)}              \\ \hline
+    Sciadro 3.1 + Matlab DE         & $121.70 \; \pm \; 4.75$           \\ \hline
+    Sciadro 3.1 + SciPy DE          & $107.40 \; \pm \; 3.10$           \\ \hline
+    \end{tabular}%
+    
+    \caption{Analisi comparativa delle performance.}
+    \label{tabella_performance_dump}
+\end{table}
+
+\section{Scenario \textit{Rural Mine}}
+
+Lo scenario è statico: \textit{Rural Mine} si basa su dati di pubblico dominio relativi a mine antiuomo presenti in aree extraurbane vicino Sarajevo, Bosnia-Herzegovina \cite{seedemining2018}.
+Di seguito sono riportate le caratteristiche dello scenario:
+
+\begin{itemize}
+    \item \textit{Area in metri:} 400 x 400
+    \item \textit{Area in patch:} 201 x 201
+    \item \textit{Dimensione patch:} 1.99m x 1.99m
+    \item \textit{Conversione spaziale:} 1 m = 0.502 patch
+    \item \textit{Conversione temporale:} 1 s = 1 tick
+    \item \textit{Numero target statici presenti nell'area:} 28
+    \item \textit{Numero target dinamici presenti nell'area:} 0
+    \item \textit{Numero ostacoli presenti nell'area:} 285
+    \item \textit{Flotta utilizzata:} 80 droni
+\end{itemize}
+
+Lo scenario presenta solo target statici, di conseguenza la funzione obiettivo è rappresentata dal tempo di rilevamento del $95 \%$ dei target.
+
+Per osservarne la complessità ambientale, le figure \ref{ruralMine_map} e \ref{ruralMine_scenario} mostrano la mappa satellitare utilizzata per \textit{Rural Mine}, e la corrispondente immagine vettoriale iniziale rappresentata nell'ambiente di simulazione, rispettivamente. 
+Gli ostacoli  sono rappresentati in grigio, mentre i bersagli sono rappresentati come 'x' nere. 
+I droni sono posizionati agli angoli e sono orientati verso il centro dell'area.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.3\paperwidth]{img/ruralMine_map.png}}
+    \end{center}
+    \caption{Immagine satellitare dello scenario Rural Mine.}
+    \label{ruralMine_map}
+\end{figure}
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.3\paperwidth]{img/ruralMine_scenario.png}}
+    \end{center}
+    \caption{Immagine vettoriale dello scenario Rural Mine.}
+    \label{ruralMine_scenario}
+\end{figure}
+
+La configurazione dei parametri tecnologici utilizzata nella fase sperimentale dello scenario \textit{Rural Mine} è  riassunta nella tabella \ref{tabella_parametri_ruralMine}.
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Parameter}              & \textbf{Value}                \\ \hline
+    Radius                          & $0.2 \; patch$                \\ \hline
+    Max speed                       & $8.5 \; patch/tick$           \\ \hline
+    Cruising speed                  & $2 \; patch/tick$             \\ \hline
+    Max acceleration                & $2 \; patch/tick^{2}$         \\ \hline
+    Max deceleration                & $-2 \; patch/tick^{2}$        \\ \hline
+    Max angular speed               & $2.6 \; rad/s$                \\ \hline
+    Max angular acceleration        & $7 \; rad/s^{2}$              \\ \hline
+    Max angular deceleration        & $-7 \; rad/s^{2}$             \\ \hline
+    Battery duration                & $1440 \; tick$                \\ \hline
+    Sensing radius                  & $2.5 \; patch$                \\ \hline
+    Sensing angle                   & \ang{360}                        \\ \hline
+    Reachable radius                & $4 \; patch$                  \\ \hline
+    Reachable angle                 & \ang{360}                        \\ \hline
+    Obstacle vision distance        & $6 \; patch$                  \\ \hline
+    Obstacle vision angle           & \ang{60}                        \\ \hline
+    Gap angle                       & \ang{20}                        \\ \hline
+    \end{tabular}%
+    
+    \caption{Configurazione parametrica della tecnologia utilizzata nella fase sperimentale dello scenario \textit{Rural Mine}.}
+    \label{tabella_parametri_ruralMine}
+\end{table}
+
+\subsection{Ottimizzazione parametrica con Differential Evolution}
+
+Uno schema riassuntivo degli intervalli utilizzati per la fase di ottimizzazione parametrica attraverso l'algoritmo di \textit{Differential Evolution} è presentato nella tabella \ref{tabella_intervalli_ruralMine}
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Parameter}              & \textbf{Interval}                 \\ \hline
+    radiusTop                       & $[1,13]$                          \\ \hline
+    radiusDown                      & $[13,19]$                         \\ \hline
+    evapRate                        & $[0.01,0.1]$                      \\ \hline
+    olfaction                       & $[1,10]$                          \\ \hline
+    flockAngle                      & $[15,45]$                         \\ \hline
+    wiggleVar                       & $[5,15]$                          \\ \hline
+    radiusSeparate                  & $[6,16]$                          \\ \hline
+    maxSeparateTurn                 & $[30,45]$                         \\ \hline
+    radiusAlign                     & $[16,22]$                         \\ \hline
+    maxAlignTurn                    & $[30,45]$                         \\ \hline
+    radiusCohere                    & $[18,26]$                         \\ \hline
+    maxCohereTurn                       & $[15,30]$                         \\ \hline
+    \end{tabular}%
+    
+    \caption{Configurazione degli intervalli per l'ottimizzazione parametrica, attraverso l'algoritmo di \textit{Differential Evolution}, utilizzata nella fase sperimentale dello scenario \textit{Rural Mine}.}
+    \label{tabella_intervalli_ruralMine}
+\end{table}
+
+I valori relativi agli iperparametri sono i seguenti:
+\begin{itemize}
+    \item \textit{Strategia di crossover:} DE/rand/1/bin;
+    \item \textit{Tasso di mutazione:} $F=0.7$;
+    \item \textit{Coefficiente di crossover:} $CR=0.5$
+\end{itemize}
+
+\subsection{Risultati sperimentali}
+
+L'algoritmo di coordinamento dello sciame è stato testato sullo scenario \textit{Rural Mine}, con la seguente strategia:
+\begin{itemize}
+    \item \textit{5 esecuzioni dell'algoritmo di Differential evolution;}
+    \item \textit{3 ripetizione della simulazione per ogni elemento della popolazione;}
+    \item \textit{Fitness function:} $f(x) = \# tick[95 \% \; target_{found}]$
+\end{itemize}
 
 \begin{figure}[H] 
     \captionsetup{justification=centering, margin=2cm, font=footnotesize}
@@ -190,14 +383,14 @@ Informazioni esperimento:
         \makebox[0.5\paperwidth]{
             \begin{tikzpicture}
                 \begin{axis}[
-                    title={\textit{Fitness function - Exec. 2}},
+                    title={},
                     xlabel={Generazione},
                     ylabel={Tick},
-                    xmin=0, xmax=30,
-                    ymin=0, ymax=500,
-                    xtick={5,10,15,20,25,30},
-                    ytick={50,100,150,200,250,300,350,400,450,500},
-                    legend pos=north west,
+                    xmin=0, xmax=40,
+                    ymin=120, ymax=140,
+                    xtick={5,10,15,20,25,30,35,40},
+                    ytick={120,125,130,135,140},
+                    legend pos=north east,
                     grid=major,
                     %ymajorgrids=true,
                     %xmajorgrids=true
@@ -205,21 +398,151 @@ Informazioni esperimento:
                 ]
                 
                 \addplot[
-                    color=blue,
+                    color=black,
                     line width=0.5mm,
                     ]
                     coordinates {
-                        (1,345.3)(2,348.3)(3,366.0)(4,334.7)(5,304.7)(6,307.7)(7,384.0)(8,369.0)(9,317.0)(10,287.0)(11,330.7)(12,309.3)(13,342.3)(14,307.3)(15,298.0)(16,312.7)(17,309.3)(18,299.7)(19,291.7)(20,298.0)(21,296.3)(22,287.3)(23,292.0)(24,291.0)(25,284.7)(26,286.7)(27,296.7)
+                        (1,137.8)(2,129.68)(3,129.68)(4,129.68)(5,126.54)(6,126.54)(7,126.54)(8,126.54)(9,126.54)(10,125.26)(11,125)(12,125)(13,125)(14,125)(15,125)(16,125)(17,125)(18,125)(19,125)(20,125)(21,125)(22,125)(23,125)(24,125)(25,125)(26,125)(27,125)(28,125)(29,122.74)(30,122.74)(31,122.74)(32,122.74)(33,122.74)(34,122.74)(35,122.74)(36,122.74)(37,122.2)(38,122.2)(39,122.2)(40,122.2)
                     };
-                    \legend{$f$}
+                
+                    \legend{\textit{average best fitness}}
                 
                 \end{axis}
             \end{tikzpicture}
         }
     \end{center}
-    \caption{Andamento della funzione obiettivo al variare di generazione.}
-    \label{modello3d_feromone}
+    \caption{Ottimizzazione parametrica con Differential Evolution, andamento della media tra le migliori fitness function delle 5 esecuzioni, al variare della generazione}
+    \label{fitness_sciadro_ruralMine}
 \end{figure}   
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Algorithm}              & \textbf{Performance (tick)}       \\ \hline
+    Sciadro 3.1 + Matlab DE         & $125.96 \; \pm \; 8.90$           \\ \hline
+    Sciadro 3.1 + SciPy DE          & $122.20 \; \pm \; 3.89$           \\ \hline
+    \end{tabular}%
+    
+    \caption{Analisi comparativa delle performance.}
+    \label{tabella_performance_ruralMine}
+\end{table}
+
+\section{Scenario \textit{Urban Mine}}
+
+Lo scenario è statico: \textit{Urban Mine} si basa su dati di pubblico dominio relativi a mine antiuomo presenti in aree urbane vicino Sarajevo, Bosnia-Herzegovina \cite{seedemining2018}.
+Di seguito sono riportate le caratteristiche dello scenario:
+
+\begin{itemize}
+    \item \textit{Area in metri:} 400 x 400
+    \item \textit{Area in patch:} 201 x 201
+    \item \textit{Dimensione patch:} 1.99m x 1.99m
+    \item \textit{Conversione spaziale:} 1 m = 0.502 patch
+    \item \textit{Conversione temporale:} 1 s = 1 tick
+    \item \textit{Numero target statici presenti nell'area:} 40
+    \item \textit{Numero target dinamici presenti nell'area:} 0
+    \item \textit{Numero ostacoli presenti nell'area:} 3664
+    \item \textit{Flotta utilizzata:} 80 droni
+\end{itemize}
+
+Lo scenario presenta solo target statici, di conseguenza la funzione obiettivo è rappresentata dal tempo di rilevamento del $95 \%$ dei target.
+
+Per osservarne la complessità ambientale, le figure \ref{urbanMine_map} e \ref{urbanMine_scenario} mostrano la mappa satellitare utilizzata per \textit{Urban Mine}, e la corrispondente immagine vettoriale iniziale rappresentata nell'ambiente di simulazione, rispettivamente. 
+Gli ostacoli  sono rappresentati in grigio, mentre i bersagli sono rappresentati come 'x' nere. 
+I droni sono posizionati agli angoli e sono orientati verso il centro dell'area.
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.3\paperwidth]{img/urbanMine_map.png}}
+    \end{center}
+    \caption{Immagine satellitare dello scenario Urban Mine.}
+    \label{urbanMine_map}
+\end{figure}
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+    \makebox[\textwidth]{\includegraphics[width=0.3\paperwidth]{img/urbanMine_scenario.png}}
+    \end{center}
+    \caption{Immagine vettoriale dello scenario Urban Mine.}
+    \label{urbanMine_scenario}
+\end{figure}
+
+La configurazione dei parametri tecnologici utilizzata nella fase sperimentale dello scenario \textit{Urban Mine} è  riassunta nella tabella \ref{tabella_parametri_urbanMine}.
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Parameter}              & \textbf{Value}                \\ \hline
+    Radius                          & $0.2 \; patch$                \\ \hline
+    Max speed                       & $8.5 \; patch/tick$           \\ \hline
+    Cruising speed                  & $2 \; patch/tick$             \\ \hline
+    Max acceleration                & $2 \; patch/tick^{2}$         \\ \hline
+    Max deceleration                & $-2 \; patch/tick^{2}$        \\ \hline
+    Max angular speed               & $2.6 \; rad/s$                \\ \hline
+    Max angular acceleration        & $7 \; rad/s^{2}$              \\ \hline
+    Max angular deceleration        & $-7 \; rad/s^{2}$             \\ \hline
+    Battery duration                & $1440 \; tick$                \\ \hline
+    Sensing radius                  & $2.5 \; patch$                \\ \hline
+    Sensing angle                   & \ang{360}                        \\ \hline
+    Reachable radius                & $4 \; patch$                  \\ \hline
+    Reachable angle                 & \ang{360}                        \\ \hline
+    Obstacle vision distance        & $6 \; patch$                  \\ \hline
+    Obstacle vision angle           & \ang{60}                        \\ \hline
+    Gap angle                       & \ang{20}                        \\ \hline
+    \end{tabular}%
+    
+    \caption{Configurazione parametrica della tecnologia utilizzata nella fase sperimentale dello scenario \textit{Urban Mine}.}
+    \label{tabella_parametri_urbanMine}
+\end{table}
+
+\subsection{Ottimizzazione parametrica con Differential Evolution}
+
+Uno schema riassuntivo degli intervalli utilizzati per la fase di ottimizzazione parametrica attraverso l'algoritmo di \textit{Differential Evolution} è presentato nella tabella \ref{tabella_intervalli_urbanMine}
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Parameter}              & \textbf{Interval}                 \\ \hline
+    radiusTop                       & $[1,13]$                          \\ \hline
+    radiusDown                      & $[13,19]$                         \\ \hline
+    evapRate                        & $[0.01,0.1]$                      \\ \hline
+    olfaction                       & $[1,10]$                          \\ \hline
+    flockAngle                      & $[15,45]$                         \\ \hline
+    wiggleVar                       & $[5,15]$                          \\ \hline
+    radiusSeparate                  & $[6,16]$                          \\ \hline
+    maxSeparateTurn                 & $[30,45]$                         \\ \hline
+    radiusAlign                     & $[16,22]$                         \\ \hline
+    maxAlignTurn                    & $[30,45]$                         \\ \hline
+    radiusCohere                    & $[18,26]$                         \\ \hline
+    maxCohereTurn                       & $[15,30]$                         \\ \hline
+    \end{tabular}%
+    
+    \caption{Configurazione degli intervalli per l'ottimizzazione parametrica, attraverso l'algoritmo di \textit{Differential Evolution}, utilizzata nella fase sperimentale dello scenario \textit{Urban Mine}.}
+    \label{tabella_intervalli_urbanMine}
+\end{table}
+
+I valori relativi agli iperparametri sono i seguenti:
+\begin{itemize}
+    \item \textit{Strategia di crossover:} DE/rand/1/bin;
+    \item \textit{Tasso di mutazione:} $F=0.7$;
+    \item \textit{Coefficiente di crossover:} $CR=0.5$
+\end{itemize}
+
+\subsection{Risultati sperimentali}
+
+L'algoritmo di coordinamento dello sciame è stato testato sullo scenario \textit{Urban Mine}, con la seguente strategia:
+\begin{itemize}
+    \item \textit{5 esecuzioni dell'algoritmo di Differential evolution;}
+    \item \textit{3 ripetizione della simulazione per ogni elemento della popolazione;}
+    \item \textit{Fitness function:} $f(x) = \# tick[95 \% \; target_{found}]$
+\end{itemize}
 
 \begin{figure}[H] 
     \captionsetup{justification=centering, margin=2cm, font=footnotesize}
@@ -227,14 +550,14 @@ Informazioni esperimento:
         \makebox[0.5\paperwidth]{
             \begin{tikzpicture}
                 \begin{axis}[
-                    title={\textit{Fitness function - Exec. 3}},
+                    title={},
                     xlabel={Generazione},
                     ylabel={Tick},
-                    xmin=0, xmax=20,
-                    ymin=0, ymax=500,
-                    xtick={5,10,15,20},
-                    ytick={50,100,150,200,250,300,350,400,450,500},
-                    legend pos=north west,
+                    xmin=0, xmax=40,
+                    ymin=150, ymax=200,
+                    xtick={5,10,15,20,25,30,35,40},
+                    ytick={150,160,170,180,190,200},
+                    legend pos=north east,
                     grid=major,
                     %ymajorgrids=true,
                     %xmajorgrids=true
@@ -242,18 +565,33 @@ Informazioni esperimento:
                 ]
                 
                 \addplot[
-                    color=blue,
+                    color=black,
                     line width=0.5mm,
                     ]
                     coordinates {
-                        (1,350.3)(2,326.3)(3,399.7)(4,325.3)(5,311.3)(6,315.3)(7,416.3)(8,307.3)(9,296.3)(10,292.3)(11,302.3)(12,289.0)(13,272.7)(14,299.7)(15,289.3)(16,287.7)(17,288.3)
+                        (1,195.94)(2,186.82)(3,175.54)(4,174.6)(5,174.6)(6,169.94)(7,167.86)(8,167.86)(9,167.86)(10,167.86)(11,166.2)(12,165.8)(13,165.8)(14,165.8)(15,163.94)(16,160.34)(17,160.34)(18,160.34)(19,160.34)(20,160.34)(21,160.34)(22,160.34)(23,160.34)(24,160.34)(25,160.34)(26,160.34)(27,160.34)(28,160.34)(29,160.34)(30,158.74)(31,158.74)(32,158.74)(33,158.74)(34,158.74)(35,158.74)(36,158.74)(37,158.74)(38,156.74)(39,156.74)(40,156.74)
                     };
-                    \legend{$f$}
+                
+                    \legend{\textit{average best fitness}}
                 
                 \end{axis}
             \end{tikzpicture}
         }
     \end{center}
-    \caption{Andamento della funzione obiettivo al variare di generazione.}
-    \label{modello3d_feromone}
-\end{figure}  
+    \caption{Ottimizzazione parametrica con Differential Evolution, andamento della media tra le migliori fitness function delle 5 esecuzioni, al variare della generazione}
+    \label{fitness_sciadro_urbanMine}
+\end{figure}   
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Algorithm}              & \textbf{Performance (tick)}       \\ \hline
+    Sciadro 3.1 + Matlab DE         & $152.38 \; \pm \; 5.25$           \\ \hline
+    Sciadro 3.1 + SciPy DE          & $160.34 \; \pm \; 5.42$           \\ \hline
+    \end{tabular}%
+    
+    \caption{Analisi comparativa delle performance.}
+    \label{tabella_performance_urbanMine}
+\end{table}

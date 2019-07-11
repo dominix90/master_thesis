@@ -58,4 +58,11 @@
 \contentsline {chapter}{\numberline {6}Implementazione e prove sperimentali}{60}% 
 \contentsline {section}{\numberline {6.1}Specifiche tecniche del drone}{60}% 
 \contentsline {section}{\numberline {6.2}Scenario \textit {Illegal Dump}}{62}% 
-\contentsline {section}{\numberline {6.3}Risultati sperimentali}{64}% 
+\contentsline {subsection}{\numberline {6.2.1}Ottimizzazione parametrica con Differential Evolution}{66}% 
+\contentsline {subsection}{\numberline {6.2.2}Risultati sperimentali}{68}% 
+\contentsline {section}{\numberline {6.3}Scenario \textit {Rural Mine}}{69}% 
+\contentsline {subsection}{\numberline {6.3.1}Ottimizzazione parametrica con Differential Evolution}{71}% 
+\contentsline {subsection}{\numberline {6.3.2}Risultati sperimentali}{72}% 
+\contentsline {section}{\numberline {6.4}Scenario \textit {Urban Mine}}{73}% 
+\contentsline {subsection}{\numberline {6.4.1}Ottimizzazione parametrica con Differential Evolution}{76}% 
+\contentsline {subsection}{\numberline {6.4.2}Risultati sperimentali}{77}% 

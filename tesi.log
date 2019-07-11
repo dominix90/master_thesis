@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.7.7)  10 JUL 2019 12:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.7.7)  11 JUL 2019 19:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -518,38 +518,238 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks46
 \verbatim@line=\toks47
 \verbatim@in@stream=\read2
-) (/home/domi/tesi/stesura/latex/tesimagistrale/listings_style.tex (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+) (/usr/share/texmf-dist/tex/latex/siunitx/siunitx.sty (/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2019-04-06 L3 programming layer (loader) 
+ (/usr/share/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2019-04-06 L3 programming layer (code)
+\c_max_int=\count157
+\l_tmpa_int=\count158
+\l_tmpb_int=\count159
+\g_tmpa_int=\count160
+\g_tmpb_int=\count161
+\g__kernel_prg_map_int=\count162
+\c__ior_term_ior=\count163
+\c_log_iow=\count164
+\l_iow_line_count_int=\count165
+\l__iow_line_target_int=\count166
+\l__iow_one_indent_int=\count167
+\l__iow_indent_int=\count168
+\c_zero_dim=\dimen264
+\c_max_dim=\dimen265
+\l_tmpa_dim=\dimen266
+\l_tmpb_dim=\dimen267
+\g_tmpa_dim=\dimen268
+\g_tmpb_dim=\dimen269
+\c_zero_skip=\skip69
+\c_max_skip=\skip70
+\l_tmpa_skip=\skip71
+\l_tmpb_skip=\skip72
+\g_tmpa_skip=\skip73
+\g_tmpb_skip=\skip74
+\c_zero_muskip=\muskip12
+\c_max_muskip=\muskip13
+\l_tmpa_muskip=\muskip14
+\l_tmpb_muskip=\muskip15
+\g_tmpa_muskip=\muskip16
+\g_tmpb_muskip=\muskip17
+\l_keys_choice_int=\count169
+\l__intarray_loop_int=\count170
+\c__intarray_sp_dim=\dimen270
+\g__intarray_font_int=\count171
+\c__fp_leading_shift_int=\count172
+\c__fp_middle_shift_int=\count173
+\c__fp_trailing_shift_int=\count174
+\c__fp_big_leading_shift_int=\count175
+\c__fp_big_middle_shift_int=\count176
+\c__fp_big_trailing_shift_int=\count177
+\c__fp_Bigg_leading_shift_int=\count178
+\c__fp_Bigg_middle_shift_int=\count179
+\c__fp_Bigg_trailing_shift_int=\count180
+\c__kernel_randint_max_int=\count181
+\g__fp_array_int=\count182
+\l__fp_array_loop_int=\count183
+\l__sort_length_int=\count184
+\l__sort_min_int=\count185
+\l__sort_top_int=\count186
+\l__sort_max_int=\count187
+\l__sort_true_max_int=\count188
+\l__sort_block_int=\count189
+\l__sort_begin_int=\count190
+\l__sort_end_int=\count191
+\l__sort_A_int=\count192
+\l__sort_B_int=\count193
+\l__sort_C_int=\count194
+\l__tl_analysis_normal_int=\count195
+\l__tl_analysis_index_int=\count196
+\l__tl_analysis_nesting_int=\count197
+\l__tl_analysis_type_int=\count198
+\l__regex_internal_a_int=\count199
+\l__regex_internal_b_int=\count266
+\l__regex_internal_c_int=\count267
+\l__regex_balance_int=\count268
+\l__regex_group_level_int=\count269
+\l__regex_mode_int=\count270
+\c__regex_cs_in_class_mode_int=\count271
+\c__regex_cs_mode_int=\count272
+\l__regex_catcodes_int=\count273
+\l__regex_default_catcodes_int=\count274
+\c__regex_catcode_D_int=\count275
+\c__regex_catcode_S_int=\count276
+\c__regex_catcode_L_int=\count277
+\c__regex_catcode_O_int=\count278
+\c__regex_catcode_A_int=\count279
+\c__regex_all_catcodes_int=\count280
+\l__regex_show_lines_int=\count281
+\l__regex_min_state_int=\count282
+\l__regex_max_state_int=\count283
+\l__regex_left_state_int=\count284
+\l__regex_right_state_int=\count285
+\l__regex_capturing_group_int=\count286
+\l__regex_min_pos_int=\count287
+\l__regex_max_pos_int=\count288
+\l__regex_curr_pos_int=\count289
+\l__regex_start_pos_int=\count290
+\l__regex_success_pos_int=\count291
+\l__regex_curr_char_int=\count292
+\l__regex_curr_catcode_int=\count293
+\l__regex_last_char_int=\count294
+\l__regex_case_changed_char_int=\count295
+\l__regex_curr_state_int=\count296
+\l__regex_step_int=\count297
+\l__regex_min_active_int=\count298
+\l__regex_max_active_int=\count299
+\l__regex_replacement_csnames_int=\count300
+\l__regex_match_count_int=\count301
+\l__regex_min_submatch_int=\count302
+\l__regex_submatch_int=\count303
+\l__regex_zeroth_submatch_int=\count304
+\g__regex_trace_regex_int=\count305
+\c_empty_box=\box59
+\l_tmpa_box=\box60
+\l_tmpb_box=\box61
+\g_tmpa_box=\box62
+\g_tmpb_box=\box63
+\l__box_top_dim=\dimen271
+\l__box_bottom_dim=\dimen272
+\l__box_left_dim=\dimen273
+\l__box_right_dim=\dimen274
+\l__box_top_new_dim=\dimen275
+\l__box_bottom_new_dim=\dimen276
+\l__box_left_new_dim=\dimen277
+\l__box_right_new_dim=\dimen278
+\l__box_internal_box=\box64
+\l__coffin_internal_box=\box65
+\l__coffin_internal_dim=\dimen279
+\l__coffin_offset_x_dim=\dimen280
+\l__coffin_offset_y_dim=\dimen281
+\l__coffin_x_dim=\dimen282
+\l__coffin_y_dim=\dimen283
+\l__coffin_x_prime_dim=\dimen284
+\l__coffin_y_prime_dim=\dimen285
+\c_empty_coffin=\box66
+\l__coffin_aligned_coffin=\box67
+\l__coffin_aligned_internal_coffin=\box68
+\l_tmpa_coffin=\box69
+\l_tmpb_coffin=\box70
+\g_tmpa_coffin=\box71
+\g_tmpb_coffin=\box72
+\l__coffin_bounding_shift_dim=\dimen286
+\l__coffin_left_corner_dim=\dimen287
+\l__coffin_right_corner_dim=\dimen288
+\l__coffin_bottom_corner_dim=\dimen289
+\l__coffin_top_corner_dim=\dimen290
+\l__coffin_scaled_total_height_dim=\dimen291
+\l__coffin_scaled_width_dim=\dimen292
+\c__coffin_empty_coffin=\box73
+\l__coffin_display_coffin=\box74
+\l__coffin_display_coord_coffin=\box75
+\l__coffin_display_pole_coffin=\box76
+\l__coffin_display_offset_dim=\dimen293
+\l__coffin_display_x_dim=\dimen294
+\l__coffin_display_y_dim=\dimen295
+\g__file_internal_ior=\read3
+\l__seq_internal_a_int=\count306
+\l__seq_internal_b_int=\count307
+\c__deprecation_minus_one=\count308
+) (/usr/share/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+File: l3pdfmode.def 2019-04-06 v L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count309
+)) (/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2019-03-05 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count310
+\g__xparse_grabber_int=\count311
+\l__xparse_m_args_int=\count312
+\l__xparse_v_nesting_int=\count313
+)
+Package: siunitx 2018/05/17 v2.7s A comprehensive (SI) units package
+ (/usr/share/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2019-03-05 LaTeX2e option processing using LaTeX3 keys
+)
+\l__siunitx_tmp_box=\box77
+\l__siunitx_tmp_dim=\dimen296
+\l__siunitx_tmp_int=\count314
+\l__siunitx_number_mantissa_length_int=\count315
+\l__siunitx_number_uncert_length_int=\count316
+\l__siunitx_round_int=\count317
+\l__siunitx_process_decimal_int=\count318
+\l__siunitx_process_uncertainty_int=\count319
+\l__siunitx_process_fixed_int=\count320
+\l__siunitx_process_integer_min_int=\count321
+\l__siunitx_process_precision_int=\count322
+\l__siunitx_group_min_int=\count323
+\l__siunitx_angle_marker_box=\box78
+\l__siunitx_angle_unit_box=\box79
+\l__siunitx_angle_marker_dim=\dimen297
+\l__siunitx_angle_unit_dim=\dimen298
+\l__siunitx_unit_int=\count324
+\l__siunitx_unit_denominator_int=\count325
+\l__siunitx_unit_numerator_int=\count326
+\l__siunitx_unit_prefix_int=\count327
+\l__siunitx_unit_prefix_base_int=\count328
+\l__siunitx_unit_prefix_gram_int=\count329
+\l__siunitx_number_product_int=\count330
+\c__siunitx_one_fill_skip=\skip75
+\l__siunitx_table_unit_align_skip=\skip76
+\l__siunitx_table_exponent_dim=\dimen299
+\l__siunitx_table_integer_dim=\dimen300
+\l__siunitx_table_mantissa_dim=\dimen301
+\l__siunitx_table_marker_dim=\dimen302
+\l__siunitx_table_result_dim=\dimen303
+\l__siunitx_table_uncert_dim=\dimen304
+\l__siunitx_table_fill_pre_dim=\dimen305
+\l__siunitx_table_fill_post_dim=\dimen306
+\l__siunitx_table_fill_mid_dim=\dimen307
+\l__siunitx_table_pre_box=\box80
+\l__siunitx_table_post_box=\box81
+\l__siunitx_table_mantissa_box=\box82
+\l__siunitx_table_result_box=\box83
+\l__siunitx_table_number_align_skip=\skip77
+\l__siunitx_table_text_align_skip=\skip78
+ (/usr/share/texmf-dist/tex/latex/translator/translator.sty
+Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
+)) (/home/domi/tesi/stesura/latex/tesimagistrale/listings_style.tex (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )) (/home/domi/tesi/stesura/latex/tesimagistrale/custom_commands.tex) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux
 
 LaTeX Warning: Label `tabella_obstacle_avoidance' multiply defined.
 
-
-LaTeX Warning: Label `modello3d_feromone' multiply defined.
-
-
-LaTeX Warning: Label `modello3d_feromone' multiply defined.
-
-
-LaTeX Warning: Label `modello3d_feromone' multiply defined.
-
 )
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Info: Redefining \it@ocap on input line 31.
-LaTeX Info: Redefining \it@ccap on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Info: Redefining \it@ocap on input line 32.
+LaTeX Info: Redefining \it@ccap on input line 32.
 
 
 File italian.ldf warning: 
@@ -557,20 +757,20 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 31.
+italian.ldf    on input line 32.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count157
-\scratchdimen=\dimen264
-\scratchbox=\box59
-\nofMPsegments=\count158
-\nofMParguments=\count159
+\scratchcounter=\count331
+\scratchdimen=\dimen308
+\scratchbox=\box84
+\nofMPsegments=\count332
+\nofMParguments=\count333
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count160
-\MPscratchDim=\dimen265
-\MPnumerator=\count161
-\makeMPintoPDFobject=\count162
+\MPscratchCnt=\count334
+\MPscratchDim=\dimen309
+\MPnumerator=\count335
+\makeMPintoPDFobject=\count336
 \everyMPtoPDFconversion=\toks49
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -607,12 +807,12 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) ABD: EveryShipout initializing macros
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into your preamble.
- on input line 31.
+ on input line 32.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count163
+\c@lstlisting=\count337
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -647,17 +847,103 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \celsius on input line 31.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 31.
+LaTeX Info: Redefining \celsius on input line 32.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 32.
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 31.
-Package gensymb Info: Using \Omega for \ohm on input line 31.
+LaTeX Info: Redefining \ohm on input line 32.
+Package gensymb Info: Using \Omega for \ohm on input line 32.
 
 Package gensymb Warning: Not defining \micro.
 
-(/home/domi/tesi/stesura/latex/tesimagistrale/frontespizio.tex
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
+) (/usr/share/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+) (/usr/share/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
+File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/home/domi/tesi/stesura/latex/tesimagistrale/frontespizio.tex
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: <default>
@@ -695,14 +981,7 @@ File: img/logo.png Graphic file (type png)
 <use img/logo.png>
 Package pdftex.def Info: img/logo.png  used on input line 11.
 (pdftex.def)             Requested size: 127.4834pt x 130.85599pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 27.
- (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 27.
- (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+ [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/domi/tesi/stesura/latex/tesimagistrale/img/logo.png>]) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/abstract.tex
@@ -1024,41 +1303,63 @@ Package pdftex.def Info: img/dji_matrice_sensore.jpg  used on input line 24.
 <img/dump_map.png, id=293, 220.57407pt x 219.06844pt>
 File: img/dump_map.png Graphic file (type png)
 <use img/dump_map.png>
-Package pdftex.def Info: img/dump_map.png  used on input line 123.
+Package pdftex.def Info: img/dump_map.png  used on input line 91.
 (pdftex.def)             Requested size: 184.29036pt x 183.04015pt.
- [63]
-<img/dump_scenario.png, id=298, 223.58531pt x 221.32687pt>
+<img/dump_scenario.png, id=294, 124.3044pt x 124.3044pt>
 File: img/dump_scenario.png Graphic file (type png)
 <use img/dump_scenario.png>
-Package pdftex.def Info: img/dump_scenario.png  used on input line 132.
-(pdftex.def)             Requested size: 184.29036pt x 182.43141pt.
- [64 </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_map.png (PNG copy)> </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_scenario.png (PNG copy)>] [65]) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex [66]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [67
+Package pdftex.def Info: img/dump_scenario.png  used on input line 100.
+(pdftex.def)             Requested size: 184.29036pt x 184.29953pt.
+ [63 </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_map.png (PNG copy)>] [64 </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_scenario.png>] [65] [66] [67] [68]
+<img/ruralMine_map.png, id=315, 386.72139pt x 368.26947pt>
+File: img/ruralMine_map.png Graphic file (type png)
+<use img/ruralMine_map.png>
+Package pdftex.def Info: img/ruralMine_map.png  used on input line 291.
+(pdftex.def)             Requested size: 184.29036pt x 175.49736pt.
+ [69]
+<img/ruralMine_scenario.png, id=320, 97.893pt x 97.893pt>
+File: img/ruralMine_scenario.png Graphic file (type png)
+<use img/ruralMine_scenario.png>
+Package pdftex.def Info: img/ruralMine_scenario.png  used on input line 300.
+(pdftex.def)             Requested size: 184.29036pt x 184.29428pt.
+ [70 </home/domi/tesi/stesura/latex/tesimagistrale/img/ruralMine_map.png> </home/domi/tesi/stesura/latex/tesimagistrale/img/ruralMine_scenario.png>] [71] [72] [73]
+<img/urbanMine_map.png, id=335, 127.02pt x 127.02pt>
+File: img/urbanMine_map.png Graphic file (type png)
+<use img/urbanMine_map.png>
+Package pdftex.def Info: img/urbanMine_map.png  used on input line 458.
+(pdftex.def)             Requested size: 184.29036pt x 184.29443pt.
+<img/urbanMine_scenario.png, id=336, 97.893pt x 97.893pt>
+File: img/urbanMine_scenario.png Graphic file (type png)
+<use img/urbanMine_scenario.png>
+Package pdftex.def Info: img/urbanMine_scenario.png  used on input line 467.
+(pdftex.def)             Requested size: 184.29036pt x 184.29428pt.
+ [74 </home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_map.png>] [75 </home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_scenario.png>] [76] [77]) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex [78]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [79
 
-] [68
+] [80
 
-] [69]
+] [81]
 Underfull \hbox (badness 4686) in paragraph at lines 133--135
 []\OT1/cmr/m/n/12 X.-S. Yang, ``Fi-re-fly al-go-ri-thm, sto-cha-stic te-st func-tions and de-si-gn
  []
 
-[70]) [71] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux)
+[82]) [83] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 28361 strings out of 492623
- 678476 string characters out of 6135670
- 1018180 words of memory out of 5000000
- 31709 multiletter control sequences out of 15000+600000
- 13990 words of font info for 52 fonts, out of 8000000 for 9000
+ 40241 strings out of 492623
+ 932654 string characters out of 6135670
+ 1211179 words of memory out of 5000000
+ 43542 multiletter control sequences out of 15000+600000
+ 544399 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,22n,96p,1912b,2277s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,22n,96p,1912b,2275s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (75 pages, 1777157 bytes).
+Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (87 pages, 2117263 bytes).
 PDF statistics:
- 383 PDF objects out of 1000 (max. 8388607)
- 231 compressed objects within 3 object streams
+ 430 PDF objects out of 1000 (max. 8388607)
+ 257 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 198 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 218 words of extra memory for PDF output out of 10000 (max. 10000000)
 

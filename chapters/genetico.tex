@@ -15,7 +15,7 @@ Un altro parametro per la valutazione delle performance è rappresentato dal num
 
 Al fine di ottenere un risultato significativo da un punto di vista statistico, la valutazione delle performance di un insieme di parametri viene  valutata come media su più esecuzioni indipendenti del simulatore.
 
-\section{Ottimizzazione basata su \\\textit{Differential Evolution}}
+\section{Ottimizzazione basata su \\\textit{Differential Evolution}} \label{sezione_de}
 
 L’algoritmo \textit{Differential Evolution} è uno strumento software in grado di trovare la configurazione ottimale dei parametri per un problema caratterizzato da una specifica complessità. 
 Risulta importante sottolineare che l’algoritmo \textit{Differential Evolution} non garantisce la soluzione ottima del problema, ma una soluzione ottimale, ovvero una soluzione “vicina” a quella ottima. 
@@ -121,6 +121,7 @@ Se il vettore della soluzione in uso, $u_{i}$, ottiene un valore della funzione 
 
 Al fine di ottimizzare i parametri di simulazione, è stato implementato un modulo software di evoluzione differenziale, chiamato \textit{Differential\_evolution\_bridge}.
 Attraverso tale modulo, è possibile calcolare la funzione obiettivo tramite l'esecuzione di una simulazione con il vettore di parametri passato in input alla funzione.
+Ogni parametro è limitato ad un intervallo che va passato all'algoritmo di evoluzione differenziale; ad ogni iterazione si prova a spaziare all'interno di questo intervallo per ottenere dei valori ottimali della funzione obiettivo.
 
 La \textit{fitness function} è calcolata come segue:
 \begin{equation*}
