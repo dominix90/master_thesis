@@ -75,9 +75,9 @@ Il numero, la forma e la dimensione degli ostacoli dipendono dalla quota di volo
 In questa sezione verranno esaminati alcuni punti chiave fondamentali che caratterizzano tipicamente gli algoritmi bioispirati, oggetto di comparazione all'interno dell'ambiente di simulazione.
 Per semplificare la comprensione di tali meccanismi, verranno analizzati alcuni algoritmi presenti in letteratura che sono stati integrati all'interno del simulatore per un'analisi comparativa delle performance. 
 
-\subsection{Sciadro 3.2}
+\subsection{SFE-RR}
 
-La strategia integrata all'interno del simulatore Sciadro 3.2 è stata inizialmente adottata dal simulatore Sciadro 3.1, pubblicamente rilasciato da Cimino et al. \cite{cimino2019adaptive}.
+La strategia SFE-RR (\textit{Stigmergy-Flocking-Evolution for robots recruitment}) integrata all'interno del simulatore è stata inizialmente adottata dal simulatore SFE, pubblicamente rilasciato da Cimino et al. \cite{cimino2019adaptive}.
 Nella sezione successiva verranno analizzati i meccanismi fondamentali di questa strategia, mentre nei capitoli successivi approfondiremo le novità introdotte nel nuovo ambiente.
 
 Le metaeuristiche analizzate sono:
@@ -111,7 +111,7 @@ L’elemento fondamentale della stigmergia è il feromone, ovvero una sostanza c
 Il feromone ha una durata limitata nel tempo e dopo un certo periodo scompare a causa dell’evaporazione. 
 Inoltre, un’entità attratta dal feromone è soggetta all’assuefazione olfattiva: dopo un certo tempo l’attrazione esercitata dal feromone perde il suo effetto.
 
-Il meccanismo di stigmergia, così come descritto, è stato progettato, implementato e testato nel simulatore SciaDro. 
+Il meccanismo di stigmergia, così come descritto, è stato progettato, implementato e testato nel simulatore SFE. 
 Lo scopo principale è quello di attrarre altre entità su un target di interesse comune, perché, in questo modo, altri target vicini possono essere facilmente scoperti.
 
 Il feromone può essere anche repulsivo: invece di attrarre entità in un’area delimitata, respinge le entità vicine.
@@ -143,7 +143,7 @@ Nel caso specifico, un drone può assumere uno dei seguenti stati, che verranno 
 Se la missione prevede una lavorazione del target, infatti, è necessario che un numero minimo di droni raggiunga una posizione relativamente vicina all'obiettivo.
 In questo caso, parliamo di \textit{esecuzione del target}.
 
-\subsection{Algortmi PAPER}
+\subsection{Algoritmi di esplorazione e recruitment}
 
 Gli autori in \cite{palmieri2017comparison} si sono concentrati sull'applicazione di diverse metaeuristiche di ispirazione biologica per il coordinamento di uno sciame che deve esplorare un'area sconosciuta al fine di trovare e gestire in modo cooperativo alcuni obiettivi distribuiti.
 Di seguito verranno analizzate prima le metaeuristiche orientate all'esplorazione dell'area e successivamente quelle inerenti il coordinamento dello sciame per la gestione dei target identificati.

@@ -75,7 +75,7 @@ Lo sciame di droni si muove separatamente, organizzato in diversi flock.
 
 Il blocco fondamentale dello spazio discretizzato simulato è rappresentato dalla cella.
 Ogni cella (denominata anche patch) ha delle coordinate \textit{x-y} nello spazio bidimensionale e può contenere un target o un ostacolo.
-Una caratteristica fondamentale del simulatore è la possibilità di prenotare una patch: tale strategia, infatti, è pensata nel caso in cui è previsto un meccanismo di \textit{collision avoidance}, come nel caso dell'algoritmo SCIADRO.
+Una caratteristica fondamentale del simulatore è la possibilità di prenotare una patch: tale strategia, infatti, è pensata nel caso in cui è previsto un meccanismo di \textit{collision avoidance}, come nel caso dell'algoritmo \textit{SFE}.
 
 Per illustrare la struttura di un oggetto \textit{patch}, consideriamo la cella come una classe.
 Nella figura \ref{classe_patch} è possibile osservare tale struttura.
@@ -148,10 +148,10 @@ Esiste una velocità massima per cui la performance della tecnologia di sensing 
 \section {Algoritmo bioispirato}
 
 Alcune caratteristiche degli elementi presenti nel simulatore, come la struttura del drone o del feromone digitale, dipendono dall'algoritmo integrato all'interno dell'ambiente di simulazione.
-Nella sezione successiva ci soffermeremo sulle metaeuristiche della strategia \textit{Sciadro}.
+Nella sezione successiva ci soffermeremo sulle metaeuristiche della strategia \textit{SFE}.
 Successivamente, invece, prenderemo in esame gli elementi utilizzati nel gruppo di algoritmi analizzati precedentemente: \textit{FTS}, \textit{PSO} e \textit{ABC}.
 
-\subsection{Sciadro 3.2}
+\subsection{SFE-RR}
 
 In questa sezione entreremo nel dettaglio della progettazione dei vari elementi introdotti nel capitolo \ref{analisi} (\textit{Analisi}), quali il drone ed i vari meccanismi di flocking, collision avoidance e stigmergia.
 
