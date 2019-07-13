@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.7.7)  11 JUL 2019 19:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.7.11)  13 JUL 2019 15:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -733,6 +733,12 @@ File: lstlang1.sty 2019/02/27 1.8b listings language file
 
 LaTeX Warning: Label `tabella_obstacle_avoidance' multiply defined.
 
+
+LaTeX Warning: Label `fitness_sciadro_dump' multiply defined.
+
+
+LaTeX Warning: Label `tabella_performance_dump' multiply defined.
+
 )
 \openout1 = `tesi.aux'.
 
@@ -1297,69 +1303,79 @@ Capitolo 6.
 <img/dji_matrice_sensore.jpg, id=286, 459.7175pt x 459.7175pt>
 File: img/dji_matrice_sensore.jpg Graphic file (type jpg)
 <use img/dji_matrice_sensore.jpg>
-Package pdftex.def Info: img/dji_matrice_sensore.jpg  used on input line 24.
+Package pdftex.def Info: img/dji_matrice_sensore.jpg  used on input line 28.
 (pdftex.def)             Requested size: 245.71425pt x 245.71844pt.
  [61 </home/domi/tesi/stesura/latex/tesimagistrale/img/dji_matrice_sensore.jpg>] [62]
 <img/dump_map.png, id=293, 220.57407pt x 219.06844pt>
 File: img/dump_map.png Graphic file (type png)
 <use img/dump_map.png>
-Package pdftex.def Info: img/dump_map.png  used on input line 91.
+Package pdftex.def Info: img/dump_map.png  used on input line 95.
 (pdftex.def)             Requested size: 184.29036pt x 183.04015pt.
 <img/dump_scenario.png, id=294, 124.3044pt x 124.3044pt>
 File: img/dump_scenario.png Graphic file (type png)
 <use img/dump_scenario.png>
-Package pdftex.def Info: img/dump_scenario.png  used on input line 100.
+Package pdftex.def Info: img/dump_scenario.png  used on input line 104.
 (pdftex.def)             Requested size: 184.29036pt x 184.29953pt.
- [63 </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_map.png (PNG copy)>] [64 </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_scenario.png>] [65] [66] [67] [68]
-<img/ruralMine_map.png, id=315, 386.72139pt x 368.26947pt>
+ [63 </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_map.png (PNG copy)>] [64 </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_scenario.png>] [65] [66] [67] [68] [69] [70] [71] [72] [73]
+<img/ruralMine_map.png, id=331, 386.72139pt x 368.26947pt>
 File: img/ruralMine_map.png Graphic file (type png)
 <use img/ruralMine_map.png>
-Package pdftex.def Info: img/ruralMine_map.png  used on input line 291.
+Package pdftex.def Info: img/ruralMine_map.png  used on input line 520.
 (pdftex.def)             Requested size: 184.29036pt x 175.49736pt.
- [69]
-<img/ruralMine_scenario.png, id=320, 97.893pt x 97.893pt>
+ [74]
+<img/ruralMine_scenario.png, id=335, 97.893pt x 97.893pt>
 File: img/ruralMine_scenario.png Graphic file (type png)
 <use img/ruralMine_scenario.png>
-Package pdftex.def Info: img/ruralMine_scenario.png  used on input line 300.
+Package pdftex.def Info: img/ruralMine_scenario.png  used on input line 529.
 (pdftex.def)             Requested size: 184.29036pt x 184.29428pt.
- [70 </home/domi/tesi/stesura/latex/tesimagistrale/img/ruralMine_map.png> </home/domi/tesi/stesura/latex/tesimagistrale/img/ruralMine_scenario.png>] [71] [72] [73]
-<img/urbanMine_map.png, id=335, 127.02pt x 127.02pt>
+ [75 </home/domi/tesi/stesura/latex/tesimagistrale/img/ruralMine_map.png> </home/domi/tesi/stesura/latex/tesimagistrale/img/ruralMine_scenario.png>] [76] [77] [78]
+<img/urbanMine_map.png, id=351, 127.02pt x 127.02pt>
 File: img/urbanMine_map.png Graphic file (type png)
 <use img/urbanMine_map.png>
-Package pdftex.def Info: img/urbanMine_map.png  used on input line 458.
+Package pdftex.def Info: img/urbanMine_map.png  used on input line 687.
 (pdftex.def)             Requested size: 184.29036pt x 184.29443pt.
-<img/urbanMine_scenario.png, id=336, 97.893pt x 97.893pt>
+<img/urbanMine_scenario.png, id=352, 97.893pt x 97.893pt>
 File: img/urbanMine_scenario.png Graphic file (type png)
 <use img/urbanMine_scenario.png>
-Package pdftex.def Info: img/urbanMine_scenario.png  used on input line 467.
+Package pdftex.def Info: img/urbanMine_scenario.png  used on input line 696.
 (pdftex.def)             Requested size: 184.29036pt x 184.29428pt.
- [74 </home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_map.png>] [75 </home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_scenario.png>] [76] [77]) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex [78]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [79
+ [79 </home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_map.png>] [80 </home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_scenario.png>] [81] [82] [83]
+Underfull \hbox (badness 1629) in paragraph at lines 847--847
+[]\OT1/cmr/m/n/12 Tabella 6.17: |Stra-te-gia di esplo-ra-zio-ne del-lo sce-na-rio \OT1/cmr/m/it/12 Il-le-gal Dump\OT1/cmr/m/n/12 , ana-li-si
+ []
 
-] [80
 
-] [81]
+Underfull \hbox (badness 2035) in paragraph at lines 879--879
+[]\OT1/cmr/m/n/12 Tabella 6.19: |Stra-te-gia di esplo-ra-zio-ne del-lo sce-na-rio \OT1/cmr/m/it/12 Ur-ban Mi-ne\OT1/cmr/m/n/12 , ana-li-si
+ []
+
+) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex [84]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [85
+
+] [86
+
+] [87]
 Underfull \hbox (badness 4686) in paragraph at lines 133--135
 []\OT1/cmr/m/n/12 X.-S. Yang, ``Fi-re-fly al-go-ri-thm, sto-cha-stic te-st func-tions and de-si-gn
  []
 
-[82]) [83] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux)
+[88]) [89] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 40241 strings out of 492623
- 932654 string characters out of 6135670
+ 40275 strings out of 492623
+ 933411 string characters out of 6135669
  1211179 words of memory out of 5000000
- 43542 multiletter control sequences out of 15000+600000
+ 43576 multiletter control sequences out of 15000+600000
  544399 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,22n,96p,1912b,2275s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (87 pages, 2117263 bytes).
+Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (93 pages, 2131580 bytes).
 PDF statistics:
- 430 PDF objects out of 1000 (max. 8388607)
- 257 compressed objects within 3 object streams
+ 449 PDF objects out of 1000 (max. 8388607)
+ 270 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  218 words of extra memory for PDF output out of 10000 (max. 10000000)
 

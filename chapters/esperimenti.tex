@@ -5,7 +5,11 @@ In questo capitolo verranno presentate le caratteristiche tecnologiche dei veico
 Per ogni scenario verrà illustrata la complessità ambientale, insieme alla rappresentazione reale ed al modello della relativa mappa, per comprendere le caratteristiche morfologiche dell'area e la strattura degli ostacoli presenti.
 Verranno, inoltre, analizzate le informazioni relative ai parametri utilizzati nella fase di ottimizzazione e adattamento delle metaeuristiche alla missione.
  
-Infine, i risultati sperimentali verranno presentati alla fine di ogni scenario ed alla fine del capitolo per un'analisi comparative con risultati già presenti in letteratura.
+Infine, i risultati sperimentali verranno presentati alla fine di ogni scenario ed alla fine del capitolo per un'analisi comparativa con i risultati già presenti in letteratura.
+
+Nel caso dello scenario \textit{Illegal Dump} sono state adattate entrambe le strategie di esplorazione analizzate nei capitoli precedenti e la strategia di reclutamento di Sciadro 3.2, per dimostrare la possibilità di adattare strategie con diversi livelli di astrazione.
+Nel caso degli scenari \textit{Rural Mine} e \textit{Urban Mine}, invece, l'adattamento interessa solo la strategia di esplorazione di Sciadro 3.2, al fine di comparare le performance del simulatore, ed in particolare del modulo di ottimizzazione parametrica, con quelle ottenute in \cite{cimino2019adaptive}, nel quale l'ottimizzazione parametrica è implementata in Matlab.
+A tal proposito, nelle sezioni dedicate alla comparazione di questi approcci, indicheremo con \textit{Sciadro 3.2} il simulatore analizzato in questo documento e con \textit{Sciadro 3.1} l'ambiente di simulazione analizzato in \cite{cimino2019adaptive}.
 
 \section{Specifiche tecniche del drone}
 
@@ -103,10 +107,12 @@ I droni sono posizionati agli angoli e sono orientati verso il centro dell'area.
     \label{dump_scenario}
 \end{figure}
 
+\subsection{Adattamento dell'algoritmo di esplorazione di Sciadro 3.2} \label{paragrafo_esplorazione_sciadro}
+
 La configurazione dei parametri tecnologici utilizzata nella fase sperimentale dello scenario \textit{Illegal Dump} è illustrata di seguito e riassunta nella tabella \ref{tabella_parametri_dump}.
 
 \begin{itemize}
-    \item $algoritmo = Sciadro \; 3.1$: la missione che viene simulata attraverso questo algoritmo è di tipo esplorativo; par tale motivo viene utilizzata la strategia di Sciadro 3.1 con l'obiettivo principale di scoprire il $95 \%$ dei target distribuiti nell'area;
+    \item $algoritmo = Sciadro \; 3.2$: la missione che viene simulata attraverso questo algoritmo è di tipo esplorativo; par tale motivo viene utilizzata la strategia di Sciadro 3.1 con l'obiettivo principale di scoprire il $95 \%$ dei target distribuiti nell'area;
     \item $strategy = 3$: la logica di coordinamento comprende, in questo modo, stigmergia e flocking;
     \item $droneRadius = 0.2$: dalle specifiche tecniche del drone, il raggio è uguale a $0.3215 \; m = 0.1614 \; patch$;
     \item $speedMax = 8.5$: dalle specifiche tecniche del drone, la velocità massima in modalità professionale (che supporta il sistema di \textit{sense and avoid}) è uguale a $17 \; m/s = 8.534 \; patch/tick$;
@@ -152,7 +158,7 @@ La configurazione dei parametri tecnologici utilizzata nella fase sperimentale d
     \label{tabella_parametri_dump}
 \end{table}
 
-\subsection{Ottimizzazione parametrica con Differential Evolution}
+\subsubsection{Ottimizzazione parametrica con Differential Evolution}
 
 Come indicato nel paragrafo \ref{sezione_de}, per la fase di ottimizzazione parametrica attraverso l'algoritmo di \textit{Differential Evolution}, è necessario fornire, oltre che i parametri da ottimizzare, anche degli intervalli che definiscono l'iperspazio all'interno del quale si effettua la ricerca dei valori ottimali.
 Uno schema riassuntivo dei suddetti intervalli è presentato nella tabella \ref{tabella_intervalli_dump}
@@ -198,9 +204,9 @@ In particolare:
     \item \textit{Coefficiente di crossover:} $CR=0.5$
 \end{itemize}
 
-\subsection{Risultati sperimentali}
+\subsubsection{Risultati sperimentali}
 
-La strategia di \textit{Sciadro 3.1} è stata implementata in NetLogo, una piattaforma di simulazione per \textit{Swarm Intelligence}.
+La strategia di \textit{Sciadro 3.2} è stata implementata in NetLogo, una piattaforma di simulazione per \textit{Swarm Intelligence}.
 L'ottimizzazione parametrica, invece, è stata costruita utilizzando la libreria \textit{SciPy} di \textit{Python}.
 
 L'algoritmo di coordinamento dello sciame è stato testato sullo scenario \textit{Illegal Dump}, con la seguente strategia:
@@ -244,7 +250,7 @@ L'algoritmo di coordinamento dello sciame è stato testato sullo scenario \texti
             \end{tikzpicture}
         }
     \end{center}
-    \caption{Ottimizzazione parametrica con Differential Evolution, andamento della media tra le migliori fitness function delle 5 esecuzioni, al variare della generazione}
+    \caption{Ottimizzazione parametrica con Differential Evolution della strategia esplorativa di Sciadro 3.1, andamento della media tra le migliori fitness function delle 5 esecuzioni, al variare della generazione}
     \label{fitness_sciadro_dump}
 \end{figure}   
 
@@ -254,11 +260,234 @@ L'algoritmo di coordinamento dello sciame è stato testato sullo scenario \texti
     \begin{tabular}{|l|c|}
     \hline
     \textbf{Algorithm}              & \textbf{Performance (tick)}              \\ \hline
-    Sciadro 3.1 + Matlab DE         & $121.70 \; \pm \; 4.75$           \\ \hline
-    Sciadro 3.1 + SciPy DE          & $107.40 \; \pm \; 3.10$           \\ \hline
+    Esplorazione Sciadro 3.2        & $107.40 \; \pm \; 3.10$           \\ \hline
     \end{tabular}%
     
-    \caption{Analisi comparativa delle performance.}
+    \caption{Valutazione delle performance registrate dall'algoritmo di esplorazione di Sciadro 3.2.}
+    \label{tabella_performance_dump}
+\end{table}
+
+\subsection{Adattamento dell'algoritmo di esplorazione di ACO}
+
+La configurazione dei parametri tecnologici utilizzata per questa strategia è riassunta nella tabella \ref{tabella_parametri_dump_ACO}.
+Per un'analisi dettagliata su tali parametri vedere il paragrafo \ref{esplorazione_paper}.
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Parameter}                      & \textbf{Value}        \\ \hline
+    Wireless range                          & $100$                 \\ \hline
+    $\beta_{0}$                             & $0.5$                 \\ \hline
+    $\alpha$                                & $0.2$                 \\ \hline
+    Inertial weight                         & $0.729$               \\ \hline
+    Acceleration coefficient                & $2$                   \\ \hline
+    \end{tabular}%
+    
+    \caption{Configurazione parametrica della tecnologia utilizzata nella fase sperimentale dello scenario \textit{Illegal Dump}.}
+    \label{tabella_parametri_dump_ACO}
+\end{table}
+
+\subsubsection{Ottimizzazione parametrica con Differential Evolution}
+
+Come previsto dall'algoritmo di \textit{Differential Evolution}, è necessario impostare degli intervalli che tale algoritmo utilizzerà durante l'ottimizzazione.
+Sono stati definiti intervalli ampi per esplorare al meglio l'iperspazio definito dagli stessi.
+In questo modo, infatti, si da più libertà all'algoritmo di DE di spaziare nella ricerca del minimo globale.
+
+Lo schema riassuntivo degli intervalli utilizzato per la fase di ottimizzazione parametrica, nel caso della strategia di esplorazione \textit{ACO}, è presentato nella tabella \ref{tabella_intervalli_dump_ACO}
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Parameter}              & \textbf{Interval}         \\ \hline
+    repulsiveStartIntensity         & $[0,100]$                 \\ \hline
+    sensingRange                    & $[0,100]$                 \\ \hline
+    EvaporationRateTimeUnit         & $[0,1]$                   \\ \hline
+    $a_{1}$                         & $[0,2]$                   \\ \hline
+    $a_{2}$                         & $[0,2]$                   \\ \hline
+    $\phi$                          & $[0,2]$                   \\ \hline
+    $\eta$                          & $[0,2]$                   \\ \hline
+    $\lambda$                       & $[0,2]$                   \\ \hline
+    \end{tabular}%
+    
+    \caption{Configurazione degli intervalli per l'ottimizzazione parametrica, attraverso l'algoritmo di \textit{Differential Evolution}, utilizzata nella fase sperimentale dello scenario \textit{Illegal Dump}.}
+    \label{tabella_intervalli_dump_ACO}
+\end{table}
+
+Anche in questo caso, l'obiettivo è quello di effettuare un'analisi comparativa con le strategie utilizzate in precedenza.
+A tal fine sono stati utilizzati gli stessi valori sia per il tasso di mutazione $F$ che per strategia e coefficiente di crossover $CR$.
+In particolare:
+\begin{itemize}
+    \item \textit{Strategia di crossover:} DE/rand/1/bin;
+    \item \textit{Tasso di mutazione:} $F=0.7$;
+    \item \textit{Coefficiente di crossover:} $CR=0.5$
+\end{itemize}
+
+\subsubsection{Risultati sperimentali}
+
+L'algoritmo di coordinamento esplorativo dello sciame è stato testato sullo scenario \textit{Illegal Dump}, con la seguente strategia:
+\begin{itemize}
+    \item \textit{5 esecuzioni dell'algoritmo di Differential evolution;}
+    \item \textit{3 ripetizione della simulazione per ogni elemento della popolazione;}
+    \item \textit{Fitness function:} $f(x) = \# tick[95 \% \; target_{found}]$
+\end{itemize}
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+        \makebox[0.5\paperwidth]{
+            \begin{tikzpicture}
+                \begin{axis}[
+                    title={},
+                    xlabel={Generazione},
+                    ylabel={Tick},
+                    xmin=0, xmax=40,
+                    ymin=150, ymax=200,
+                    xtick={5,10,15,20,25,30,35,40},
+                    ytick={150,160,170,180,190,200},
+                    legend pos=north east,
+                    grid=major,
+                    %ymajorgrids=true,
+                    %xmajorgrids=true
+                    %grid style=dashed,
+                ]
+                
+                \addplot[
+                    color=black,
+                    line width=0.5mm,
+                    ]
+                    coordinates {
+                        (1,196.94)(2,187.48)(3,176.46)(4,173.94)(5,173.02)(6,172.48)(7,171.14)(8,169.42)(9,169.42)(10,168.88)(11,166.54)(12,166.48)(13,165.76)(14,165.7)(15,163.9)(16,163.7)(17,162.96)(18,162.22)(19,161.34)(20,161.34)(21,159.22)(22,159.22)(23,159.22)(24,159.22)(25,159.22)(26,155.08)(27,155)(28,155)(29,155)(30,155)(31,155)(32,155)(33,155)(34,153.54)(35,153.54)(36,153.54)(37,152.94)(38,152.94)(39,152.4)(40,150.86)
+                    };
+                
+                    \legend{\textit{average best fitness}}
+                
+                \end{axis}
+            \end{tikzpicture}
+        }
+    \end{center}
+    \caption{Ottimizzazione parametrica con Differential Evolution della strategia esplorativa ACO, andamento della media tra le migliori fitness function delle 5 esecuzioni, al variare della generazione}
+    \label{fitness_ACO_dump}
+\end{figure}   
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Algorithm}              & \textbf{Performance (tick)}              \\ \hline
+    Esplorazione ACO                & $161.34 \; \pm \; 6.21$           \\ \hline
+    \end{tabular}%
+    
+    \caption{Valutazione delle performance registrate dall'algoritmo di esplorazione ACO.}
+    \label{tabella_performance_dump_ACO}
+\end{table}
+
+
+\subsection{Adattamento dell'algoritmo di reclutamento di Sciadro 3.2}
+
+La strategia di reclutamento prevede una fase di lavorazione del target successiva alla scoperta dello stesso.
+In questo caso, infatti, perché un target diventi \textit{Executed} è necessario che un numero minimo di droni si avvicini al target per l'esecuzione del task previsto dalla missione.
+
+La configurazione dei parametri tecnologici utilizzata corrisponde con quella già introdotta nella sezione \ref{paragrafo_esplorazione_sciadro}.
+L'unica differenza con il suddetto approccio di esplorazione è il parametro relativo al numero di droni necessario alla lavorazione del target, indicato con \textit{requiredDrones}.
+Nelle fase sperimentale presentata di seguito $requiredDrones = 2$.
+
+\subsubsection{Ottimizzazione parametrica con Differential Evolution}
+
+Lo schema riassuntivo degli intervalli utilizzato nell'esecuzione dell'algoritmo di DE è presentato nella tabella \ref{tabella_intervalli_dump_sciadro32}
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Parameter}              & \textbf{Interval}                 \\ \hline
+    radiusTop                       & $[1,13]$                          \\ \hline
+    radiusDown                      & $[13,19]$                         \\ \hline
+    evapRate                        & $[0.01,0.1]$                      \\ \hline
+    olfaction                       & $[1,10]$                          \\ \hline
+    flockAngle                      & $[15,45]$                         \\ \hline
+    wiggleVar                       & $[5,15]$                          \\ \hline
+    radiusSeparate                  & $[6,16]$                          \\ \hline
+    maxSeparateTurn                 & $[30,45]$                         \\ \hline
+    radiusAlign                     & $[16,22]$                         \\ \hline
+    maxAlignTurn                    & $[30,45]$                         \\ \hline
+    radiusCohere                    & $[18,26]$                         \\ \hline
+maxCohereTurn                       & $[15,30]$                         \\ \hline
+    \end{tabular}%
+    
+    \caption{Configurazione degli intervalli per l'ottimizzazione parametrica, attraverso l'algoritmo di \textit{Differential Evolution}, utilizzata nella fase sperimentale dello scenario \textit{Illegal Dump}.}
+    \label{tabella_intervalli_dump_sciadro32}
+\end{table}
+
+Gli iperparametri $F$ e $CR$, per le fasi di mutazione e crossover dell'algoritmo di DE, e la strategia di crossover utilizzati sono illustrati di seguito:
+\begin{itemize}
+    \item \textit{Strategia di crossover:} DE/rand/1/bin;
+    \item \textit{Tasso di mutazione:} $F=0.7$;
+    \item \textit{Coefficiente di crossover:} $CR=0.5$
+\end{itemize}
+
+\subsubsection{Risultati sperimentali}
+
+L'algoritmo di reclutamento è stato testato sullo scenario \textit{Illegal Dump}, con la seguente strategia:
+\begin{itemize}
+    \item \textit{5 esecuzioni dell'algoritmo di Differential evolution;}
+    \item \textit{3 ripetizione della simulazione per ogni elemento della popolazione;}
+    \item \textit{Fitness function:} $f(x) = \# tick[95 \% \; target_{executed}]$
+\end{itemize}
+
+\begin{figure}[H] 
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
+    \begin{center}
+        \makebox[0.5\paperwidth]{
+            \begin{tikzpicture}
+                \begin{axis}[
+                    title={},
+                    xlabel={Generazione},
+                    ylabel={Tick},
+                    xmin=0, xmax=40,
+                    ymin=100, ymax=150,
+                    xtick={5,10,15,20,25,30,35,40},
+                    ytick={100,110,120,130,140,150},
+                    legend pos=north east,
+                    grid=major,
+                    %ymajorgrids=true,
+                    %xmajorgrids=true
+                    %grid style=dashed,
+                ]
+                
+                \addplot[
+                    color=black,
+                    line width=0.5mm,
+                    ]
+                    coordinates {
+                        (1,130.58)(2,123.38)(3,120.18)(4,116.92)(5,115.4)(6,114.46)(7,114.46)(8,114.38)(9,114.04)(10,114.04)(11,112.66)(12,112.66)(13,112.66)(14,112.66)(15,111.8)(16,111.8)(17,111.8)(18,109.92)(19,108.92)(20,108.92)(21,108.92)(22,108.92)(23,108.92)(24,108.92)(25,108.92)(26,108.92)(27,108.92)(28,108.92)(29,108.92)(30,108.92)(31,108.92)(32,108.92)(33,108.92)(34,108.92)(35,108.92)(36,107.4)(37,107.4)(38,107.4)(39,107.4)(40,107.4)
+                    };
+                
+                    \legend{\textit{average best fitness}}
+                
+                \end{axis}
+            \end{tikzpicture}
+        }
+    \end{center}
+    \caption{Ottimizzazione parametrica con Differential Evolution della strategia esplorativa di Sciadro 3.1, andamento della media tra le migliori fitness function delle 5 esecuzioni, al variare della generazione}
+    \label{fitness_sciadro_dump}
+\end{figure}   
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Algorithm}              & \textbf{Performance (tick)}              \\ \hline
+    Reclutamento Sciadro 3.2                     & $107.40 \; \pm \; 3.10$           \\ \hline
+    \end{tabular}%
+    
+    \caption{Valutazione delle performance registrate dall'algoritmo di reclutamento di Sciadro 3.2.}
     \label{tabella_performance_dump}
 \end{table}
 
@@ -421,8 +650,8 @@ L'algoritmo di coordinamento dello sciame è stato testato sullo scenario \texti
     \begin{tabular}{|l|c|}
     \hline
     \textbf{Algorithm}              & \textbf{Performance (tick)}       \\ \hline
-    Sciadro 3.1 + Matlab DE         & $125.96 \; \pm \; 8.90$           \\ \hline
-    Sciadro 3.1 + SciPy DE          & $122.20 \; \pm \; 3.89$           \\ \hline
+    Sciadro 3.1                     & $125.96 \; \pm \; 8.90$           \\ \hline
+    Sciadro 3.2                     & $122.20 \; \pm \; 3.89$           \\ \hline
     \end{tabular}%
     
     \caption{Analisi comparativa delle performance.}
@@ -588,10 +817,65 @@ L'algoritmo di coordinamento dello sciame è stato testato sullo scenario \texti
     \begin{tabular}{|l|c|}
     \hline
     \textbf{Algorithm}              & \textbf{Performance (tick)}       \\ \hline
-    Sciadro 3.1 + Matlab DE         & $152.38 \; \pm \; 5.25$           \\ \hline
-    Sciadro 3.1 + SciPy DE          & $160.34 \; \pm \; 5.42$           \\ \hline
+    Sciadro 3.1                     & $152.38 \; \pm \; 5.25$           \\ \hline
+    Sciadro 3.2                     & $160.34 \; \pm \; 5.42$           \\ \hline
     \end{tabular}%
     
     \caption{Analisi comparativa delle performance.}
     \label{tabella_performance_urbanMine}
+\end{table}
+
+\newpage
+\section{Analisi comparativa delle performance}
+
+In questa sezione verrà presentato uno schema riassuntivo dei risultati ottenuti nella fase sperimentale, al fine di poter effettuare una comparazione tra le performance registrate dalle varie strategie adottate.
+
+Per lo scenario \textit{Illegal Dump} sono state adattate entrambe le strategie di esplorazione introdotte nei capitoli precedenti e sono state confrontate con i risultati di altri studi presenti in letteratura.
+La tabella \ref{analisi_comparativa_esplorazione_dump} mostra i risultati degli esperimenti realizzati.
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Algorithm}              & \textbf{Performance (tick)}       \\ \hline
+    Sciadro 3.1                     & $121.70 \; \pm \; 4.75$           \\ \hline
+    Sciadro 3.2                     & $107.40 \; \pm \; 3.10$           \\ \hline
+    ACO                             & $161.34 \; \pm \; 6.21$           \\ \hline
+    \end{tabular}%
+    
+    \caption{Strategia di esplorazione dello scenario \textit{Illegal Dump}, analisi comparativa delle performance.}
+    \label{analisi_comparativa_esplorazione_dump}
+\end{table}
+
+Per gli scenari \textit{Rural Mine} e \textit{Urban Mine} si è scelto di adattare solo la strategia di esplorazione Sciadro 3.2, al fine di testarne le performance su scenari di diverse conformazioni.
+Anche in questo caso si è scelto di valutare le performance del simulatore attraverso un confronto con le performance registrate, sugli stessi scenari, da Sciadro 3.1.
+Le tabelle \ref{analisi_comparativa_esplorazione_ruralMine} e \ref{analisi_comparativa_esplorazione_urbanMine} mostrano i risultati degli esperimenti realizzati.
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Algorithm}              & \textbf{Performance (tick)}       \\ \hline
+    Sciadro 3.1                     & $121.70 \; \pm \; 4.75$           \\ \hline
+    Sciadro 3.2                     & $107.40 \; \pm \; 3.10$           \\ \hline
+    \end{tabular}%
+    
+    \caption{Strategia di esplorazione dello scenario \textit{Rural Mine}, analisi comparativa delle performance.}
+    \label{analisi_comparativa_esplorazione_ruralMine}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Algorithm}              & \textbf{Performance (tick)}       \\ \hline
+    Sciadro 3.1                     & $121.70 \; \pm \; 4.75$           \\ \hline
+    Sciadro 3.2                     & $107.40 \; \pm \; 3.10$           \\ \hline
+    \end{tabular}%
+    
+    \caption{Strategia di esplorazione dello scenario \textit{Urban Mine}, analisi comparativa delle performance.}
+    \label{analisi_comparativa_esplorazione_urbanMine}
 \end{table}
