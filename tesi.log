@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.7.11)  13 JUL 2019 15:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.7.11)  13 JUL 2019 19:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -734,7 +734,10 @@ File: lstlang1.sty 2019/02/27 1.8b listings language file
 LaTeX Warning: Label `tabella_obstacle_avoidance' multiply defined.
 
 
-LaTeX Warning: Label `fitness_sciadro_dump' multiply defined.
+LaTeX Warning: Label `tabella_performance_dump' multiply defined.
+
+
+LaTeX Warning: Label `fitness_sciadro32_dump' multiply defined.
 
 
 LaTeX Warning: Label `tabella_performance_dump' multiply defined.
@@ -1138,152 +1141,152 @@ Package pdftex.def Info: img/modello_parametrico_drone.png  used on input line 2
 <img/classe_drone.png, id=117, 162.6075pt x 473.77pt>
 File: img/classe_drone.png Graphic file (type png)
 <use img/classe_drone.png>
-Package pdftex.def Info: img/classe_drone.png  used on input line 239.
+Package pdftex.def Info: img/classe_drone.png  used on input line 240.
 (pdftex.def)             Requested size: 122.85712pt x 357.96526pt.
  [23]
 <img/aree_flocking.png, id=121, 450.18187pt x 318.43968pt>
 File: img/aree_flocking.png Graphic file (type png)
 <use img/aree_flocking.png>
-Package pdftex.def Info: img/aree_flocking.png  used on input line 255.
+Package pdftex.def Info: img/aree_flocking.png  used on input line 256.
 (pdftex.def)             Requested size: 245.71425pt x 173.811pt.
  [24 </home/domi/tesi/stesura/latex/tesimagistrale/img/classe_drone.png>]
 <img/separate.png, id=126, 327.47343pt x 191.9672pt>
 File: img/separate.png Graphic file (type png)
 <use img/separate.png>
-Package pdftex.def Info: img/separate.png  used on input line 288.
+Package pdftex.def Info: img/separate.png  used on input line 290.
 (pdftex.def)             Requested size: 245.71425pt x 144.03947pt.
  [25 </home/domi/tesi/stesura/latex/tesimagistrale/img/aree_flocking.png (PNG copy)>]
 <img/align.png, id=130, 407.27156pt x 265.74281pt>
 File: img/align.png Graphic file (type png)
 <use img/align.png>
-Package pdftex.def Info: img/align.png  used on input line 300.
+Package pdftex.def Info: img/align.png  used on input line 302.
 (pdftex.def)             Requested size: 245.71425pt x 160.32683pt.
 <img/cohere.png, id=131, 383.93437pt x 266.49562pt>
 File: img/cohere.png Graphic file (type png)
 <use img/cohere.png>
-Package pdftex.def Info: img/cohere.png  used on input line 312.
+Package pdftex.def Info: img/cohere.png  used on input line 314.
 (pdftex.def)             Requested size: 245.71425pt x 170.55661pt.
  [26 </home/domi/tesi/stesura/latex/tesimagistrale/img/separate.png (PNG copy)> </home/domi/tesi/stesura/latex/tesimagistrale/img/align.png (PNG copy)>]
 <img/activity_flocking.png, id=135, 639.38875pt x 372.39125pt>
 File: img/activity_flocking.png Graphic file (type png)
 <use img/activity_flocking.png>
-Package pdftex.def Info: img/activity_flocking.png  used on input line 331.
+Package pdftex.def Info: img/activity_flocking.png  used on input line 333.
 (pdftex.def)             Requested size: 307.14749pt x 178.88782pt.
  [27 </home/domi/tesi/stesura/latex/tesimagistrale/img/cohere.png (PNG copy)>]
 <img/classe_flocking.png, id=140, 202.7575pt x 275.0275pt>
 File: img/classe_flocking.png Graphic file (type png)
 <use img/classe_flocking.png>
-Package pdftex.def Info: img/classe_flocking.png  used on input line 342.
+Package pdftex.def Info: img/classe_flocking.png  used on input line 344.
 (pdftex.def)             Requested size: 122.85712pt x 166.65024pt.
  [28 </home/domi/tesi/stesura/latex/tesimagistrale/img/activity_flocking.png> </home/domi/tesi/stesura/latex/tesimagistrale/img/classe_flocking.png>]
 <img/obstacle_avoidance.png, id=146, 537.50812pt x 356.0803pt>
 File: img/obstacle_avoidance.png Graphic file (type png)
 <use img/obstacle_avoidance.png>
-Package pdftex.def Info: img/obstacle_avoidance.png  used on input line 390.
+Package pdftex.def Info: img/obstacle_avoidance.png  used on input line 393.
 (pdftex.def)             Requested size: 245.71425pt x 162.77745pt.
  [29] [30 </home/domi/tesi/stesura/latex/tesimagistrale/img/obstacle_avoidance.png (PNG copy)>]
 <img/activity_obstacle.png, id=154, 457.71pt x 603.25375pt>
 File: img/activity_obstacle.png Graphic file (type png)
 <use img/activity_obstacle.png>
-Package pdftex.def Info: img/activity_obstacle.png  used on input line 414.
+Package pdftex.def Info: img/activity_obstacle.png  used on input line 417.
 (pdftex.def)             Requested size: 245.71425pt x 323.84676pt.
 <img/classe_obstacle.png, id=155, 202.7575pt x 242.9075pt>
 File: img/classe_obstacle.png Graphic file (type png)
 <use img/classe_obstacle.png>
-Package pdftex.def Info: img/classe_obstacle.png  used on input line 426.
+Package pdftex.def Info: img/classe_obstacle.png  used on input line 429.
 (pdftex.def)             Requested size: 122.85712pt x 147.18742pt.
  [31 </home/domi/tesi/stesura/latex/tesimagistrale/img/activity_obstacle.png>] [32 </home/domi/tesi/stesura/latex/tesimagistrale/img/classe_obstacle.png>]
 <img/overlapping_a.png, id=164, 332.74312pt x 344.78813pt>
 File: img/overlapping_a.png Graphic file (type png)
 <use img/overlapping_a.png>
-Package pdftex.def Info: img/overlapping_a.png  used on input line 467.
+Package pdftex.def Info: img/overlapping_a.png  used on input line 471.
 (pdftex.def)             Requested size: 122.85712pt x 127.30128pt.
 <img/overlapping_b.png, id=165, 316.93407pt x 274.77657pt>
 File: img/overlapping_b.png Graphic file (type png)
 <use img/overlapping_b.png>
-Package pdftex.def Info: img/overlapping_b.png  used on input line 478.
+Package pdftex.def Info: img/overlapping_b.png  used on input line 482.
 (pdftex.def)             Requested size: 122.85712pt x 106.51254pt.
  [33 </home/domi/tesi/stesura/latex/tesimagistrale/img/overlapping_a.png (PNG copy)>]
 <img/overlapping_c.png, id=170, 255.95625pt x 274.02374pt>
 File: img/overlapping_c.png Graphic file (type png)
 <use img/overlapping_c.png>
-Package pdftex.def Info: img/overlapping_c.png  used on input line 488.
+Package pdftex.def Info: img/overlapping_c.png  used on input line 492.
 (pdftex.def)             Requested size: 122.85712pt x 131.52989pt.
 <img/activity_scheduling.png, id=171, 384.43625pt x 452.69125pt>
 File: img/activity_scheduling.png Graphic file (type png)
 <use img/activity_scheduling.png>
-Package pdftex.def Info: img/activity_scheduling.png  used on input line 502.
+Package pdftex.def Info: img/activity_scheduling.png  used on input line 506.
 (pdftex.def)             Requested size: 184.29036pt x 217.01303pt.
  [34 </home/domi/tesi/stesura/latex/tesimagistrale/img/overlapping_b.png (PNG copy)> </home/domi/tesi/stesura/latex/tesimagistrale/img/overlapping_c.png (PNG copy)>]
 <img/classe_overlapping.png, id=175, 202.7575pt x 224.84pt>
 File: img/classe_overlapping.png Graphic file (type png)
 <use img/classe_overlapping.png>
-Package pdftex.def Info: img/classe_overlapping.png  used on input line 514.
+Package pdftex.def Info: img/classe_overlapping.png  used on input line 518.
 (pdftex.def)             Requested size: 122.85712pt x 136.23961pt.
  [35 </home/domi/tesi/stesura/latex/tesimagistrale/img/activity_scheduling.png> </home/domi/tesi/stesura/latex/tesimagistrale/img/classe_overlapping.png>]
 <img/modello3d_feromone.png, id=181, 659.46375pt x 333.49594pt>
 File: img/modello3d_feromone.png Graphic file (type png)
 <use img/modello3d_feromone.png>
-Package pdftex.def Info: img/modello3d_feromone.png  used on input line 540.
+Package pdftex.def Info: img/modello3d_feromone.png  used on input line 544.
 (pdftex.def)             Requested size: 245.71425pt x 124.25664pt.
 <img/modello2d_feromone.png, id=182, 542.77782pt x 357.58594pt>
 File: img/modello2d_feromone.png Graphic file (type png)
 <use img/modello2d_feromone.png>
-Package pdftex.def Info: img/modello2d_feromone.png  used on input line 549.
+Package pdftex.def Info: img/modello2d_feromone.png  used on input line 553.
 (pdftex.def)             Requested size: 245.71425pt x 161.87794pt.
  [36 </home/domi/tesi/stesura/latex/tesimagistrale/img/modello3d_feromone.png (PNG copy)>]
 <img/evaporazione.png, id=186, 697.10437pt x 345.54094pt>
 File: img/evaporazione.png Graphic file (type png)
 <use img/evaporazione.png>
-Package pdftex.def Info: img/evaporazione.png  used on input line 596.
+Package pdftex.def Info: img/evaporazione.png  used on input line 601.
 (pdftex.def)             Requested size: 307.14749pt x 152.2441pt.
  [37 </home/domi/tesi/stesura/latex/tesimagistrale/img/modello2d_feromone.png (PNG copy)>] [38 </home/domi/tesi/stesura/latex/tesimagistrale/img/evaporazione.png (PNG copy)>]
 <img/activity_assuefazione.png, id=194, 258.9675pt x 359.3425pt>
 File: img/activity_assuefazione.png Graphic file (type png)
 <use img/activity_assuefazione.png>
-Package pdftex.def Info: img/activity_assuefazione.png  used on input line 648.
+Package pdftex.def Info: img/activity_assuefazione.png  used on input line 653.
 (pdftex.def)             Requested size: 122.85712pt x 170.47562pt.
  [39]
 <img/classe_pheromone.png, id=199, 162.6075pt x 214.8025pt>
 File: img/classe_pheromone.png Graphic file (type png)
 <use img/classe_pheromone.png>
-Package pdftex.def Info: img/classe_pheromone.png  used on input line 660.
+Package pdftex.def Info: img/classe_pheromone.png  used on input line 665.
 (pdftex.def)             Requested size: 122.85712pt x 162.2978pt.
  [40 </home/domi/tesi/stesura/latex/tesimagistrale/img/activity_assuefazione.png> </home/domi/tesi/stesura/latex/tesimagistrale/img/classe_pheromone.png>]
 <img/rilevamento_multiplo_target.png, id=205, 438.8897pt x 354.57469pt>
 File: img/rilevamento_multiplo_target.png Graphic file (type png)
 <use img/rilevamento_multiplo_target.png>
-Package pdftex.def Info: img/rilevamento_multiplo_target.png  used on input line 682.
+Package pdftex.def Info: img/rilevamento_multiplo_target.png  used on input line 687.
 (pdftex.def)             Requested size: 245.71425pt x 198.51178pt.
  [41 </home/domi/tesi/stesura/latex/tesimagistrale/img/rilevamento_multiplo_target.png (PNG copy)>] [42]
 <img/diffusione_feromone.png, id=217, 551.05875pt x 499.8675pt>
 File: img/diffusione_feromone.png Graphic file (type png)
 <use img/diffusione_feromone.png>
-Package pdftex.def Info: img/diffusione_feromone.png  used on input line 758.
+Package pdftex.def Info: img/diffusione_feromone.png  used on input line 763.
 (pdftex.def)             Requested size: 245.71425pt x 222.88654pt.
  [43] [44 </home/domi/tesi/stesura/latex/tesimagistrale/img/diffusione_feromone.png (PNG copy)>]
 <img/attivita_exploration.png, id=224, 846.16125pt x 1127.21124pt>
 File: img/attivita_exploration.png Graphic file (type png)
 <use img/attivita_exploration.png>
-Package pdftex.def Info: img/attivita_exploration.png  used on input line 796.
+Package pdftex.def Info: img/attivita_exploration.png  used on input line 801.
 (pdftex.def)             Requested size: 307.14749pt x 409.1669pt.
  [45] [46 </home/domi/tesi/stesura/latex/tesimagistrale/img/attivita_exploration.png>] [47] [48]
 <img/attivita_fts.png, id=239, 981.6675pt x 1287.81125pt>
 File: img/attivita_fts.png Graphic file (type png)
 <use img/attivita_fts.png>
-Package pdftex.def Info: img/attivita_fts.png  used on input line 882.
+Package pdftex.def Info: img/attivita_fts.png  used on input line 887.
 (pdftex.def)             Requested size: 307.14749pt x 402.93129pt.
  [49] [50 </home/domi/tesi/stesura/latex/tesimagistrale/img/attivita_fts.png>]
 <img/attivita_pso.png, id=247, 981.6675pt x 1287.81125pt>
 File: img/attivita_pso.png Graphic file (type png)
 <use img/attivita_pso.png>
-Package pdftex.def Info: img/attivita_pso.png  used on input line 926.
+Package pdftex.def Info: img/attivita_pso.png  used on input line 931.
 (pdftex.def)             Requested size: 307.14749pt x 402.93129pt.
  [51] [52 </home/domi/tesi/stesura/latex/tesimagistrale/img/attivita_pso.png>]
 <img/attivita_abc.png, id=256, 981.6675pt x 1287.81125pt>
 File: img/attivita_abc.png Graphic file (type png)
 <use img/attivita_abc.png>
-Package pdftex.def Info: img/attivita_abc.png  used on input line 984.
+Package pdftex.def Info: img/attivita_abc.png  used on input line 989.
 (pdftex.def)             Requested size: 307.14749pt x 402.93129pt.
 ) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/genetico.tex [53] [54 </home/domi/tesi/stesura/latex/tesimagistrale/img/attivita_abc.png>]
 Capitolo 5.
@@ -1303,79 +1306,67 @@ Capitolo 6.
 <img/dji_matrice_sensore.jpg, id=286, 459.7175pt x 459.7175pt>
 File: img/dji_matrice_sensore.jpg Graphic file (type jpg)
 <use img/dji_matrice_sensore.jpg>
-Package pdftex.def Info: img/dji_matrice_sensore.jpg  used on input line 28.
+Package pdftex.def Info: img/dji_matrice_sensore.jpg  used on input line 30.
 (pdftex.def)             Requested size: 245.71425pt x 245.71844pt.
- [61 </home/domi/tesi/stesura/latex/tesimagistrale/img/dji_matrice_sensore.jpg>] [62]
+ [61] [62 </home/domi/tesi/stesura/latex/tesimagistrale/img/dji_matrice_sensore.jpg>]
 <img/dump_map.png, id=293, 220.57407pt x 219.06844pt>
 File: img/dump_map.png Graphic file (type png)
 <use img/dump_map.png>
-Package pdftex.def Info: img/dump_map.png  used on input line 95.
+Package pdftex.def Info: img/dump_map.png  used on input line 97.
 (pdftex.def)             Requested size: 184.29036pt x 183.04015pt.
-<img/dump_scenario.png, id=294, 124.3044pt x 124.3044pt>
+ [63]
+<img/dump_scenario.png, id=298, 124.3044pt x 124.3044pt>
 File: img/dump_scenario.png Graphic file (type png)
 <use img/dump_scenario.png>
-Package pdftex.def Info: img/dump_scenario.png  used on input line 104.
+Package pdftex.def Info: img/dump_scenario.png  used on input line 106.
 (pdftex.def)             Requested size: 184.29036pt x 184.29953pt.
- [63 </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_map.png (PNG copy)>] [64 </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_scenario.png>] [65] [66] [67] [68] [69] [70] [71] [72] [73]
-<img/ruralMine_map.png, id=331, 386.72139pt x 368.26947pt>
+ [64 </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_map.png (PNG copy)> </home/domi/tesi/stesura/latex/tesimagistrale/img/dump_scenario.png>] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77]
+<img/ruralMine_map.png, id=344, 386.72139pt x 368.26947pt>
 File: img/ruralMine_map.png Graphic file (type png)
 <use img/ruralMine_map.png>
-Package pdftex.def Info: img/ruralMine_map.png  used on input line 520.
+Package pdftex.def Info: img/ruralMine_map.png  used on input line 643.
 (pdftex.def)             Requested size: 184.29036pt x 175.49736pt.
- [74]
-<img/ruralMine_scenario.png, id=335, 97.893pt x 97.893pt>
+<img/ruralMine_scenario.png, id=345, 97.893pt x 97.893pt>
 File: img/ruralMine_scenario.png Graphic file (type png)
 <use img/ruralMine_scenario.png>
-Package pdftex.def Info: img/ruralMine_scenario.png  used on input line 529.
+Package pdftex.def Info: img/ruralMine_scenario.png  used on input line 652.
 (pdftex.def)             Requested size: 184.29036pt x 184.29428pt.
- [75 </home/domi/tesi/stesura/latex/tesimagistrale/img/ruralMine_map.png> </home/domi/tesi/stesura/latex/tesimagistrale/img/ruralMine_scenario.png>] [76] [77] [78]
-<img/urbanMine_map.png, id=351, 127.02pt x 127.02pt>
+ [78 </home/domi/tesi/stesura/latex/tesimagistrale/img/ruralMine_map.png>] [79 </home/domi/tesi/stesura/latex/tesimagistrale/img/ruralMine_scenario.png>] [80] [81] [82]
+<img/urbanMine_map.png, id=364, 127.02pt x 127.02pt>
 File: img/urbanMine_map.png Graphic file (type png)
 <use img/urbanMine_map.png>
-Package pdftex.def Info: img/urbanMine_map.png  used on input line 687.
+Package pdftex.def Info: img/urbanMine_map.png  used on input line 811.
 (pdftex.def)             Requested size: 184.29036pt x 184.29443pt.
-<img/urbanMine_scenario.png, id=352, 97.893pt x 97.893pt>
+<img/urbanMine_scenario.png, id=365, 97.893pt x 97.893pt>
 File: img/urbanMine_scenario.png Graphic file (type png)
 <use img/urbanMine_scenario.png>
-Package pdftex.def Info: img/urbanMine_scenario.png  used on input line 696.
+Package pdftex.def Info: img/urbanMine_scenario.png  used on input line 820.
 (pdftex.def)             Requested size: 184.29036pt x 184.29428pt.
- [79 </home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_map.png>] [80 </home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_scenario.png>] [81] [82] [83]
-Underfull \hbox (badness 1629) in paragraph at lines 847--847
-[]\OT1/cmr/m/n/12 Tabella 6.17: |Stra-te-gia di esplo-ra-zio-ne del-lo sce-na-rio \OT1/cmr/m/it/12 Il-le-gal Dump\OT1/cmr/m/n/12 , ana-li-si
- []
+ [83 </home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_map.png>] [84 </home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_scenario.png>] [85] [86] [87] [88] [89]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [90] [91
 
-
-Underfull \hbox (badness 2035) in paragraph at lines 879--879
-[]\OT1/cmr/m/n/12 Tabella 6.19: |Stra-te-gia di esplo-ra-zio-ne del-lo sce-na-rio \OT1/cmr/m/it/12 Ur-ban Mi-ne\OT1/cmr/m/n/12 , ana-li-si
- []
-
-) (/home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex [84]) (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl [85
-
-] [86
-
-] [87]
+] [92]
 Underfull \hbox (badness 4686) in paragraph at lines 133--135
 []\OT1/cmr/m/n/12 X.-S. Yang, ``Fi-re-fly al-go-ri-thm, sto-cha-stic te-st func-tions and de-si-gn
  []
 
-[88]) [89] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux)
+[93]) [94] (/home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 40275 strings out of 492623
- 933411 string characters out of 6135669
+ 40288 strings out of 492623
+ 933601 string characters out of 6135669
  1211179 words of memory out of 5000000
- 43576 multiletter control sequences out of 15000+600000
+ 43592 multiletter control sequences out of 15000+600000
  544399 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,22n,96p,1912b,2275s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (93 pages, 2131580 bytes).
+Output written on /home/domi/tesi/stesura/latex/tesimagistrale/tesi.pdf (98 pages, 2145702 bytes).
 PDF statistics:
- 449 PDF objects out of 1000 (max. 8388607)
- 270 compressed objects within 3 object streams
+ 465 PDF objects out of 1000 (max. 8388607)
+ 281 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  218 words of extra memory for PDF output out of 10000 (max. 10000000)
 

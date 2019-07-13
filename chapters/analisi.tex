@@ -8,7 +8,7 @@ Di seguito è possibile osserverne una rapida descrizione:
     \item \textit{UAV:} entità incaricata di completare il task prefissato dalla missione;
     \item \textit{Target:} entità che rappresenta l'obiettivo della missione;
     \item \textit{Ostacolo:} entità che dev'essere rilevata dallo sciame di UAV;
-    \item \textit{Algoritmo bioispirato:} strategia integrata nell'ambiente di simulazione contenente i vari meccanismi di coordinamento dello sciame.
+    \item \textit{Algoritmo bio-ispirato:} strategia integrata nell'ambiente di simulazione contenente i vari meccanismi di coordinamento dello sciame.
 
 \end{itemize}
 
@@ -75,10 +75,12 @@ Il numero, la forma e la dimensione degli ostacoli dipendono dalla quota di volo
 In questa sezione verranno esaminati alcuni punti chiave fondamentali che caratterizzano tipicamente gli algoritmi bioispirati, oggetto di comparazione all'interno dell'ambiente di simulazione.
 Per semplificare la comprensione di tali meccanismi, verranno analizzati alcuni algoritmi presenti in letteratura che sono stati integrati all'interno del simulatore per un'analisi comparativa delle performance. 
 
-\subsection{SciaDro}
+\subsection{Sciadro 3.2}
 
-Tale algoritmo è stato inizialmente integrato all'interno del simulatore Sciadro 3.1, pubblicamente rilasciato da Cimino et al. \cite{cimino2019adaptive}.
-Nella sezione successiva verranno analizzati i meccanismi fondamentali di questa strategia:
+La strategia integrata all'interno del simulatore Sciadro 3.2 è stata inizialmente adottata dal simulatore Sciadro 3.1, pubblicamente rilasciato da Cimino et al. \cite{cimino2019adaptive}.
+Nella sezione successiva verranno analizzati i meccanismi fondamentali di questa strategia, mentre nei capitoli successivi approfondiremo le novità introdotte nel nuovo ambiente.
+
+Le metaeuristiche analizzate sono:
 
 \begin{itemize}
     \item \textit{Collision avoidance};
@@ -138,6 +140,8 @@ Nel caso specifico, un drone può assumere uno dei seguenti stati, che verranno 
     \item \textit{Waiting};
     \item \textit{Execution};
 \end{itemize}
+Se la missione prevede una lavorazione del target, infatti, è necessario che un numero minimo di droni raggiunga una posizione relativamente vicina all'obiettivo.
+In questo caso, parliamo di \textit{esecuzione del target}.
 
 \subsection{Algortmi PAPER}
 

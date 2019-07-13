@@ -114,7 +114,7 @@ Lo stato di un target è identificato dalla variabile \textbf{target.state}, che
     \item \textit{Executed}.
 \end{itemize}
 
-Perché un target venga lavorato, dev'essere raggiunto da un numero minimo di agenti: questo parametro può essere configurato prima dell'avvio della simulazione e dipende dalla singola missione.
+Perché un target venga eseguito, dev'essere raggiunto da un numero minimo di agenti: questo parametro può essere configurato prima dell'avvio della simulazione e dipende dalla singola missione.
 
 \begin{figure}[H] 
     \captionsetup{justification=centering, margin=2cm, font=footnotesize}
@@ -151,7 +151,7 @@ Alcune caratteristiche degli elementi presenti nel simulatore, come la struttura
 Nella sezione successiva ci soffermeremo sulle metaeuristiche della strategia \textit{Sciadro}.
 Successivamente, invece, prenderemo in esame gli elementi utilizzati nel gruppo di algoritmi analizzati precedentemente: \textit{FTS}, \textit{PSO} e \textit{ABC}.
 
-\subsection{SciaDro}
+\subsection{Sciadro 3.2}
 
 In questa sezione entreremo nel dettaglio della progettazione dei vari elementi introdotti nel capitolo \ref{analisi} (\textit{Analisi}), quali il drone ed i vari meccanismi di flocking, collision avoidance e stigmergia.
 
@@ -208,6 +208,7 @@ Per le ragioni sopra menzionate, tutti questi parametri devono essere fissati pr
 La seguente tabella riassume i parametri strutturali che caratterizzano il drone.
 \begin{table}[H]
     \centering
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
     \begin{tabular}{|l|l|c|}
     \hline
     \textbf{Parametro}       & \textbf{Definizione}       & \textbf{Unità di misura}   \\ \hline
@@ -261,6 +262,7 @@ Le tre aree di prossimità hanno in comune l’angolo \textbf{drone.flocking.ang
 I parametri illustrati nella figura \ref{aree_flocking}, sono analizzati in dettaglio nella seguente tabella.
 \begin{table}[H]
     \centering
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
     \resizebox{\textwidth}{!}{%
     \begin{tabular}{|l|l|c|}
     \hline
@@ -367,6 +369,7 @@ Durante la simulazione, questi parametri influenzano il comportamento del drone,
 
 \begin{table}[H]
     \centering
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
     \resizebox{\textwidth}{!}{%
     \begin{tabular}{|l|l|c|}
     \hline
@@ -440,6 +443,7 @@ La regione conica schedulata da un drone per evitare le collisioni è descritta 
 
 \begin{table}[H]
     \centering
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
     \begin{tabular}{|l|l|c|}
     \hline
     \textbf{Parametro}              & \textbf{Definizione}                      & \textbf{Unità di misura}      \\ \hline
@@ -554,6 +558,7 @@ Le funzioni eseguite sulla traccia feromonica sono:
 
 \begin{table}[H]
     \centering
+    \captionsetup{justification=centering, margin=2cm, font=footnotesize}
     \resizebox{\textwidth}{!}{%
     \begin{tabular}{|l|l|c|}
     \hline
