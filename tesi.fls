@@ -346,9 +346,11 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
-INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/abstract.tex
-INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/abstract.tex
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/dedica.tex
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/dedica.tex
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/abstract.tex
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/abstract.tex
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/tesi.toc
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/tesi.toc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
@@ -498,6 +500,8 @@ INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_map.png
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_scenario.png
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_scenario.png
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/img/urbanMine_scenario.png
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex
+INPUT /home/domi/tesi/stesura/latex/tesimagistrale/chapters/ringraziamenti.tex
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/tesi.bbl
 INPUT /home/domi/tesi/stesura/latex/tesimagistrale/tesi.aux

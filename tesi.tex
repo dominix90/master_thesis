@@ -30,25 +30,30 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 \begin{document}
-\pagenumbering{Roman}
+
+
 
 \input{frontespizio.tex}
+\input{dedica.tex}
 
+\newgeometry{left=3.5cm}
+\pagenumbering{Roman}
 \input{chapters/abstract.tex}
+\restoregeometry
 
-\newgeometry{left=3.5cm,top=2cm}
+\newgeometry{left=3.5cm,top=2cm,bottom=2cm}
 \tableofcontents
 \restoregeometry
 
+\newgeometry{left=3.5cm}
 \pagenumbering{arabic}
-
 \input{chapters/introduzione.tex}
 \input{chapters/statoarte.tex}
 \input{chapters/analisi.tex}
 \input{chapters/progettazione.tex}
 \input{chapters/genetico.tex}
 \input{chapters/esperimenti.tex}
-%\input{chapters/ringraziamenti.tex}
+\input{chapters/ringraziamenti.tex}
 
 \bibliography{bibliography} 
 \bibliographystyle{ieeetr}

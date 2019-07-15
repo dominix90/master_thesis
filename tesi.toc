@@ -39,7 +39,7 @@
 \contentsline {paragraph}{Meccanismo di coordinamento basato su stigmergia:}{39}% 
 \contentsline {paragraph}{Assuefazione olfattiva:}{39}% 
 \contentsline {subsubsection}{\numberline {4.5.1.5}Progettazione del meccanismo di rilevamento ed esecuzione dei target}{41}% 
-\contentsline {subsection}{\numberline {4.5.2}Algortmi PAPER}{42}% 
+\contentsline {subsection}{\numberline {4.5.2}Algoritmi di esplorazione e recruitment}{42}% 
 \contentsline {subsubsection}{\numberline {4.5.2.1}Strategia di esplorazione}{42}% 
 \contentsline {paragraph}{Diffusione del feromone:}{42}% 
 \contentsline {paragraph}{Selezione cella successiva:}{44}% 
@@ -58,23 +58,23 @@
 \contentsline {chapter}{\numberline {6}Implementazione e prove sperimentali}{60}% 
 \contentsline {section}{\numberline {6.1}Specifiche tecniche del drone}{61}% 
 \contentsline {section}{\numberline {6.2}Scenario \textit {Illegal Dump}}{63}% 
-\contentsline {subsection}{\numberline {6.2.1}Adattamento dell'algoritmo di esplorazione: SFE-RR1}{64}% 
-\contentsline {subsubsection}{\numberline {6.2.1.1}Ottimizzazione parametrica con Differential Evolution}{66}% 
+\contentsline {subsection}{\numberline {6.2.1}Adattamento dell'algoritmo di esplorazione: SFE-RR1}{65}% 
+\contentsline {subsubsection}{\numberline {6.2.1.1}Ottimizzazione parametrica con Differential Evolution}{67}% 
 \contentsline {subsubsection}{\numberline {6.2.1.2}Risultati sperimentali}{68}% 
-\contentsline {subsection}{\numberline {6.2.2}Adattamento dell'algoritmo di esplorazione: ACO}{69}% 
-\contentsline {subsubsection}{\numberline {6.2.2.1}Ottimizzazione parametrica con Differential Evolution}{69}% 
-\contentsline {subsubsection}{\numberline {6.2.2.2}Risultati sperimentali}{70}% 
-\contentsline {subsection}{\numberline {6.2.3}Adattamento dell'algoritmo di reclutamento: \\SFE-RR}{71}% 
-\contentsline {subsubsection}{\numberline {6.2.3.1}Ottimizzazione parametrica con Differential Evolution}{72}% 
-\contentsline {subsubsection}{\numberline {6.2.3.2}Risultati sperimentali}{73}% 
-\contentsline {subsection}{\numberline {6.2.4}Adattamento dell'algoritmo di reclutamento: \\ACO-ABC-RR-E}{74}% 
-\contentsline {subsubsection}{\numberline {6.2.4.1}Ottimizzazione parametrica con Differential Evolution}{74}% 
-\contentsline {subsubsection}{\numberline {6.2.4.2}Risultati sperimentali}{75}% 
-\contentsline {section}{\numberline {6.3}Scenario \textit {Rural Mine}}{76}% 
-\contentsline {subsection}{\numberline {6.3.1}Ottimizzazione parametrica con Differential Evolution}{79}% 
-\contentsline {subsection}{\numberline {6.3.2}Risultati sperimentali}{80}% 
-\contentsline {section}{\numberline {6.4}Scenario \textit {Urban Mine}}{81}% 
-\contentsline {subsection}{\numberline {6.4.1}Ottimizzazione parametrica con Differential Evolution}{84}% 
-\contentsline {subsection}{\numberline {6.4.2}Risultati sperimentali}{85}% 
-\contentsline {section}{\numberline {6.5}Analisi comparativa delle performance}{87}% 
-\contentsline {section}{\numberline {6.6}Conclusioni}{90}% 
+\contentsline {subsection}{\numberline {6.2.2}Adattamento dell'algoritmo di esplorazione: ACO-E}{69}% 
+\contentsline {subsubsection}{\numberline {6.2.2.1}Ottimizzazione parametrica con Differential Evolution}{70}% 
+\contentsline {subsubsection}{\numberline {6.2.2.2}Risultati sperimentali}{71}% 
+\contentsline {subsection}{\numberline {6.2.3}Adattamento dell'algoritmo di reclutamento: \\SFE-RR}{72}% 
+\contentsline {subsubsection}{\numberline {6.2.3.1}Ottimizzazione parametrica con Differential Evolution}{73}% 
+\contentsline {subsubsection}{\numberline {6.2.3.2}Risultati sperimentali}{74}% 
+\contentsline {subsection}{\numberline {6.2.4}Adattamento dell'algoritmo di reclutamento: \\ACO-ABC-RR-E}{75}% 
+\contentsline {subsubsection}{\numberline {6.2.4.1}Ottimizzazione parametrica con Differential Evolution}{75}% 
+\contentsline {subsubsection}{\numberline {6.2.4.2}Risultati sperimentali}{76}% 
+\contentsline {section}{\numberline {6.3}Scenario \textit {Rural Mine}}{77}% 
+\contentsline {subsection}{\numberline {6.3.1}Ottimizzazione parametrica con Differential Evolution}{80}% 
+\contentsline {subsection}{\numberline {6.3.2}Risultati sperimentali}{81}% 
+\contentsline {section}{\numberline {6.4}Scenario \textit {Urban Mine}}{82}% 
+\contentsline {subsection}{\numberline {6.4.1}Ottimizzazione parametrica con Differential Evolution}{85}% 
+\contentsline {subsection}{\numberline {6.4.2}Risultati sperimentali}{86}% 
+\contentsline {section}{\numberline {6.5}Analisi comparativa delle performance}{88}% 
+\contentsline {section}{\numberline {6.6}Conclusioni}{91}% 
