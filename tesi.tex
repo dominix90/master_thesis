@@ -36,12 +36,12 @@
 \input{frontespizio.tex}
 \input{dedica.tex}
 
-\newgeometry{left=3.5cm}
+\newgeometry{left=3.5cm,top=2.5cm,bottom=2.5cm}
 \pagenumbering{Roman}
 \input{chapters/abstract.tex}
-\restoregeometry
+%\restoregeometry
 
-\newgeometry{left=3.5cm,top=2cm,bottom=2cm}
+%\newgeometry{left=3.5cm,top=2cm,bottom=2cm}
 \tableofcontents
 \restoregeometry
 
@@ -53,9 +53,11 @@
 \input{chapters/progettazione.tex}
 \input{chapters/genetico.tex}
 \input{chapters/esperimenti.tex}
-\input{chapters/ringraziamenti.tex}
 
 \bibliography{bibliography} 
 \bibliographystyle{ieeetr}
+
+\input{chapters/ringraziamenti.tex}
+
 
 \end{document}
